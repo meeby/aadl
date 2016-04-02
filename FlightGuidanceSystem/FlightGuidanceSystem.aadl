@@ -1,0 +1,24 @@
+package FlightGuidanceSystem
+public
+	with APGuidanceCommandGenerator;
+	with FCFailureIndicator;
+	with FDGuidanceCommandGenerator;
+	with FGController;
+	with ReferenceAttitudeProcessor;
+with AircraftAttitudeRequesterReceiver;
+
+	system FlightGuidanceSystem
+	end FlightGuidanceSystem;
+
+	system implementation FlightGuidanceSystem.impl
+		subcomponents
+			apGuidanceCmndGenerator: system APGuidanceCommandGenerator::APGuidanceCommandGenerator;
+			fcFailureIndicator: system FCFailureIndicator::FCFailureIndicator;
+			fdGuidanceCmndGenerator: system FDGuidanceCommandGenerator::FDGuidanceCommandGenerator;
+			fgController: system FGController::FGController;
+			refAttitProcessor: system ReferenceAttitudeProcessor::ReferenceAttitudeProcessor;
+			aarr: system AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver;
+
+	end FlightGuidanceSystem.impl;
+
+end FlightGuidanceSystem;

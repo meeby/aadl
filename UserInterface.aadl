@@ -1,0 +1,10 @@
+package UserInterface
+public
+	
+	device FlightControlInterface
+	end FlightControlInterface;
+	
+	device PrimaryFlightDisplay
+	end PrimaryFlightDisplay;
+
+end UserInterface;

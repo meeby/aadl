@@ -1,0 +1,23 @@
+package SafetyManeuverChecker
+public
+	with APThreads;
+
+	system SafetyManeuverChecker
+		features
+			smc_erh: out data port;
+	end SafetyManeuverChecker;
+
+	system implementation SafetyManeuverChecker.impl
+		subcomponents
+			smcProcess: process SafetyManeuverProcess.impl;
+	end SafetyManeuverChecker.impl;
+
+	process SafetyManeuverProcess
+	end SafetyManeuverProcess;
+
+	process implementation SafetyManeuverProcess.impl
+		subcomponents
+			safetyManeuverThread: thread APThreads::SafetyManeuverThread;
+	end SafetyManeuverProcess.impl;
+
+end SafetyManeuverChecker;

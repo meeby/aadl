@@ -1,0 +1,23 @@
+package GuidanceRequesterReceiver
+public
+	with APThreads;
+
+	system GuidanceRequesterReceiver
+		features
+			grr_erh: out data port;
+	end GuidanceRequesterReceiver;
+
+	system implementation GuidanceRequesterReceiver.impl
+		subcomponents
+			grrProcess: process APGuidanceRRProcess.impl;
+	end GuidanceRequesterReceiver.impl;
+
+	process APGuidanceRRProcess
+	end APGuidanceRRProcess;
+
+	process implementation APGuidanceRRProcess.impl
+		subcomponents
+			apGuidanceRRThread: thread APThreads::APGuidanceRequestThread;
+	end APGuidanceRRProcess.impl;
+
+end GuidanceRequesterReceiver;

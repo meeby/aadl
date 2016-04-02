@@ -1,0 +1,23 @@
+package APStatusIndicator
+public
+	with APThreads;
+
+	system APStatusIndicator
+		features
+			apsi_apc: in data port;
+	end APStatusIndicator;
+
+	system implementation APStatusIndicator.impl
+		subcomponents
+			apsiProcess: process APStatusIndicatorProcess.impl;
+	end APStatusIndicator.impl;
+
+	process APStatusIndicatorProcess
+	end APStatusIndicatorProcess;
+
+	process implementation APStatusIndicatorProcess.impl
+		subcomponents
+			APStatusIndicatorThread: thread APThreads::APStatusIndicatorThread;
+	end APStatusIndicatorProcess.impl;
+
+end APStatusIndicator;

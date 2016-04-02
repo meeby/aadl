@@ -1,0 +1,13 @@
+package SSThreads
+public
+
+	thread AircraftAttitudeRRThread
+	end AircraftAttitudeRRThread;
+
+	thread DisplayThread
+	end DisplayThread;
+
+	thread GuidanceMonitorThread
+	end GuidanceMonitorThread;
+
+end SSThreads;

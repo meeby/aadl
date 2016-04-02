@@ -1,0 +1,24 @@
+package AircraftAttitudeRequesterReceiver
+public
+with SSThreads;
+	
+	system AircraftAttitudeRequesterReceiver
+		features
+			aarr_erh: out data port;
+			aarr_fgc: out data port;
+	end AircraftAttitudeRequesterReceiver;
+
+	system implementation AircraftAttitudeRequesterReceiver.impl
+		subcomponents
+			apcProcess: process AARRProcess.impl;
+	end AircraftAttitudeRequesterReceiver.impl;
+
+	process AARRProcess
+	end AARRProcess;
+
+	process implementation AARRProcess.impl
+		subcomponents
+			aarrThread: thread SSThreads::AircraftAttitudeRRThread;
+	end AARRProcess.impl;
+
+end AircraftAttitudeRequesterReceiver;

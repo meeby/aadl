@@ -1,0 +1,23 @@
+package FlightControlSystem
+public
+	with FlightGuidanceSystem;
+	with AutoPilotSystem;
+	with AircraftAttitudeRequesterReceiver;
+	with Display;
+	with GuidanceMonitor;
+	with FCSExecutionPlatform;
+
+	system FlightControlSystem
+	end FlightControlSystem;
+
+	system implementation FlightControlSystem.impl
+		subcomponents
+			fgs: system FlightGuidanceSystem::FlightGuidanceSystem.impl;
+			ap: system AutoPilotSystem::AutoPilotSystem.impl;
+			aarr: system AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver;
+			dis: system Display::Display;
+			guidanceMonitor: system GuidanceMonitor::GuidanceMonitor;
+			hw: system FCSExecutionPlatform::Hardware;
+	end FlightControlSystem.impl;
+
+end FlightControlSystem;

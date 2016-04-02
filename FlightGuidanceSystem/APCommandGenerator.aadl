@@ -1,0 +1,7 @@
+package APGuidanceCommandGenerator
+public
+	
+	system APGuidanceCommandGenerator
+	end APGuidanceCommandGenerator;
+	
+end APGuidanceCommandGenerator;

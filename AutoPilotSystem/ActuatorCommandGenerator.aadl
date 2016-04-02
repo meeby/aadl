@@ -1,0 +1,23 @@
+package ActuatorCommandGenerator
+public
+	with APThreads;
+
+	system ActuatorCommandGenerator
+		features
+			acg_apc: in data port;
+	end ActuatorCommandGenerator;
+
+	system implementation ActuatorCommandGenerator.impl
+		subcomponents
+			acgProcess: process GenerateActuatorCommand.impl;
+	end ActuatorCommandGenerator.impl;
+
+	process GenerateActuatorCommand
+	end GenerateActuatorCommand;
+
+	process implementation GenerateActuatorCommand.impl
+		subcomponents
+			generateActuatorCommandThread: thread APThreads::GenerateActuatorCommandThread;
+	end GenerateActuatorCommand.impl;
+
+end ActuatorCommandGenerator;

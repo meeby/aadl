@@ -1,0 +1,25 @@
+package APController
+public
+	with APThreads;
+
+	system APController
+		features
+			apc_erh: in data port;
+			apc_apsi: out data port;
+			apc_acg: out data port;
+	end APController;
+
+	system implementation APController.impl
+		subcomponents
+			apcProcess: process APControllerProcess.impl;
+	end APController.impl;
+
+	process APControllerProcess
+	end APControllerProcess;
+
+	process implementation APControllerProcess.impl
+		subcomponents
+			apControllerThread: thread APThreads::APControllerThread;
+	end APControllerProcess.impl;
+
+end APController;

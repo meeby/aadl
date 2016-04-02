@@ -1,0 +1,27 @@
+package EngagementRequestHandler
+public
+	with APThreads;
+
+	system EngagementRequestHandler
+		features
+			erh_grr: in data port;
+			erh_smc: in data port;
+			erh_aarr: in data port;
+
+			erh_apc: out data port;
+	end EngagementRequestHandler;
+
+	system implementation EngagementRequestHandler.impl
+		subcomponents
+			erhProcess: process EngagementProcess.impl;
+	end EngagementRequestHandler.impl;
+
+	process EngagementProcess
+	end EngagementProcess;
+
+	process implementation EngagementProcess.impl
+		subcomponents
+			engagementThread: thread APThreads::EngagementRequestThread;
+	end EngagementProcess.impl;
+
+end EngagementRequestHandler;

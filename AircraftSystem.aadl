@@ -1,0 +1,20 @@
+package AircraftSystem
+public
+	with FlightControlSystem;
+	with AltitudeHeadingSystem;
+	with ControlSurfaceActuator;
+	with UserInterface;
+
+	system OurAircraft
+	end OurAircraft;
+
+	system implementation OurAircraft.impl
+		subcomponents
+			fcs: system FlightControlSystem::FlightControlSystem.impl;
+			ahs: system AltitudeHeadingSystem::AltitudeHeadingSystem;
+			csa: system ControlSurfaceActuator::ControlSurfaceActuator;
+			fci: device UserInterface::FlightControlInterface;
+			pfd: device UserInterface::PrimaryFlightDisplay;
+	end OurAircraft.impl;
+
+end AircraftSystem;
