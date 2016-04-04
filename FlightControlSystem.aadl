@@ -14,7 +14,7 @@ public
 		subcomponents
 			fgs: system FlightGuidanceSystem::FlightGuidanceSystem.impl;
 			ap: system AutoPilotSystem::AutoPilotSystem.impl;
-			aarr: system AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver;
+			aarr: system AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver.impl;
 			dis: system Display::Display;
 			guidanceMonitor: system GuidanceMonitor::GuidanceMonitor;
 			hw: system FCSExecutionPlatform::Hardware;

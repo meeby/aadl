@@ -14,12 +14,12 @@ with Display;
 
 	system implementation FlightGuidanceSystem.impl
 		subcomponents
-			apGuidanceCmndGenerator: system APGuidanceCommandGenerator::APGuidanceCommandGenerator;
-			fcFailureIndicator: system FCFailureIndicator::FCFailureIndicator;
-			fdGuidanceCmndGenerator: system FDGuidanceCommandGenerator::FDGuidanceCommandGenerator;
-			fgController: system FGController::FGController;
-			refAttitProcessor: system ReferenceAttitudeProcessor::ReferenceAttitudeProcessor;
-			aarr: system AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver;
+			apGuidanceCmndGenerator: system APGuidanceCommandGenerator::APGuidanceCommandGenerator.impl;
+			fcFailureIndicator: system FCFailureIndicator::FCFailureIndicator.impl;
+			fdGuidanceCmndGenerator: system FDGuidanceCommandGenerator::FDGuidanceCommandGenerator.impl;
+			fgController: system FGController::FGController.impl;
+			refAttitProcessor: system ReferenceAttitudeProcessor::ReferenceAttitudeProcessor.impl;
+			aarr: system AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver.impl;
 			gm: system GuidanceMonitor::GuidanceMonitor;
 			display: system Display::Display;
 		connections
