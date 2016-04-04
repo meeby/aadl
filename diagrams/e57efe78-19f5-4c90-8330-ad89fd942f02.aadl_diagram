@@ -177,9 +177,9 @@
       </children>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <properties key="independentObject" value="subcomponent APGuidanceCommandGenerator::APGuidanceCommandGenerator.impl.commandGenProcess"/>
-        <properties key="is_ghost" value="false"/>
         <properties key="is_layed_out" value="true"/>
-        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="477" height="140" x="104" y="61" style="//@styles.0/@styles.2/@styles.0">
+        <properties key="is_ghost" value="false"/>
+        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="477" height="140" x="104" y="61" style="//@styles.0/@styles.1/@styles.0">
           <points x="20"/>
           <points x="477"/>
           <points x="457" y="140"/>
@@ -190,9 +190,9 @@
         </anchors>
         <children xsi:type="pi:ContainerShape" visible="true" active="true">
           <properties key="independentObject" value="subcomponent APGuidanceCommandGenerator::APGCGProcess.impl.apgcgThread"/>
-          <properties key="is_ghost" value="false"/>
           <properties key="is_layed_out" value="true"/>
-          <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="317" height="58" x="80" y="51" style="//@styles.0/@styles.1">
+          <properties key="is_ghost" value="false"/>
+          <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="317" height="58" x="80" y="51" style="//@styles.0/@styles.2">
             <points x="20"/>
             <points x="317"/>
             <points x="297" y="58"/>
@@ -381,9 +381,9 @@
       </children>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <properties key="independentObject" value="subcomponent FCFailureIndicator::FCFailureIndicator.impl.fcFailureProcess"/>
-        <properties key="is_ghost" value="false"/>
         <properties key="is_layed_out" value="true"/>
-        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="458" height="126" x="82" y="45" style="//@styles.0/@styles.2/@styles.0">
+        <properties key="is_ghost" value="false"/>
+        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="458" height="126" x="82" y="45" style="//@styles.0/@styles.1/@styles.0">
           <points x="20"/>
           <points x="458"/>
           <points x="438" y="126"/>
@@ -394,9 +394,9 @@
         </anchors>
         <children xsi:type="pi:ContainerShape" visible="true" active="true">
           <properties key="independentObject" value="subcomponent FCFailureIndicator::FCFIProcess.impl.fcfiThread"/>
-          <properties key="is_ghost" value="false"/>
           <properties key="is_layed_out" value="true"/>
-          <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="298" height="50" x="80" y="45" style="//@styles.0/@styles.1">
+          <properties key="is_ghost" value="false"/>
+          <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="298" height="50" x="80" y="45" style="//@styles.0/@styles.2">
             <points x="20"/>
             <points x="298"/>
             <points x="278" y="50"/>
@@ -585,9 +585,9 @@
       </children>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <properties key="independentObject" value="subcomponent FDGuidanceCommandGenerator::FDGuidanceCommandGenerator.impl.fdGuidCommandGenProcess"/>
-        <properties key="is_ghost" value="false"/>
         <properties key="is_layed_out" value="true"/>
-        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="488" height="133" x="100" y="70" style="//@styles.0/@styles.2/@styles.0">
+        <properties key="is_ghost" value="false"/>
+        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="488" height="133" x="100" y="70" style="//@styles.0/@styles.1/@styles.0">
           <points x="20"/>
           <points x="488"/>
           <points x="468" y="133"/>
@@ -598,9 +598,9 @@
         </anchors>
         <children xsi:type="pi:ContainerShape" visible="true" active="true">
           <properties key="independentObject" value="subcomponent FDGuidanceCommandGenerator::FDGCGProcess.impl.fdgcgThread"/>
-          <properties key="is_ghost" value="false"/>
           <properties key="is_layed_out" value="true"/>
-          <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="328" height="53" x="80" y="50" style="//@styles.0/@styles.1">
+          <properties key="is_ghost" value="false"/>
+          <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="328" height="53" x="80" y="50" style="//@styles.0/@styles.2">
             <points x="20"/>
             <points x="328"/>
             <points x="308" y="53"/>
@@ -790,9 +790,9 @@
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <properties key="independentObject" value="feature FGController::FGController.fgc_apgcg"/>
         <properties key="is_layed_out" value="true"/>
+        <properties key="side" value="left"/>
         <properties key="is_ghost" value="false"/>
         <properties key="is_coloring_container" value="true"/>
-        <properties key="side" value="left"/>
         <properties key="layout_side" value="left"/>
         <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="73" height="26" y="80"/>
         <anchors xsi:type="pi:ChopboxAnchor">
@@ -848,9 +848,9 @@
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <properties key="independentObject" value="feature FGController::FGController.fgc_fdgcg"/>
         <properties key="is_layed_out" value="true"/>
+        <properties key="side" value="left"/>
         <properties key="is_ghost" value="false"/>
         <properties key="is_coloring_container" value="true"/>
-        <properties key="side" value="left"/>
         <properties key="layout_side" value="left"/>
         <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="69" height="26" y="120"/>
         <anchors xsi:type="pi:ChopboxAnchor">
@@ -963,9 +963,9 @@
       </children>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <properties key="independentObject" value="subcomponent FGController::FGController.impl.fgControllerProcess"/>
-        <properties key="is_ghost" value="false"/>
         <properties key="is_layed_out" value="true"/>
-        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="455" height="126" x="103" y="61" style="//@styles.0/@styles.2/@styles.0">
+        <properties key="is_ghost" value="false"/>
+        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="455" height="126" x="103" y="61" style="//@styles.0/@styles.1/@styles.0">
           <points x="20"/>
           <points x="455"/>
           <points x="435" y="126"/>
@@ -976,9 +976,9 @@
         </anchors>
         <children xsi:type="pi:ContainerShape" visible="true" active="true">
           <properties key="independentObject" value="subcomponent FGController::FGCProcess.impl.fgcThread"/>
-          <properties key="is_ghost" value="false"/>
           <properties key="is_layed_out" value="true"/>
-          <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="295" height="52" x="80" y="44" style="//@styles.0/@styles.1">
+          <properties key="is_ghost" value="false"/>
+          <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="295" height="52" x="80" y="44" style="//@styles.0/@styles.2">
             <points x="20"/>
             <points x="295"/>
             <points x="275" y="52"/>
@@ -1109,9 +1109,9 @@
       </children>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <properties key="independentObject" value="subcomponent ReferenceAttitudeProcessor::ReferenceAttitudeProcessor.impl.refAttitudeProcProcess"/>
-        <properties key="is_ghost" value="false"/>
         <properties key="is_layed_out" value="true"/>
-        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="464" height="140" x="84" y="55" style="//@styles.0/@styles.2/@styles.0">
+        <properties key="is_ghost" value="false"/>
+        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="464" height="140" x="84" y="55" style="//@styles.0/@styles.1/@styles.0">
           <points x="20"/>
           <points x="464"/>
           <points x="444" y="140"/>
@@ -1122,9 +1122,9 @@
         </anchors>
         <children xsi:type="pi:ContainerShape" visible="true" active="true">
           <properties key="independentObject" value="subcomponent ReferenceAttitudeProcessor::RAPProcess.impl.rapThread"/>
-          <properties key="is_ghost" value="false"/>
           <properties key="is_layed_out" value="true"/>
-          <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="304" height="50" x="80" y="59" style="//@styles.0/@styles.1">
+          <properties key="is_ghost" value="false"/>
+          <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="304" height="50" x="80" y="59" style="//@styles.0/@styles.2">
             <points x="20"/>
             <points x="304"/>
             <points x="284" y="50"/>
@@ -1313,9 +1313,9 @@
       </children>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <properties key="independentObject" value="subcomponent AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver.impl.apcProcess"/>
-        <properties key="is_ghost" value="false"/>
         <properties key="is_layed_out" value="true"/>
-        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="481" height="142" x="92" y="80" style="//@styles.0/@styles.2/@styles.0">
+        <properties key="is_ghost" value="false"/>
+        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="481" height="142" x="92" y="80" style="//@styles.0/@styles.1/@styles.0">
           <points x="20"/>
           <points x="481"/>
           <points x="461" y="142"/>
@@ -1326,9 +1326,9 @@
         </anchors>
         <children xsi:type="pi:ContainerShape" visible="true" active="true">
           <properties key="independentObject" value="subcomponent AircraftAttitudeRequesterReceiver::AARRProcess.impl.aarrThread"/>
-          <properties key="is_ghost" value="false"/>
           <properties key="is_layed_out" value="true"/>
-          <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="308" height="62" x="80" y="50" style="//@styles.0/@styles.1">
+          <properties key="is_ghost" value="false"/>
+          <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="308" height="62" x="80" y="50" style="//@styles.0/@styles.2">
             <points x="20"/>
             <points x="308"/>
             <points x="288" y="62"/>
@@ -1395,16 +1395,16 @@
       <properties key="independentObject" value="subcomponent FlightGuidanceSystem::FlightGuidanceSystem.impl.gm"/>
       <properties key="is_layed_out" value="true"/>
       <properties key="is_ghost" value="false"/>
-      <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" filled="false" width="358" height="92" x="80" y="639" style="//@styles.0/@styles.0" cornerHeight="25" cornerWidth="25"/>
+      <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" filled="false" width="358" height="117" x="80" y="639" style="//@styles.0/@styles.0" cornerHeight="25" cornerWidth="25"/>
       <anchors xsi:type="pi:ChopboxAnchor">
         <properties key="name" value="chopbox"/>
       </anchors>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <properties key="independentObject" value="feature GuidanceMonitor::GuidanceMonitor.gm_apgcg"/>
         <properties key="is_layed_out" value="true"/>
+        <properties key="side" value="right"/>
         <properties key="is_ghost" value="false"/>
         <properties key="is_coloring_container" value="true"/>
-        <properties key="side" value="right"/>
         <properties key="layout_side" value="right"/>
         <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="74" height="26" x="284" y="31"/>
         <anchors xsi:type="pi:ChopboxAnchor">
@@ -1460,9 +1460,9 @@
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <properties key="independentObject" value="feature GuidanceMonitor::GuidanceMonitor.gm_fdgcg"/>
         <properties key="is_layed_out" value="true"/>
+        <properties key="side" value="right"/>
         <properties key="is_ghost" value="false"/>
         <properties key="is_coloring_container" value="true"/>
-        <properties key="side" value="right"/>
         <properties key="layout_side" value="right"/>
         <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="70" height="26" x="288" y="61"/>
         <anchors xsi:type="pi:ChopboxAnchor">
@@ -1622,10 +1622,10 @@
     <styles lineWidth="2" lineStyle="UNSPECIFIED" id="system" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED">
       <styles lineWidth="3" lineStyle="UNSPECIFIED" id="system-implementation" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED"/>
     </styles>
-    <styles lineWidth="2" lineStyle="DASH" id="thread" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED"/>
     <styles lineWidth="2" lineStyle="UNSPECIFIED" id="process" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED">
       <styles lineWidth="3" lineStyle="UNSPECIFIED" id="process-implementation" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED"/>
     </styles>
+    <styles lineWidth="2" lineStyle="DASH" id="thread" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED"/>
   </styles>
   <styles background="//@colors.2" foreground="//@colors.2" lineWidth="2" lineVisible="true" id="feature" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED"/>
   <styles background="//@colors.1" lineStyle="UNSPECIFIED" filled="true" lineVisible="false" transparency="0.2" id="text-background" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED"/>
