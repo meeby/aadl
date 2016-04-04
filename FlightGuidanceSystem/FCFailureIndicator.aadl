@@ -1,7 +1,25 @@
 package FCFailureIndicator
 public
 	
+with FGSThreads;
+	
 	system FCFailureIndicator
+		features
+			fcfi_dis: out data port;
+			fcfi_fgc: in data port;
 	end FCFailureIndicator;
+	
+	system implementation FCFailureIndicator.impl
+		subcomponents
+			fcFailureProcess: process FCFIProcess.impl;
+	end FCFailureIndicator.impl;
+
+	process FCFIProcess
+	end FCFIProcess;
+	
+	process implementation FCFIProcess.impl
+		subcomponents
+			fcfiThread: thread FGSThreads::FCFailureIndicatorThread;
+	end FCFIProcess.impl;
 
 end FCFailureIndicator;

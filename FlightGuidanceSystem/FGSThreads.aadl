@@ -1,4 +1,19 @@
 package FGSThreads
 public
 	
+	thread APCommandGenThread
+	end APCommandGenThread;
+	
+	thread FCFailureIndicatorThread
+	end FCFailureIndicatorThread;
+	
+	thread FDGuidCommandGenThread
+	end FDGuidCommandGenThread;
+	
+	thread FGControllerThread
+	end FGControllerThread;
+	
+	thread RefAttitudeProcThread
+	end RefAttitudeProcThread;
+	
 end FGSThreads;

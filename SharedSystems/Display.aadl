@@ -2,6 +2,8 @@ package Display
 public
 	
 	system Display
+		features
+			dis_fcfi: in data port;
 	end Display;
 
 end Display;
