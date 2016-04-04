@@ -5,6 +5,7 @@ public
 	system GuidanceRequesterReceiver
 		features
 			grr_erh: out data port;
+			grr_gm: out data port;
 	end GuidanceRequesterReceiver;
 
 	system implementation GuidanceRequesterReceiver.impl

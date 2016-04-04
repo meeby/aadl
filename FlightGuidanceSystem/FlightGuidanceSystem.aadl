@@ -5,9 +5,9 @@ public
 	with FDGuidanceCommandGenerator;
 	with FGController;
 	with ReferenceAttitudeProcessor;
-with AircraftAttitudeRequesterReceiver;
-with GuidanceMonitor;
-with Display;
+	with AircraftAttitudeRequesterReceiver;
+	with GuidanceMonitor;
+	with Display;
 
 	system FlightGuidanceSystem
 	end FlightGuidanceSystem;
@@ -20,8 +20,8 @@ with Display;
 			fgController: system FGController::FGController.impl;
 			refAttitProcessor: system ReferenceAttitudeProcessor::ReferenceAttitudeProcessor.impl;
 			aarr: system AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver.impl;
-			gm: system GuidanceMonitor::GuidanceMonitor;
-			display: system Display::Display;
+			gm: system GuidanceMonitor::GuidanceMonitor.impl;
+			display: system Display::Display.impl;
 		connections
 			c_apgcg_gm: port apGuidanceCmndGenerator.apgcg_gm -> gm.gm_apgcg;
 			c_fgc_apgcg: port FGController.fgc_apgcg -> apGuidanceCmndGenerator.apgcg_fgc;

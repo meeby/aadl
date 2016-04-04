@@ -7,7 +7,9 @@ public
 	with GuidanceRequesterReceiver;
 	with SafetyManeuverChecker;
 	with AircraftAttitudeRequesterReceiver;
-	
+	with GuidanceMonitor;
+	with Display;
+
 	system AutoPilotSystem
 	end AutoPilotSystem;
 
@@ -17,16 +19,20 @@ public
 			apController: system APController::APController.impl;
 			apStatus: system APStatusIndicator::APStatusIndicator.impl;
 			engagementRequestHandler: system EngagementRequestHandler::EngagementRequestHandler.impl;
-			guidanceRequestReceive: system GuidanceRequesterReceiver::GuidanceRequesterReceiver.impl;
+			grr: system GuidanceRequesterReceiver::GuidanceRequesterReceiver.impl;
 			safetyManeuverChecker: system SafetyManeuverChecker::SafetyManeuverChecker.impl;
 			aarr: system AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver.impl;
+			gm: system GuidanceMonitor::GuidanceMonitor.impl;
+			display: system Display::Display.impl;
 		connections
 			c_apc_apsi: port apController.apc_apsi -> apStatus.apsi_apc;
 			c_apc_acg: port apController.apc_acg -> actCmndGenerator.acg_apc;
-			c_grr_erh: port guidanceRequestReceive.grr_erh -> engagementRequestHandler.erh_grr;
+			c_grr_erh: port grr.grr_erh -> engagementRequestHandler.erh_grr;
 			c_smc_erh: port safetyManeuverChecker.smc_erh -> engagementRequestHandler.erh_smc;
 			c_aarr_erh: port aarr.aarr_erh -> engagementRequestHandler.erh_aarr;
 			c_erh_apc: port engagementRequestHandler.erh_apc -> apController.apc_erh;
+			c_apgcg_dis: port apStatus.apsi_dis -> display.dis_apsi;
+			c_fcfi_grr: port grr.grr_gm -> gm.gm_grr;
 	end AutoPilotSystem.impl;
 
 end AutoPilotSystem;

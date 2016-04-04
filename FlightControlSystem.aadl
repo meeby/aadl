@@ -15,8 +15,8 @@ public
 			fgs: system FlightGuidanceSystem::FlightGuidanceSystem.impl;
 			ap: system AutoPilotSystem::AutoPilotSystem.impl;
 			aarr: system AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver.impl;
-			dis: system Display::Display;
-			guidanceMonitor: system GuidanceMonitor::GuidanceMonitor;
+			dis: system Display::Display.impl;
+			guidanceMonitor: system GuidanceMonitor::GuidanceMonitor.impl;
 			hw: system FCSExecutionPlatform::Hardware;
 	end FlightControlSystem.impl;
 

@@ -1,9 +1,24 @@
 package Display
 public
-	
+	with SSThreads;
+
 	system Display
 		features
 			dis_fcfi: in data port;
+			dis_apsi: in data port;
 	end Display;
+
+	system implementation Display.impl
+		subcomponents
+			displayProcess: process DisplayProcess.impl;
+	end Display.impl;
+
+	process DisplayProcess
+	end DisplayProcess;
+
+	process implementation DisplayProcess.impl
+		subcomponents
+			displayThread: thread SSThreads::DisplayThread;
+	end DisplayProcess.impl;
 
 end Display;

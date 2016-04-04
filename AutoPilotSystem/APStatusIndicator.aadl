@@ -5,6 +5,7 @@ public
 	system APStatusIndicator
 		features
 			apsi_apc: in data port;
+			apsi_dis: out data port;
 	end APStatusIndicator;
 
 	system implementation APStatusIndicator.impl

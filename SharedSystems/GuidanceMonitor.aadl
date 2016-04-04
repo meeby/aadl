@@ -1,10 +1,25 @@
 package GuidanceMonitor
 public
-	
+with SSThreads;
+
 	system GuidanceMonitor
 		features
 			gm_apgcg: in data port;
 			gm_fdgcg: in data port;
+			gm_grr: in data port;
 	end GuidanceMonitor;
-	
+
+	system implementation GuidanceMonitor.impl
+		subcomponents
+			displayProcess: process GuidanceMonitorProcess.impl;
+	end GuidanceMonitor.impl;
+
+	process GuidanceMonitorProcess
+	end GuidanceMonitorProcess;
+
+	process implementation GuidanceMonitorProcess.impl
+		subcomponents
+			gmThread: thread SSThreads::GuidanceMonitorThread;
+	end GuidanceMonitorProcess.impl;
+
 end GuidanceMonitor;
