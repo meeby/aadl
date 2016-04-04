@@ -1,7 +1,28 @@
 package FGController
 public
 	
+	with FGSThreads;
+	
 	system FGController
+		features
+			fgc_aarr: in data port;
+			fgc_fcfi: out data port;
+			fgc_apgcg: out data port;
+			fgc_fdgcg: out data port;
+			fgc_rap: in data port;
 	end FGController;
+	
+	system implementation FGController.impl
+		subcomponents
+			fgControllerProcess: process FGCProcess.impl;
+	end FGController.impl;
+
+	process FGCProcess
+	end FGCProcess;
+	
+	process implementation FGCProcess.impl
+		subcomponents
+			fgcThread: thread FGSThreads::FGControllerThread;
+	end FGCProcess.impl;
 	
 end FGController;

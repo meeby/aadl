@@ -1,7 +1,25 @@
 package APGuidanceCommandGenerator
 public
 	
+with FGSThreads;
+	
 	system APGuidanceCommandGenerator
+		features
+			apgcg_gm: out data port;
+			apgcg_fgc: in data port;
 	end APGuidanceCommandGenerator;
+	
+	system implementation APGuidanceCommandGenerator.impl
+		subcomponents
+			commandGenProcess: process APGCGProcess.impl;
+	end APGuidanceCommandGenerator.impl;
+
+	process APGCGProcess
+	end APGCGProcess;
+	
+	process implementation APGCGProcess.impl
+		subcomponents
+			apgcgThread: thread FGSThreads::APCommandGenThread;
+	end APGCGProcess.impl;
 	
 end APGuidanceCommandGenerator;

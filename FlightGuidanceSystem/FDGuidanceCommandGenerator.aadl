@@ -1,7 +1,24 @@
 package FDGuidanceCommandGenerator
 public
+	with FGSThreads;
 	
 	system FDGuidanceCommandGenerator
+		features
+			fdgcg_fgc: in data port;
+			fdgcg_gm: out data port;
 	end FDGuidanceCommandGenerator;
+	
+	system implementation FDGuidanceCommandGenerator.impl
+		subcomponents
+			fdGuidCommandGenProcess: process FDGCGProcess.impl;
+	end FDGuidanceCommandGenerator.impl;
+
+	process FDGCGProcess
+	end FDGCGProcess;
+	
+	process implementation FDGCGProcess.impl
+		subcomponents
+			fdgcgThread: thread FGSThreads::FDGuidCommandGenThread;
+	end FDGCGProcess.impl;
 	
 end FDGuidanceCommandGenerator;

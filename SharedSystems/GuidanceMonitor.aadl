@@ -2,6 +2,9 @@ package GuidanceMonitor
 public
 	
 	system GuidanceMonitor
+		features
+			gm_apgcg: in data port;
+			gm_fdgcg: in data port;
 	end GuidanceMonitor;
 	
 end GuidanceMonitor;

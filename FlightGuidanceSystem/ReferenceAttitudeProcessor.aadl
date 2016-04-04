@@ -1,7 +1,23 @@
 package ReferenceAttitudeProcessor
 public
+with FGSThreads;
 	
 	system ReferenceAttitudeProcessor
+		features
+			rap_fgc: out data port;
 	end ReferenceAttitudeProcessor;
+	
+	system implementation ReferenceAttitudeProcessor.impl
+		subcomponents
+			refAttitudeProcProcess: process RAPProcess.impl;
+	end ReferenceAttitudeProcessor.impl;
+
+	process RAPProcess
+	end RAPProcess;
+	
+	process implementation RAPProcess.impl
+		subcomponents
+			rapThread: thread FGSThreads::RefAttitudeProcThread;
+	end RAPProcess.impl;
 	
 end ReferenceAttitudeProcessor;
