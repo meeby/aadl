@@ -8,6 +8,11 @@ public
 	with FCSExecutionPlatform;
 
 	system FlightControlSystem
+		features
+			fcs_fci: in data port;
+			fcs_pdf: out data port;	
+			fcs_ahs: in data port;
+			fcs_csa: out data port;			
 	end FlightControlSystem;
 
 	system implementation FlightControlSystem.impl
@@ -16,7 +21,7 @@ public
 			ap: system AutoPilotSystem::AutoPilotSystem.impl;
 			aarr: system AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver.impl;
 			dis: system Display::Display.impl;
-			guidanceMonitor: system GuidanceMonitor::GuidanceMonitor.impl;
+			gm: system GuidanceMonitor::GuidanceMonitor.impl;
 			hw: system FCSExecutionPlatform::Hardware;
 	end FlightControlSystem.impl;
 

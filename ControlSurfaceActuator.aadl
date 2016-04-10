@@ -2,6 +2,8 @@ package ControlSurfaceActuator
 public
 	
 	system ControlSurfaceActuator
+		features
+			csa_fcs: in data port;
 	end ControlSurfaceActuator;
 	
 end ControlSurfaceActuator;

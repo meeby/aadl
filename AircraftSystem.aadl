@@ -15,6 +15,12 @@ public
 			csa: system ControlSurfaceActuator::ControlSurfaceActuator;
 			fci: device UserInterface::FlightControlInterface;
 			pfd: device UserInterface::PrimaryFlightDisplay;
+			
+		connections
+			c_fci_fcs: port fci.fci_fcs -> fcs.fcs_fci;
+			c_fcs_pfd: port fcs.fcs_pdf -> pfd.pfd_fcs;
+			c_ahs_fcs: port ahs.ahs_fcs -> fcs.fcs_ahs;
+			c_fcs_csa: port fcs.fcs_csa -> csa.csa_fcs;
 	end OurAircraft.impl;
 
 end AircraftSystem;

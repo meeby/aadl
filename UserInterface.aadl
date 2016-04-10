@@ -2,9 +2,13 @@ package UserInterface
 public
 	
 	device FlightControlInterface
+		features
+			fci_fcs: out data port;
 	end FlightControlInterface;
 	
 	device PrimaryFlightDisplay
+		features
+			pfd_fcs: in data port;
 	end PrimaryFlightDisplay;
 
 end UserInterface;

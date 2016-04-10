@@ -2,6 +2,8 @@ package AltitudeHeadingSystem
 public
 	
 	system AltitudeHeadingSystem
+		features
+			ahs_fcs: out data port;
 	end AltitudeHeadingSystem;
 	
 end AltitudeHeadingSystem;
