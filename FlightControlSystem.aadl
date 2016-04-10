@@ -12,7 +12,12 @@ public
 			fcs_fci: in data port;
 			fcs_pdf: out data port;	
 			fcs_ahs: in data port;
-			fcs_csa: out data port;			
+			fcs_csa: out data port;
+		flows
+			flow_w_t: flow path fcs_fci -> fcs_pdf {
+				Latency => 10 ms .. 20 ms;
+			};
+			
 	end FlightControlSystem;
 
 	system implementation FlightControlSystem.impl

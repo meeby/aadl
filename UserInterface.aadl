@@ -1,14 +1,22 @@
 package UserInterface
 public
-	
+
 	device FlightControlInterface
 		features
 			fci_fcs: out data port;
+		flows
+			fci_source: flow source fci_fcs {
+				Latency => 5ms .. 5ms;
+			};
 	end FlightControlInterface;
-	
+
 	device PrimaryFlightDisplay
 		features
 			pfd_fcs: in data port;
+		flows
+			pfd_sink: flow sink pfd_fcs {
+				Latency => 5ms..5ms;
+			};
 	end PrimaryFlightDisplay;
 
 end UserInterface;
