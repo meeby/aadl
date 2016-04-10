@@ -18,7 +18,7 @@ with SSThreads;
 
 	process implementation AARRProcess.impl
 		subcomponents
-			aarrThread: thread SSThreads::AircraftAttitudeRRThread;
+			aarrThread: thread SSThreads::RequestAircraftAttitude;
 	end AARRProcess.impl;
 
 end AircraftAttitudeRequesterReceiver;

@@ -1,22 +1,22 @@
 package APThreads
 public
 
-	thread GenerateActuatorCommandThread
-	end GenerateActuatorCommandThread;
+	thread GenerateActuatorCommands
+	end GenerateActuatorCommands;
 
 	thread APControllerThread
 	end APControllerThread;
 
-	thread APStatusIndicatorThread
-	end APStatusIndicatorThread;
+	thread UpdateAPStatusIndicator
+	end UpdateAPStatusIndicator;
 
-	thread EngagementRequestThread
-	end EngagementRequestThread;
+	thread RequestAPEngagement
+	end RequestAPEngagement;
 
-	thread APGuidanceRequestThread
-	end APGuidanceRequestThread;
+	thread RequestAPGuidance
+	end RequestAPGuidance;
 
-	thread SafetyManeuverThread
-	end SafetyManeuverThread;
+	thread ConfirmManeuverIsSafe
+	end ConfirmManeuverIsSafe;
 
 end APThreads;

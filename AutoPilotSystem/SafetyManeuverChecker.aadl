@@ -17,7 +17,7 @@ public
 
 	process implementation SafetyManeuverProcess.impl
 		subcomponents
-			safetyManeuverThread: thread APThreads::SafetyManeuverThread;
+			safetyManeuverThread: thread APThreads::ConfirmManeuverIsSafe;
 	end SafetyManeuverProcess.impl;
 
 end SafetyManeuverChecker;

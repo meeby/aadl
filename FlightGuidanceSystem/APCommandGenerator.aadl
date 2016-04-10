@@ -19,7 +19,7 @@ with FGSThreads;
 	
 	process implementation APGCGProcess.impl
 		subcomponents
-			apgcgThread: thread FGSThreads::APCommandGenThread;
+			apgcgThread: thread FGSThreads::GenerateAPCommands;
 	end APGCGProcess.impl;
 	
 end APGuidanceCommandGenerator;

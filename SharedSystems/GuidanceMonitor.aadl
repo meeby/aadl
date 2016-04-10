@@ -19,7 +19,7 @@ with SSThreads;
 
 	process implementation GuidanceMonitorProcess.impl
 		subcomponents
-			gmThread: thread SSThreads::GuidanceMonitorThread;
+			gmThread: thread SSThreads::MonitorForGuidanceRequest;
 	end GuidanceMonitorProcess.impl;
 
 end GuidanceMonitor;

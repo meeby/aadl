@@ -18,7 +18,7 @@ public
 
 	process implementation APGuidanceRRProcess.impl
 		subcomponents
-			apGuidanceRRThread: thread APThreads::APGuidanceRequestThread;
+			apGuidanceRRThread: thread APThreads::RequestAPGuidance;
 	end APGuidanceRRProcess.impl;
 
 end GuidanceRequesterReceiver;

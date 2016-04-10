@@ -18,7 +18,7 @@ public
 
 	process implementation APStatusIndicatorProcess.impl
 		subcomponents
-			APStatusIndicatorThread: thread APThreads::APStatusIndicatorThread;
+			APStatusIndicatorThread: thread APThreads::UpdateAPStatusIndicator;
 	end APStatusIndicatorProcess.impl;
 
 end APStatusIndicator;

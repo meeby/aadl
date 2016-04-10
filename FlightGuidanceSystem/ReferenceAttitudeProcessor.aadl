@@ -17,7 +17,7 @@ with FGSThreads;
 	
 	process implementation RAPProcess.impl
 		subcomponents
-			rapThread: thread FGSThreads::RefAttitudeProcThread;
+			rapThread: thread FGSThreads::ProcessReferenceAttitude;
 	end RAPProcess.impl;
 	
 end ReferenceAttitudeProcessor;

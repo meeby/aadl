@@ -21,7 +21,7 @@ public
 
 	process implementation EngagementProcess.impl
 		subcomponents
-			engagementThread: thread APThreads::EngagementRequestThread;
+			engagementThread: thread APThreads::RequestAPEngagement;
 	end EngagementProcess.impl;
 
 end EngagementRequestHandler;

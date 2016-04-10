@@ -19,7 +19,7 @@ with FGSThreads;
 	
 	process implementation FCFIProcess.impl
 		subcomponents
-			fcfiThread: thread FGSThreads::FCFailureIndicatorThread;
+			fcfiThread: thread FGSThreads::UpdateFCFailureIndicator;
 	end FCFIProcess.impl;
 
 end FCFailureIndicator;

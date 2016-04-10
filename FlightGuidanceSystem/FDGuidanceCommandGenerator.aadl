@@ -18,7 +18,7 @@ public
 	
 	process implementation FDGCGProcess.impl
 		subcomponents
-			fdgcgThread: thread FGSThreads::FDGuidCommandGenThread;
+			fdgcgThread: thread FGSThreads::GenerateFDGuidanceCommands;
 	end FDGCGProcess.impl;
 	
 end FDGuidanceCommandGenerator;

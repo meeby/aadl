@@ -18,7 +18,7 @@ public
 
 	process implementation DisplayProcess.impl
 		subcomponents
-			displayThread: thread SSThreads::DisplayThread;
+			displayThread: thread SSThreads::SendDataToDisplay;
 	end DisplayProcess.impl;
 
 end Display;

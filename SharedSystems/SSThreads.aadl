@@ -1,13 +1,13 @@
 package SSThreads
 public
 
-	thread AircraftAttitudeRRThread
-	end AircraftAttitudeRRThread;
+	thread RequestAircraftAttitude
+	end RequestAircraftAttitude;
 
-	thread DisplayThread
-	end DisplayThread;
+	thread SendDataToDisplay
+	end SendDataToDisplay;
 
-	thread GuidanceMonitorThread
-	end GuidanceMonitorThread;
+	thread MonitorForGuidanceRequest
+	end MonitorForGuidanceRequest;
 
 end SSThreads;

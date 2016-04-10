@@ -17,7 +17,7 @@ public
 
 	process implementation GenerateActuatorCommand.impl
 		subcomponents
-			generateActuatorCommandThread: thread APThreads::GenerateActuatorCommandThread;
+			generateActuatorCommandThread: thread APThreads::GenerateActuatorCommands;
 	end GenerateActuatorCommand.impl;
 
 end ActuatorCommandGenerator;

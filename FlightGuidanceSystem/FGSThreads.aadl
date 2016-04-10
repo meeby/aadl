@@ -1,19 +1,19 @@
 package FGSThreads
 public
 	
-	thread APCommandGenThread
-	end APCommandGenThread;
+	thread GenerateAPCommands
+	end GenerateAPCommands;
 	
-	thread FCFailureIndicatorThread
-	end FCFailureIndicatorThread;
+	thread UpdateFCFailureIndicator
+	end UpdateFCFailureIndicator;
 	
-	thread FDGuidCommandGenThread
-	end FDGuidCommandGenThread;
+	thread GenerateFDGuidanceCommands
+	end GenerateFDGuidanceCommands;
 	
 	thread FGControllerThread
 	end FGControllerThread;
 	
-	thread RefAttitudeProcThread
-	end RefAttitudeProcThread;
+	thread ProcessReferenceAttitude
+	end ProcessReferenceAttitude;
 	
 end FGSThreads;
