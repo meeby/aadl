@@ -1,19 +1,113 @@
 package FGSThreads
 public
+
+	thread RequestAndReceiveAircraftAttitude
+	end RequestAndReceiveAircraftAttitude;
+
+	thread AlertFCFailureIndicator
+	end AlertFCFailureIndicator;
+
+	thread StartAPCommandGeneration
+	end StartAPCommandGeneration;
+
+	thread StartFDGuidanceCommandGeneration
+		features
+			guidanceRequest: in data port;
+			setReferenceAttitude: out data port;
+		flows
+			Flow_FDGuidanceRequest: flow path guidanceRequest -> setReferenceAttitude;
+		properties
+			Dispatch_Protocol => Periodic;
+			Period => 10 ms;
+			Compute_Execution_time => 2 ms .. 2 ms;
+	end StartFDGuidanceCommandGeneration;
+
+	thread RequestReferenceAttitude
+		features
+			refAttitudeRequest: in data port;
+			requestRefAttitude: out data port;
+		flows
+			Flow_RARequest: flow path refAttitudeRequest -> requestRefAttitude;
+		properties
+			Dispatch_Protocol => Periodic;
+			Period => 10 ms;
+			Compute_Execution_time => 2 ms .. 2 ms;
+	end RequestReferenceAttitude;
+
+	thread ReceiveReferenceAttitude
+		features
+			refAttitudeInput: in data port;
+			sendRefAttitude: out data port;
+		flows
+			Flow_RAReceived: flow path refAttitudeInput -> sendRefAttitude;
+		properties
+			Dispatch_Protocol => Periodic;
+			Period => 10 ms;
+			Compute_Execution_time => 2 ms .. 2 ms;
+	end ReceiveReferenceAttitude;
 	
+	thread GetFDGuidanceCommands
+		features
+			guidanceInput: in data port;
+			sendGuidance: out data port;
+		flows
+			Flow_GetFDGuid: flow path guidanceInput -> sendGuidance;
+		properties
+			Dispatch_Protocol => Periodic;
+			Period => 10 ms;
+			Compute_Execution_time => 2 ms .. 2 ms;
+	end GetFDGuidanceCommands;
+
 	thread GenerateAPCommands
 	end GenerateAPCommands;
-	
-	thread UpdateFCFailureIndicator
-	end UpdateFCFailureIndicator;
-	
-	thread GenerateFDGuidanceCommands
-	end GenerateFDGuidanceCommands;
-	
+
+	thread ReceiveFCFailureIndicator
+	end ReceiveFCFailureIndicator;
+
+	thread DisplayFCFailureIndicator
+	end DisplayFCFailureIndicator;
+
+	thread CalculateFDGuidance
+		features
+			receiveCurrentAttitude: in data port;
+			outputNewAttitude: out data port;
+		flows
+			Flow_FDGuidance: flow path receiveCurrentAttitude -> outputNewAttitude;
+		properties
+			Dispatch_Protocol => Periodic;
+			Period => 10 ms;
+			Compute_Execution_time => 2 ms .. 2 ms;
+	end CalculateFDGuidance;
+
+	thread TransformFDGuidanceCommands
+		features
+			desiredAttitude: in data port;
+			displayableAttitude: out data port;
+		flows
+			Flow_FDGuidance: flow path desiredAttitude -> displayableAttitude;
+		properties
+			Dispatch_Protocol => Periodic;
+			Period => 10 ms;
+			Compute_Execution_time => 2 ms .. 2 ms;
+	end TransformFDGuidanceCommands;
+
 	thread FGControllerThread
 	end FGControllerThread;
-	
-	thread ProcessReferenceAttitude
-	end ProcessReferenceAttitude;
-	
+
+	thread SetReferenceAttitude
+		features
+			desiredReferenceAttitude: in data port;
+			result: out data port;
+		flows
+			Flow_FDGuidance: flow path desiredReferenceAttitude -> result;
+	end SetReferenceAttitude;
+
+	thread SendReferenceAttitude
+		features
+			request: in data port;
+			currentReferenceAttitude: out data port;
+		flows
+			Flow_FDGuidance: flow path request -> currentReferenceAttitude;
+	end SendReferenceAttitude;
+
 end FGSThreads;

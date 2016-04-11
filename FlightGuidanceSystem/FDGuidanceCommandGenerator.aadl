@@ -1,24 +1,26 @@
 package FDGuidanceCommandGenerator
 public
 	with FGSThreads;
-	
-	system FDGuidanceCommandGenerator
-		features
-			fdgcg_fgc: in data port;
-			fdgcg_gm: out data port;
-	end FDGuidanceCommandGenerator;
-	
-	system implementation FDGuidanceCommandGenerator.impl
-		subcomponents
-			fdGuidCommandGenProcess: process FDGCGProcess.impl;
-	end FDGuidanceCommandGenerator.impl;
 
-	process FDGCGProcess
-	end FDGCGProcess;
-	
-	process implementation FDGCGProcess.impl
+	process FDGuidanceCommandGeneratorProcess
+		features
+			guidanceRequest: in data port;
+			generatedGuidanceCommands: out data port;
+		flows
+			Flow_FDGuidance: flow path guidanceRequest -> generatedGuidanceCommands;
+	end FDGuidanceCommandGeneratorProcess;
+
+	process implementation FDGuidanceCommandGeneratorProcess.impl
 		subcomponents
-			fdgcgThread: thread FGSThreads::GenerateFDGuidanceCommands;
-	end FDGCGProcess.impl;
-	
+			calcFDGuid: thread FGSThreads::CalculateFDGuidance;
+			transFDGuidCmndsThread: thread FGSThreads::TransformFDGuidanceCommands;
+		connections
+			fdgcgp1: port guidanceRequest -> calcFDGuid.receiveCurrentAttitude;
+			fdgcgp2: port calcFDGuid.outputNewAttitude -> transFDGuidCmndsThread.desiredAttitude;
+			fdgcgp3: port transFDGuidCmndsThread.displayableAttitude -> generatedGuidanceCommands;
+		flows
+			Flow_FDGuidance: flow path guidanceRequest -> fdgcgp1 -> calcFDGuid.Flow_FDGuidance -> fdgcgp2 ->
+					transFDGuidCmndsThread.Flow_FDGuidance -> fdgcgp3 -> generatedGuidanceCommands;
+	end FDGuidanceCommandGeneratorProcess.impl;
+
 end FDGuidanceCommandGenerator;

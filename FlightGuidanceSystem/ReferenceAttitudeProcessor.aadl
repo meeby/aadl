@@ -1,23 +1,30 @@
 package ReferenceAttitudeProcessor
 public
-with FGSThreads;
-	
-	system ReferenceAttitudeProcessor
-		features
-			rap_fgc: out data port;
-	end ReferenceAttitudeProcessor;
-	
-	system implementation ReferenceAttitudeProcessor.impl
-		subcomponents
-			refAttitudeProcProcess: process RAPProcess.impl;
-	end ReferenceAttitudeProcessor.impl;
+	with FGSThreads;
 
-	process RAPProcess
-	end RAPProcess;
-	
-	process implementation RAPProcess.impl
+	process ReferenceAttitudeProcessorProcess
+		features
+			rap_fgc_in: in data port;
+			rap_fgc_out: out data port;
+		flows
+			Flow_SetRefAttitude: flow path rap_fgc_in -> rap_fgc_out;
+			Flow_SendRefAttitude: flow path rap_fgc_in -> rap_fgc_out;
+	end ReferenceAttitudeProcessorProcess;
+
+	process implementation ReferenceAttitudeProcessorProcess.impl
 		subcomponents
-			rapThread: thread FGSThreads::ProcessReferenceAttitude;
-	end RAPProcess.impl;
-	
+			setReferenceAttitude: thread FGSThreads::SetReferenceAttitude;
+			sendReferenceAttitude: thread FGSThreads::SendReferenceAttitude;
+		connections
+			rapp1: port rap_fgc_in -> setReferenceAttitude.desiredReferenceAttitude;
+			rapp2: port setReferenceAttitude.result -> rap_fgc_out;
+			rapp3: port rap_fgc_in -> sendReferenceAttitude.request;
+			rapp4: port sendReferenceAttitude.currentReferenceAttitude -> rap_fgc_out;
+		flows
+			Flow_SendRefAttitude: flow path rap_fgc_in -> rapp3 -> sendReferenceAttitude.Flow_FDGuidance -> rapp4 ->
+					rap_fgc_out;
+			Flow_SetRefAttitude: flow path rap_fgc_in -> rapp1 -> setReferenceAttitude.Flow_FDGuidance -> rapp2 ->
+					rap_fgc_out;
+	end ReferenceAttitudeProcessorProcess.impl;
+
 end ReferenceAttitudeProcessor;
