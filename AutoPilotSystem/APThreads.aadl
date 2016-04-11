@@ -2,21 +2,52 @@ package APThreads
 public
 
 	thread GenerateActuatorCommands
+	    features
+			request: in data port;
+			actuators: out data port;
+		flows
+			flow_W_T: flow path request -> actuators;	
 	end GenerateActuatorCommands;
+
+	thread SendActuatorCommands
+	    features		
+			actuators_in: in data port;
+			actuators_out: out data port;
+		flows
+			flow_W_T: flow path actuators_in -> actuators_out;	
+	end SendActuatorCommands;
 
 	thread APControllerThread
 	end APControllerThread;
 
 	thread UpdateAPStatusIndicator
+		features
+			in_status: in data port;
+			out_status: out data port;
+		flows
+			flow_W_T: flow path in_status -> out_status;
 	end UpdateAPStatusIndicator;
 
 	thread RequestAPEngagement
 	end RequestAPEngagement;
 
 	thread RequestAPGuidance
+		features
+			guidance_receiver: in data port;
+			guidance_sender: out data port;
+		flows
+			flow_W_T: flow path guidance_receiver -> guidance_sender;	
 	end RequestAPGuidance;
 
 	thread ConfirmManeuverIsSafe
+	features
+			maneuver_checker_in: in data port;
+			isSafe: out data port;
+			notSafe: out data port;
+			
+		flows
+			flow_W_T: flow path maneuver_checker_in -> isSafe;	
+			flow_B_T: flow path maneuver_checker_in -> notSafe;	
 	end ConfirmManeuverIsSafe;
 
 end APThreads;

@@ -7,19 +7,86 @@ public
 			apc_erh: in data port;
 			apc_apsi: out data port;
 			apc_acg: out data port;
+		flows
+        	flow_APStatus: flow path apc_erh -> apc_apsi;
+			flow_APActuatorCommands: flow path apc_erh -> apc_acg;
 	end APController;
 
 	system implementation APController.impl
 		subcomponents
 			apcProcess: process APControllerProcess.impl;
-	end APController.impl;
+			apcEngagement: process APEngagementProcess.impl;
+			apcActuatorCommands: process APActuatorCommandsProcess.impl;
+			
+	connections
+		c4: port apcProcess.engagement_send -> apcEngagement.receiver;
+		c5: port apcEngagement.engagement_status -> apcProcess.engagementStatus;
+  		c6: port apcProcess.actuatorCommands_requester -> apcActuatorCommands.request;
+		c7: port apcActuatorCommands.actuators -> apcProcess.actuatorCommands_receiver;
+		c8: port apcProcess.status_indicator -> apc_apsi;
+		c9: port apcProcess.Actuators -> apc_acg;
+		c10: port apc_erh -> apcProcess.engagement_request;
+	flows
+		flow_APStatus: flow path apc_erh -> c10 -> apcProcess.flow_W_T -> c4 -> apcEngagement.flow_W_T -> c5 ->
+						apcProcess.flow_A_T -> c8 -> apc_apsi;
+						flow_APActuatorCommands: flow path apc_erh -> c10 ->
+						apcProcess.flow_W_T -> c4 -> apcEngagement.flow_W_T -> c5 -> apcProcess.flow_B_T -> c6 ->
+						apcActuatorCommands.flow_W_T -> c7 -> apcProcess.flow_C_T -> c9 -> apc_acg;
+end APController.impl;
 
 	process APControllerProcess
+		features
+			engagement_request: in data port;
+			actuatorCommands_receiver: in data port;
+			engagement_send: out data port;
+			engagementStatus: in data port;
+			status_indicator: out data port;
+			Actuators: out data port;
+			actuatorCommands_requester: out data port;
+		flows
+			flow_W_T: flow path engagement_request -> engagement_send;	
+			flow_B_T: flow path engagementStatus -> actuatorCommands_requester;	
+			flow_A_T: flow path engagementStatus -> status_indicator;
+			flow_C_T: flow path actuatorCommands_receiver -> Actuators;	
+
 	end APControllerProcess;
 
 	process implementation APControllerProcess.impl
 		subcomponents
 			apControllerThread: thread APThreads::APControllerThread;
+			apStatusIndicator:thread APThreads::UpdateAPStatusIndicator;
 	end APControllerProcess.impl;
+	
+	process APEngagementProcess
+	     features
+			receiver: in data port;
+			engagement_status: out data port;
+		flows
+			flow_W_T: flow path receiver -> engagement_status;
+	end APEngagementProcess;
+
+	process implementation APEngagementProcess.impl
+		subcomponents
+			apSafetyManeuverChecker: thread APThreads::ConfirmManeuverIsSafe;
+			apGuidanceRequester: thread APThreads::RequestAPGuidance;
+	end APEngagementProcess.impl;
+	
+	process APActuatorCommandsProcess
+		features
+			request: in data port;
+			actuators: out data port;
+		flows
+			flow_W_T: flow path request -> actuators;
+	end APActuatorCommandsProcess;
+
+	process implementation APActuatorCommandsProcess.impl
+		subcomponents
+			apGenerateActuatorCommands: thread APThreads::GenerateActuatorCommands;
+			apSendActuatorCommands: thread APThreads::SendActuatorCommands;
+	connections
+		c1: port apGenerateActuatorCommands.actuators -> apSendActuatorCommands.actuators_in;
+		c2: port request -> apGenerateActuatorCommands.request;
+		c3: port apSendActuatorCommands.actuators_out -> actuators;
+		end APActuatorCommandsProcess.impl;
 
 end APController;
