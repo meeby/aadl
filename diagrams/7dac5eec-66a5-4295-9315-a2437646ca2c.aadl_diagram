@@ -1,52 +1,37 @@
 <?xml version="1.0" encoding="ASCII"?>
 <pi:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" visible="true" gridUnit="10" diagramTypeId="AADL Diagram" name="AutoPilotSystem::AutoPilotSystem.impl" snapToGrid="true" version="0.11.0">
   <properties key="independentObject" value="classifier AutoPilotSystem::AutoPilotSystem.impl"/>
-  <properties key="nesting_depth" value="2"/>
+  <properties key="nesting_depth" value="0"/>
   <graphicsAlgorithm xsi:type="al:Rectangle" background="//@colors.1" foreground="//@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
   <children xsi:type="pi:ContainerShape" visible="true" active="true">
     <properties key="independentObject" value="classifier AutoPilotSystem::AutoPilotSystem.impl"/>
     <properties key="is_layed_out" value="true"/>
     <properties key="is_ghost" value="false"/>
-    <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" filled="false" width="2497" height="962" x="80" y="80" style="//@styles.0/@styles.0/@styles.0" cornerHeight="25" cornerWidth="25"/>
+    <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" filled="false" width="2848" height="962" x="80" y="80" style="//@styles.0/@styles.0/@styles.0" cornerHeight="25" cornerWidth="25"/>
     <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
       <properties key="name" value="connection AutoPilotSystem::AutoPilotSystem.impl.c_apc_apsi_midpoint"/>
       <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-      <location x="803" y="121"/>
+      <location x="1840" y="365"/>
     </anchors>
     <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
       <properties key="name" value="connection AutoPilotSystem::AutoPilotSystem.impl.c_apc_acg_midpoint"/>
       <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-      <location x="1633" y="121"/>
-    </anchors>
-    <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
-      <properties key="name" value="connection AutoPilotSystem::AutoPilotSystem.impl.c_grr_erh_midpoint"/>
-      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-      <location x="841" y="615"/>
-    </anchors>
-    <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
-      <properties key="name" value="connection AutoPilotSystem::AutoPilotSystem.impl.c_smc_erh_midpoint"/>
-      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-      <location x="1636" y="470"/>
+      <location x="1795" y="164"/>
     </anchors>
     <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
       <properties key="name" value="connection AutoPilotSystem::AutoPilotSystem.impl.c_aarr_erh_midpoint"/>
       <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-      <location x="836" y="422"/>
+      <location x="100" y="314"/>
     </anchors>
     <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
       <properties key="name" value="connection AutoPilotSystem::AutoPilotSystem.impl.c_erh_apc_midpoint"/>
       <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-      <location x="1625" y="336"/>
+      <location x="861" y="170"/>
     </anchors>
     <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
       <properties key="name" value="connection AutoPilotSystem::AutoPilotSystem.impl.c_apgcg_dis_midpoint"/>
       <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-      <location x="35" y="417"/>
-    </anchors>
-    <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
-      <properties key="name" value="connection AutoPilotSystem::AutoPilotSystem.impl.c_fcfi_grr_midpoint"/>
-      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-      <location x="1659" y="749"/>
+      <location x="1357" y="671"/>
     </anchors>
     <anchors xsi:type="pi:ChopboxAnchor">
       <properties key="name" value="chopbox"/>
@@ -55,7 +40,7 @@
       <properties key="independentObject" value="subcomponent AutoPilotSystem::AutoPilotSystem.impl.actCmndGenerator"/>
       <properties key="is_layed_out" value="true"/>
       <properties key="is_ghost" value="false"/>
-      <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" filled="false" width="737" height="230" x="1680" y="44" style="//@styles.0/@styles.0/@styles.0" cornerHeight="25" cornerWidth="25"/>
+      <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" filled="false" width="737" height="245" x="1920" y="95" style="//@styles.0/@styles.0/@styles.0" cornerHeight="25" cornerWidth="25"/>
       <anchors xsi:type="pi:ChopboxAnchor">
         <properties key="name" value="chopbox"/>
       </anchors>
@@ -117,68 +102,6 @@
           </graphicsAlgorithm>
         </children>
       </children>
-      <children xsi:type="pi:ContainerShape" visible="true" active="true">
-        <properties key="independentObject" value="subcomponent ActuatorCommandGenerator::ActuatorCommandGenerator.impl.acgProcess"/>
-        <properties key="is_layed_out" value="true"/>
-        <properties key="is_ghost" value="false"/>
-        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="555" height="145" x="91" y="55" style="//@styles.0/@styles.1/@styles.0">
-          <points x="20"/>
-          <points x="555"/>
-          <points x="535" y="145"/>
-          <points y="145"/>
-        </graphicsAlgorithm>
-        <anchors xsi:type="pi:ChopboxAnchor">
-          <properties key="name" value="chopbox"/>
-        </anchors>
-        <children xsi:type="pi:ContainerShape" visible="true" active="true">
-          <properties key="independentObject" value="subcomponent ActuatorCommandGenerator::GenerateActuatorCommand.impl.generateActuatorCommandThread"/>
-          <properties key="is_layed_out" value="true"/>
-          <properties key="is_ghost" value="false"/>
-          <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="395" height="50" x="80" y="44" style="//@styles.0/@styles.2">
-            <points x="20"/>
-            <points x="395"/>
-            <points x="375" y="50"/>
-            <points y="50"/>
-          </graphicsAlgorithm>
-          <anchors xsi:type="pi:ChopboxAnchor">
-            <properties key="name" value="chopbox"/>
-          </anchors>
-          <children visible="true">
-            <properties key="name" value="label"/>
-            <properties key="is_manually_positioned" value="true"/>
-            <properties key="is_transient" value="true"/>
-            <properties key="independentObject" value="subcomponent ActuatorCommandGenerator::GenerateActuatorCommand.impl.generateActuatorCommandThread"/>
-            <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="235" height="21" x="80" y="2" style="//@styles.2">
-              <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="235" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="generateActuatorCommandThread"/>
-            </graphicsAlgorithm>
-          </children>
-          <children visible="true">
-            <properties key="name" value="subcomponent_type_label"/>
-            <properties key="is_manually_positioned" value="true"/>
-            <properties key="is_transient" value="true"/>
-            <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="314" height="21" x="40" y="21" style="//@styles.2">
-              <graphicsAlgorithmChildren xsi:type="al:MultiText" lineStyle="UNSPECIFIED" width="314" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="APThreads::GenerateActuatorCommandThread"/>
-            </graphicsAlgorithm>
-          </children>
-        </children>
-        <children visible="true">
-          <properties key="name" value="label"/>
-          <properties key="is_manually_positioned" value="true"/>
-          <properties key="is_transient" value="true"/>
-          <properties key="independentObject" value="subcomponent ActuatorCommandGenerator::ActuatorCommandGenerator.impl.acgProcess"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="87" height="21" x="234" y="2" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="87" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="acgProcess"/>
-          </graphicsAlgorithm>
-        </children>
-        <children visible="true">
-          <properties key="name" value="subcomponent_type_label"/>
-          <properties key="is_manually_positioned" value="true"/>
-          <properties key="is_transient" value="true"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="414" height="21" x="70" y="21" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:MultiText" lineStyle="UNSPECIFIED" width="414" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="ActuatorCommandGenerator::GenerateActuatorCommand.impl"/>
-          </graphicsAlgorithm>
-        </children>
-      </children>
       <children visible="true">
         <properties key="name" value="label"/>
         <properties key="is_manually_positioned" value="true"/>
@@ -201,85 +124,42 @@
       <properties key="independentObject" value="subcomponent AutoPilotSystem::AutoPilotSystem.impl.apController"/>
       <properties key="is_layed_out" value="true"/>
       <properties key="is_ghost" value="false"/>
-      <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" filled="false" width="693" height="226" x="893" y="46" style="//@styles.0/@styles.0/@styles.0" cornerHeight="25" cornerWidth="25"/>
+      <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" filled="false" width="769" height="237" x="900" y="81" style="//@styles.0/@styles.0/@styles.0" cornerHeight="25" cornerWidth="25"/>
       <anchors xsi:type="pi:ChopboxAnchor">
         <properties key="name" value="chopbox"/>
+      </anchors>
+      <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
+        <properties key="name" value="connection APController::APController.impl.c10_midpoint"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
+        <location x="500" y="136"/>
+      </anchors>
+      <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
+        <properties key="name" value="connection APController::APController.impl.c8_midpoint"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
+        <location x="438" y="194"/>
+      </anchors>
+      <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
+        <properties key="name" value="connection APController::APController.impl.c9_midpoint"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
+        <location x="870" y="127"/>
       </anchors>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <properties key="independentObject" value="feature APController::APController.apc_erh"/>
         <properties key="is_layed_out" value="true"/>
-        <properties key="side" value="right"/>
         <properties key="is_ghost" value="false"/>
         <properties key="is_coloring_container" value="true"/>
-        <properties key="layout_side" value="right"/>
-        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="59" height="26" x="634" y="170"/>
-        <anchors xsi:type="pi:ChopboxAnchor">
-          <properties key="name" value="chopbox"/>
-        </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
-          <properties key="name" value="innerConnector"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-          <location x="44" y="21"/>
-        </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" incomingConnections="//@connections.5" useAnchorLocationAsConnectionEndpoint="true">
-          <properties key="name" value="outerConnector"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-          <location x="59" y="21"/>
-        </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
-          <properties key="name" value="flowSpecification"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-          <location x="-6" y="21"/>
-        </anchors>
-        <children xsi:type="pi:ContainerShape" visible="true" active="true">
-          <properties key="name" value="feature"/>
-          <properties key="is_inner_shape" value="true"/>
-          <properties key="is_coloring_child" value="true"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="15" height="10" x="44" y="16" style="//@styles.1">
-            <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" width="15" height="10" style="//@styles.1">
-              <points x="15"/>
-              <points y="5"/>
-              <points x="15" y="10"/>
-            </graphicsAlgorithmChildren>
-          </graphicsAlgorithm>
-          <anchors xsi:type="pi:ChopboxAnchor">
-            <properties key="name" value="chopbox"/>
-          </anchors>
-        </children>
-        <children visible="true">
-          <properties key="is_manually_positioned" value="true"/>
-          <properties key="independentObject" value="feature APController::APController.apc_erh"/>
-          <properties key="name" value="label"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="54" height="16" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="54" height="16" style="//@styles.3" horizontalAlignment="ALIGNMENT_RIGHT" verticalAlignment="UNSPECIFIED" value="apc_erh"/>
-          </graphicsAlgorithm>
-        </children>
-        <children visible="true">
-          <properties key="is_manually_positioned" value="true"/>
-          <properties key="independentObject" value="feature APController::APController.apc_erh"/>
-          <properties key="name" value="annotation"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" x="54" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" style="//@styles.4" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value=""/>
-          </graphicsAlgorithm>
-        </children>
-      </children>
-      <children xsi:type="pi:ContainerShape" visible="true" active="true">
-        <properties key="independentObject" value="feature APController::APController.apc_apsi"/>
-        <properties key="is_layed_out" value="true"/>
         <properties key="side" value="left"/>
-        <properties key="is_ghost" value="false"/>
-        <properties key="is_coloring_container" value="true"/>
         <properties key="layout_side" value="left"/>
-        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="64" height="26" y="55"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="59" height="26" y="66"/>
         <anchors xsi:type="pi:ChopboxAnchor">
           <properties key="name" value="chopbox"/>
         </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
+        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" outgoingConnections="//@connections.5 //@connections.6" useAnchorLocationAsConnectionEndpoint="true">
           <properties key="name" value="innerConnector"/>
           <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
           <location x="15" y="21"/>
         </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" outgoingConnections="//@connections.0" useAnchorLocationAsConnectionEndpoint="true">
+        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" incomingConnections="//@connections.3" useAnchorLocationAsConnectionEndpoint="true">
           <properties key="name" value="outerConnector"/>
           <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
           <location y="21"/>
@@ -295,9 +175,67 @@
           <properties key="is_coloring_child" value="true"/>
           <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="15" height="10" y="16" style="//@styles.1">
             <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" width="15" height="10" style="//@styles.1">
-              <points x="15"/>
-              <points y="5"/>
-              <points x="15" y="10"/>
+              <points/>
+              <points x="15" y="5"/>
+              <points y="10"/>
+            </graphicsAlgorithmChildren>
+          </graphicsAlgorithm>
+          <anchors xsi:type="pi:ChopboxAnchor">
+            <properties key="name" value="chopbox"/>
+          </anchors>
+        </children>
+        <children visible="true">
+          <properties key="is_manually_positioned" value="true"/>
+          <properties key="independentObject" value="feature APController::APController.apc_erh"/>
+          <properties key="name" value="label"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="54" height="16" x="5" style="//@styles.2">
+            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="54" height="16" style="//@styles.3" verticalAlignment="UNSPECIFIED" value="apc_erh"/>
+          </graphicsAlgorithm>
+        </children>
+        <children visible="true">
+          <properties key="is_manually_positioned" value="true"/>
+          <properties key="independentObject" value="feature APController::APController.apc_erh"/>
+          <properties key="name" value="annotation"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" x="5" style="//@styles.2">
+            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" style="//@styles.4" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value=""/>
+          </graphicsAlgorithm>
+        </children>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <properties key="independentObject" value="feature APController::APController.apc_apsi"/>
+        <properties key="is_layed_out" value="true"/>
+        <properties key="is_ghost" value="false"/>
+        <properties key="is_coloring_container" value="true"/>
+        <properties key="side" value="right"/>
+        <properties key="layout_side" value="right"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="64" height="26" x="705" y="181"/>
+        <anchors xsi:type="pi:ChopboxAnchor">
+          <properties key="name" value="chopbox"/>
+        </anchors>
+        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" incomingConnections="//@connections.5" useAnchorLocationAsConnectionEndpoint="true">
+          <properties key="name" value="innerConnector"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
+          <location x="49" y="21"/>
+        </anchors>
+        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" outgoingConnections="//@connections.0" useAnchorLocationAsConnectionEndpoint="true">
+          <properties key="name" value="outerConnector"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
+          <location x="64" y="21"/>
+        </anchors>
+        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
+          <properties key="name" value="flowSpecification"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
+          <location x="-1" y="21"/>
+        </anchors>
+        <children xsi:type="pi:ContainerShape" visible="true" active="true">
+          <properties key="name" value="feature"/>
+          <properties key="is_inner_shape" value="true"/>
+          <properties key="is_coloring_child" value="true"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="15" height="10" x="49" y="16" style="//@styles.1">
+            <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" width="15" height="10" style="//@styles.1">
+              <points/>
+              <points x="15" y="5"/>
+              <points y="10"/>
             </graphicsAlgorithmChildren>
           </graphicsAlgorithm>
           <anchors xsi:type="pi:ChopboxAnchor">
@@ -308,15 +246,15 @@
           <properties key="is_manually_positioned" value="true"/>
           <properties key="independentObject" value="feature APController::APController.apc_apsi"/>
           <properties key="name" value="label"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="59" height="16" x="5" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="59" height="16" style="//@styles.3" verticalAlignment="UNSPECIFIED" value="apc_apsi"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="59" height="16" style="//@styles.2">
+            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="59" height="16" style="//@styles.3" horizontalAlignment="ALIGNMENT_RIGHT" verticalAlignment="UNSPECIFIED" value="apc_apsi"/>
           </graphicsAlgorithm>
         </children>
         <children visible="true">
           <properties key="is_manually_positioned" value="true"/>
           <properties key="independentObject" value="feature APController::APController.apc_apsi"/>
           <properties key="name" value="annotation"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" x="5" style="//@styles.2">
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" x="59" style="//@styles.2">
             <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" style="//@styles.4" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value=""/>
           </graphicsAlgorithm>
         </children>
@@ -328,11 +266,11 @@
         <properties key="is_ghost" value="false"/>
         <properties key="is_coloring_container" value="true"/>
         <properties key="layout_side" value="right"/>
-        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="61" height="26" x="632" y="55"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="61" height="26" x="708" y="66"/>
         <anchors xsi:type="pi:ChopboxAnchor">
           <properties key="name" value="chopbox"/>
         </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
+        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" incomingConnections="//@connections.6" useAnchorLocationAsConnectionEndpoint="true">
           <properties key="name" value="innerConnector"/>
           <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
           <location x="46" y="21"/>
@@ -379,74 +317,12 @@
           </graphicsAlgorithm>
         </children>
       </children>
-      <children xsi:type="pi:ContainerShape" visible="true" active="true">
-        <properties key="independentObject" value="subcomponent APController::APController.impl.apcProcess"/>
-        <properties key="is_layed_out" value="true"/>
-        <properties key="is_ghost" value="false"/>
-        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="501" height="134" x="94" y="55" style="//@styles.0/@styles.1/@styles.0">
-          <points x="20"/>
-          <points x="501"/>
-          <points x="481" y="134"/>
-          <points y="134"/>
-        </graphicsAlgorithm>
-        <anchors xsi:type="pi:ChopboxAnchor">
-          <properties key="name" value="chopbox"/>
-        </anchors>
-        <children xsi:type="pi:ContainerShape" visible="true" active="true">
-          <properties key="independentObject" value="subcomponent APController::APControllerProcess.impl.apControllerThread"/>
-          <properties key="is_layed_out" value="true"/>
-          <properties key="is_ghost" value="false"/>
-          <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="319" height="58" x="80" y="46" style="//@styles.0/@styles.2">
-            <points x="20"/>
-            <points x="319"/>
-            <points x="299" y="58"/>
-            <points y="58"/>
-          </graphicsAlgorithm>
-          <anchors xsi:type="pi:ChopboxAnchor">
-            <properties key="name" value="chopbox"/>
-          </anchors>
-          <children visible="true">
-            <properties key="name" value="label"/>
-            <properties key="is_manually_positioned" value="true"/>
-            <properties key="is_transient" value="true"/>
-            <properties key="independentObject" value="subcomponent APController::APControllerProcess.impl.apControllerThread"/>
-            <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="139" height="21" x="90" y="2" style="//@styles.2">
-              <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="139" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="apControllerThread"/>
-            </graphicsAlgorithm>
-          </children>
-          <children visible="true">
-            <properties key="name" value="subcomponent_type_label"/>
-            <properties key="is_manually_positioned" value="true"/>
-            <properties key="is_transient" value="true"/>
-            <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="218" height="21" x="50" y="21" style="//@styles.2">
-              <graphicsAlgorithmChildren xsi:type="al:MultiText" lineStyle="UNSPECIFIED" width="218" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="APThreads::APControllerThread"/>
-            </graphicsAlgorithm>
-          </children>
-        </children>
-        <children visible="true">
-          <properties key="name" value="label"/>
-          <properties key="is_manually_positioned" value="true"/>
-          <properties key="is_transient" value="true"/>
-          <properties key="independentObject" value="subcomponent APController::APController.impl.apcProcess"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="87" height="21" x="207" y="2" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="87" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="apcProcess"/>
-          </graphicsAlgorithm>
-        </children>
-        <children visible="true">
-          <properties key="name" value="subcomponent_type_label"/>
-          <properties key="is_manually_positioned" value="true"/>
-          <properties key="is_transient" value="true"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="266" height="21" x="117" y="21" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:MultiText" lineStyle="UNSPECIFIED" width="266" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="APController::APControllerProcess.impl"/>
-          </graphicsAlgorithm>
-        </children>
-      </children>
       <children visible="true">
         <properties key="name" value="label"/>
         <properties key="is_manually_positioned" value="true"/>
         <properties key="is_transient" value="true"/>
         <properties key="independentObject" value="subcomponent AutoPilotSystem::AutoPilotSystem.impl.apController"/>
-        <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="94" height="21" x="299" y="2" style="//@styles.2">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="94" height="21" x="337" y="2" style="//@styles.2">
           <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="94" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="apController"/>
         </graphicsAlgorithm>
       </children>
@@ -454,7 +330,7 @@
         <properties key="name" value="subcomponent_type_label"/>
         <properties key="is_manually_positioned" value="true"/>
         <properties key="is_transient" value="true"/>
-        <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="216" height="21" x="238" y="21" style="//@styles.2">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="216" height="21" x="276" y="21" style="//@styles.2">
           <graphicsAlgorithmChildren xsi:type="al:MultiText" lineStyle="UNSPECIFIED" width="216" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="APController::APController.impl"/>
         </graphicsAlgorithm>
       </children>
@@ -463,45 +339,45 @@
       <properties key="independentObject" value="subcomponent AutoPilotSystem::AutoPilotSystem.impl.apStatus"/>
       <properties key="is_layed_out" value="true"/>
       <properties key="is_ghost" value="false"/>
-      <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" filled="false" width="633" height="236" x="80" y="41" style="//@styles.0/@styles.0/@styles.0" cornerHeight="25" cornerWidth="25"/>
+      <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" filled="false" width="633" height="266" x="2010" y="371" style="//@styles.0/@styles.0/@styles.0" cornerHeight="25" cornerWidth="25"/>
       <anchors xsi:type="pi:ChopboxAnchor">
         <properties key="name" value="chopbox"/>
       </anchors>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <properties key="independentObject" value="feature APStatusIndicator::APStatusIndicator.apsi_apc"/>
         <properties key="is_layed_out" value="true"/>
-        <properties key="side" value="right"/>
         <properties key="is_ghost" value="false"/>
         <properties key="is_coloring_container" value="true"/>
-        <properties key="layout_side" value="right"/>
-        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="64" height="26" x="569" y="58"/>
+        <properties key="side" value="left"/>
+        <properties key="layout_side" value="left"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="64" height="26" y="55"/>
         <anchors xsi:type="pi:ChopboxAnchor">
           <properties key="name" value="chopbox"/>
         </anchors>
         <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
           <properties key="name" value="innerConnector"/>
           <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-          <location x="49" y="21"/>
+          <location x="15" y="21"/>
         </anchors>
         <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" incomingConnections="//@connections.0" useAnchorLocationAsConnectionEndpoint="true">
           <properties key="name" value="outerConnector"/>
           <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-          <location x="64" y="21"/>
+          <location y="21"/>
         </anchors>
         <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
           <properties key="name" value="flowSpecification"/>
           <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-          <location x="-1" y="21"/>
+          <location x="65" y="21"/>
         </anchors>
         <children xsi:type="pi:ContainerShape" visible="true" active="true">
           <properties key="name" value="feature"/>
           <properties key="is_inner_shape" value="true"/>
           <properties key="is_coloring_child" value="true"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="15" height="10" x="49" y="16" style="//@styles.1">
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="15" height="10" y="16" style="//@styles.1">
             <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" width="15" height="10" style="//@styles.1">
-              <points x="15"/>
-              <points y="5"/>
-              <points x="15" y="10"/>
+              <points/>
+              <points x="15" y="5"/>
+              <points y="10"/>
             </graphicsAlgorithmChildren>
           </graphicsAlgorithm>
           <anchors xsi:type="pi:ChopboxAnchor">
@@ -512,89 +388,27 @@
           <properties key="is_manually_positioned" value="true"/>
           <properties key="independentObject" value="feature APStatusIndicator::APStatusIndicator.apsi_apc"/>
           <properties key="name" value="label"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="59" height="16" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="59" height="16" style="//@styles.3" horizontalAlignment="ALIGNMENT_RIGHT" verticalAlignment="UNSPECIFIED" value="apsi_apc"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="59" height="16" x="5" style="//@styles.2">
+            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="59" height="16" style="//@styles.3" verticalAlignment="UNSPECIFIED" value="apsi_apc"/>
           </graphicsAlgorithm>
         </children>
         <children visible="true">
           <properties key="is_manually_positioned" value="true"/>
           <properties key="independentObject" value="feature APStatusIndicator::APStatusIndicator.apsi_apc"/>
           <properties key="name" value="annotation"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" x="59" style="//@styles.2">
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" x="5" style="//@styles.2">
             <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" style="//@styles.4" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value=""/>
           </graphicsAlgorithm>
         </children>
       </children>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
-        <properties key="independentObject" value="subcomponent APStatusIndicator::APStatusIndicator.impl.apsiProcess"/>
-        <properties key="is_layed_out" value="true"/>
-        <properties key="is_ghost" value="false"/>
-        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="438" height="151" x="94" y="55" style="//@styles.0/@styles.1/@styles.0">
-          <points x="20"/>
-          <points x="438"/>
-          <points x="418" y="151"/>
-          <points y="151"/>
-        </graphicsAlgorithm>
-        <anchors xsi:type="pi:ChopboxAnchor">
-          <properties key="name" value="chopbox"/>
-        </anchors>
-        <children xsi:type="pi:ContainerShape" visible="true" active="true">
-          <properties key="independentObject" value="subcomponent APStatusIndicator::APStatusIndicatorProcess.impl.APStatusIndicatorThread"/>
-          <properties key="is_layed_out" value="true"/>
-          <properties key="is_ghost" value="false"/>
-          <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="272" height="59" x="80" y="62" style="//@styles.0/@styles.2">
-            <points x="20"/>
-            <points x="272"/>
-            <points x="252" y="59"/>
-            <points y="59"/>
-          </graphicsAlgorithm>
-          <anchors xsi:type="pi:ChopboxAnchor">
-            <properties key="name" value="chopbox"/>
-          </anchors>
-          <children visible="true">
-            <properties key="name" value="label"/>
-            <properties key="is_manually_positioned" value="true"/>
-            <properties key="is_transient" value="true"/>
-            <properties key="independentObject" value="subcomponent APStatusIndicator::APStatusIndicatorProcess.impl.APStatusIndicatorThread"/>
-            <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="173" height="21" x="49" y="2" style="//@styles.2">
-              <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="173" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="APStatusIndicatorThread"/>
-            </graphicsAlgorithm>
-          </children>
-          <children visible="true">
-            <properties key="name" value="subcomponent_type_label"/>
-            <properties key="is_manually_positioned" value="true"/>
-            <properties key="is_transient" value="true"/>
-            <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="250" height="21" x="11" y="21" style="//@styles.2">
-              <graphicsAlgorithmChildren xsi:type="al:MultiText" lineStyle="UNSPECIFIED" width="250" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="APThreads::APStatusIndicatorThread"/>
-            </graphicsAlgorithm>
-          </children>
-        </children>
-        <children visible="true">
-          <properties key="name" value="label"/>
-          <properties key="is_manually_positioned" value="true"/>
-          <properties key="is_transient" value="true"/>
-          <properties key="independentObject" value="subcomponent APStatusIndicator::APStatusIndicator.impl.apsiProcess"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="90" height="21" x="174" y="2" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="90" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="apsiProcess"/>
-          </graphicsAlgorithm>
-        </children>
-        <children visible="true">
-          <properties key="name" value="subcomponent_type_label"/>
-          <properties key="is_manually_positioned" value="true"/>
-          <properties key="is_transient" value="true"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="330" height="21" x="54" y="21" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:MultiText" lineStyle="UNSPECIFIED" width="330" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="APStatusIndicator::APStatusIndicatorProcess.impl"/>
-          </graphicsAlgorithm>
-        </children>
-      </children>
-      <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <properties key="independentObject" value="feature APStatusIndicator::APStatusIndicator.apsi_dis"/>
-        <properties key="side" value="left"/>
         <properties key="is_layed_out" value="true"/>
         <properties key="is_ghost" value="false"/>
         <properties key="is_coloring_container" value="true"/>
+        <properties key="side" value="left"/>
         <properties key="layout_side" value="left"/>
-        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="59" height="26" y="80"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="59" height="26" y="169"/>
         <anchors xsi:type="pi:ChopboxAnchor">
           <properties key="name" value="chopbox"/>
         </anchors>
@@ -603,7 +417,7 @@
           <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
           <location x="15" y="21"/>
         </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" outgoingConnections="//@connections.6" useAnchorLocationAsConnectionEndpoint="true">
+        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" outgoingConnections="//@connections.4" useAnchorLocationAsConnectionEndpoint="true">
           <properties key="name" value="outerConnector"/>
           <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
           <location y="21"/>
@@ -667,7 +481,7 @@
       <properties key="independentObject" value="subcomponent AutoPilotSystem::AutoPilotSystem.impl.engagementRequestHandler"/>
       <properties key="is_layed_out" value="true"/>
       <properties key="is_ghost" value="false"/>
-      <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" filled="false" width="701" height="252" x="890" y="339" style="//@styles.0/@styles.0/@styles.0" cornerHeight="25" cornerWidth="25"/>
+      <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" filled="false" width="701" height="252" x="120" y="70" style="//@styles.0/@styles.0/@styles.0" cornerHeight="25" cornerWidth="25"/>
       <anchors xsi:type="pi:ChopboxAnchor">
         <properties key="name" value="chopbox"/>
       </anchors>
@@ -687,7 +501,7 @@
           <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
           <location x="15" y="21"/>
         </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" incomingConnections="//@connections.2" useAnchorLocationAsConnectionEndpoint="true">
+        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
           <properties key="name" value="outerConnector"/>
           <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
           <location y="21"/>
@@ -745,7 +559,7 @@
           <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
           <location x="46" y="21"/>
         </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" incomingConnections="//@connections.3" useAnchorLocationAsConnectionEndpoint="true">
+        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
           <properties key="name" value="outerConnector"/>
           <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
           <location x="61" y="21"/>
@@ -803,7 +617,7 @@
           <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
           <location x="15" y="21"/>
         </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" incomingConnections="//@connections.4" useAnchorLocationAsConnectionEndpoint="true">
+        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" incomingConnections="//@connections.2" useAnchorLocationAsConnectionEndpoint="true">
           <properties key="name" value="outerConnector"/>
           <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
           <location y="21"/>
@@ -861,7 +675,7 @@
           <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
           <location x="44" y="21"/>
         </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" outgoingConnections="//@connections.5" useAnchorLocationAsConnectionEndpoint="true">
+        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" outgoingConnections="//@connections.3" useAnchorLocationAsConnectionEndpoint="true">
           <properties key="name" value="outerConnector"/>
           <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
           <location x="59" y="21"/>
@@ -903,68 +717,6 @@
           </graphicsAlgorithm>
         </children>
       </children>
-      <children xsi:type="pi:ContainerShape" visible="true" active="true">
-        <properties key="independentObject" value="subcomponent EngagementRequestHandler::EngagementRequestHandler.impl.erhProcess"/>
-        <properties key="is_layed_out" value="true"/>
-        <properties key="is_ghost" value="false"/>
-        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="501" height="142" x="100" y="80" style="//@styles.0/@styles.1/@styles.0">
-          <points x="20"/>
-          <points x="501"/>
-          <points x="481" y="142"/>
-          <points y="142"/>
-        </graphicsAlgorithm>
-        <anchors xsi:type="pi:ChopboxAnchor">
-          <properties key="name" value="chopbox"/>
-        </anchors>
-        <children xsi:type="pi:ContainerShape" visible="true" active="true">
-          <properties key="independentObject" value="subcomponent EngagementRequestHandler::EngagementProcess.impl.engagementThread"/>
-          <properties key="is_layed_out" value="true"/>
-          <properties key="is_ghost" value="false"/>
-          <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="340" height="61" x="80" y="51" style="//@styles.0/@styles.2">
-            <points x="20"/>
-            <points x="340"/>
-            <points x="320" y="61"/>
-            <points y="61"/>
-          </graphicsAlgorithm>
-          <anchors xsi:type="pi:ChopboxAnchor">
-            <properties key="name" value="chopbox"/>
-          </anchors>
-          <children visible="true">
-            <properties key="name" value="label"/>
-            <properties key="is_manually_positioned" value="true"/>
-            <properties key="is_transient" value="true"/>
-            <properties key="independentObject" value="subcomponent EngagementRequestHandler::EngagementProcess.impl.engagementThread"/>
-            <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="140" height="21" x="100" y="2" style="//@styles.2">
-              <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="140" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="engagementThread"/>
-            </graphicsAlgorithm>
-          </children>
-          <children visible="true">
-            <properties key="name" value="subcomponent_type_label"/>
-            <properties key="is_manually_positioned" value="true"/>
-            <properties key="is_transient" value="true"/>
-            <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="268" height="21" x="36" y="21" style="//@styles.2">
-              <graphicsAlgorithmChildren xsi:type="al:MultiText" lineStyle="UNSPECIFIED" width="268" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="APThreads::EngagementRequestThread"/>
-            </graphicsAlgorithm>
-          </children>
-        </children>
-        <children visible="true">
-          <properties key="name" value="label"/>
-          <properties key="is_manually_positioned" value="true"/>
-          <properties key="is_transient" value="true"/>
-          <properties key="independentObject" value="subcomponent EngagementRequestHandler::EngagementRequestHandler.impl.erhProcess"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="85" height="21" x="208" y="2" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="85" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="erhProcess"/>
-          </graphicsAlgorithm>
-        </children>
-        <children visible="true">
-          <properties key="name" value="subcomponent_type_label"/>
-          <properties key="is_manually_positioned" value="true"/>
-          <properties key="is_transient" value="true"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="365" height="21" x="68" y="21" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:MultiText" lineStyle="UNSPECIFIED" width="365" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="EngagementRequestHandler::EngagementProcess.impl"/>
-          </graphicsAlgorithm>
-        </children>
-      </children>
       <children visible="true">
         <properties key="name" value="label"/>
         <properties key="is_manually_positioned" value="true"/>
@@ -984,21 +736,21 @@
       </children>
     </children>
     <children xsi:type="pi:ContainerShape" visible="true" active="true">
-      <properties key="independentObject" value="subcomponent AutoPilotSystem::AutoPilotSystem.impl.safetyManeuverChecker"/>
+      <properties key="independentObject" value="subcomponent AutoPilotSystem::AutoPilotSystem.impl.aarr"/>
       <properties key="is_layed_out" value="true"/>
       <properties key="is_ghost" value="false"/>
-      <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" filled="false" width="683" height="241" x="1680" y="325" style="//@styles.0/@styles.0/@styles.0" cornerHeight="25" cornerWidth="25"/>
+      <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" filled="false" width="702" height="205" x="80" y="347" style="//@styles.0/@styles.0/@styles.0" cornerHeight="25" cornerWidth="25"/>
       <anchors xsi:type="pi:ChopboxAnchor">
         <properties key="name" value="chopbox"/>
       </anchors>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
-        <properties key="independentObject" value="feature SafetyManeuverChecker::SafetyManeuverChecker.smc_erh"/>
+        <properties key="independentObject" value="feature AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver.aarr_erh"/>
         <properties key="is_layed_out" value="true"/>
-        <properties key="side" value="left"/>
         <properties key="is_ghost" value="false"/>
         <properties key="is_coloring_container" value="true"/>
+        <properties key="side" value="left"/>
         <properties key="layout_side" value="left"/>
-        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="61" height="26" y="123"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="62" height="26" y="108"/>
         <anchors xsi:type="pi:ChopboxAnchor">
           <properties key="name" value="chopbox"/>
         </anchors>
@@ -1007,7 +759,7 @@
           <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
           <location x="15" y="21"/>
         </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" outgoingConnections="//@connections.3" useAnchorLocationAsConnectionEndpoint="true">
+        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" outgoingConnections="//@connections.2" useAnchorLocationAsConnectionEndpoint="true">
           <properties key="name" value="outerConnector"/>
           <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
           <location y="21"/>
@@ -1034,15 +786,15 @@
         </children>
         <children visible="true">
           <properties key="is_manually_positioned" value="true"/>
-          <properties key="independentObject" value="feature SafetyManeuverChecker::SafetyManeuverChecker.smc_erh"/>
+          <properties key="independentObject" value="feature AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver.aarr_erh"/>
           <properties key="name" value="label"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="56" height="16" x="5" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="56" height="16" style="//@styles.3" verticalAlignment="UNSPECIFIED" value="smc_erh"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="57" height="16" x="5" style="//@styles.2">
+            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="57" height="16" style="//@styles.3" verticalAlignment="UNSPECIFIED" value="aarr_erh"/>
           </graphicsAlgorithm>
         </children>
         <children visible="true">
           <properties key="is_manually_positioned" value="true"/>
-          <properties key="independentObject" value="feature SafetyManeuverChecker::SafetyManeuverChecker.smc_erh"/>
+          <properties key="independentObject" value="feature AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver.aarr_erh"/>
           <properties key="name" value="annotation"/>
           <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" x="5" style="//@styles.2">
             <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" style="//@styles.4" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value=""/>
@@ -1050,124 +802,36 @@
         </children>
       </children>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
-        <properties key="independentObject" value="subcomponent SafetyManeuverChecker::SafetyManeuverChecker.impl.smcProcess"/>
+        <properties key="independentObject" value="feature AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver.aarr_fgc"/>
         <properties key="is_layed_out" value="true"/>
-        <properties key="is_ghost" value="false"/>
-        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="501" height="151" x="91" y="60" style="//@styles.0/@styles.1/@styles.0">
-          <points x="20"/>
-          <points x="501"/>
-          <points x="481" y="151"/>
-          <points y="151"/>
-        </graphicsAlgorithm>
-        <anchors xsi:type="pi:ChopboxAnchor">
-          <properties key="name" value="chopbox"/>
-        </anchors>
-        <children xsi:type="pi:ContainerShape" visible="true" active="true">
-          <properties key="independentObject" value="subcomponent SafetyManeuverChecker::SafetyManeuverProcess.impl.safetyManeuverThread"/>
-          <properties key="is_layed_out" value="true"/>
-          <properties key="is_ghost" value="false"/>
-          <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="337" height="57" x="80" y="40" style="//@styles.0/@styles.2">
-            <points x="20"/>
-            <points x="337"/>
-            <points x="317" y="57"/>
-            <points y="57"/>
-          </graphicsAlgorithm>
-          <anchors xsi:type="pi:ChopboxAnchor">
-            <properties key="name" value="chopbox"/>
-          </anchors>
-          <children visible="true">
-            <properties key="name" value="label"/>
-            <properties key="is_manually_positioned" value="true"/>
-            <properties key="is_transient" value="true"/>
-            <properties key="independentObject" value="subcomponent SafetyManeuverChecker::SafetyManeuverProcess.impl.safetyManeuverThread"/>
-            <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="160" height="21" x="88" y="2" style="//@styles.2">
-              <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="160" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="safetyManeuverThread"/>
-            </graphicsAlgorithm>
-          </children>
-          <children visible="true">
-            <properties key="name" value="subcomponent_type_label"/>
-            <properties key="is_manually_positioned" value="true"/>
-            <properties key="is_transient" value="true"/>
-            <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="240" height="21" x="48" y="21" style="//@styles.2">
-              <graphicsAlgorithmChildren xsi:type="al:MultiText" lineStyle="UNSPECIFIED" width="240" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="APThreads::SafetyManeuverThread"/>
-            </graphicsAlgorithm>
-          </children>
-        </children>
-        <children visible="true">
-          <properties key="name" value="label"/>
-          <properties key="is_manually_positioned" value="true"/>
-          <properties key="is_transient" value="true"/>
-          <properties key="independentObject" value="subcomponent SafetyManeuverChecker::SafetyManeuverChecker.impl.smcProcess"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="89" height="21" x="206" y="2" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="89" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="smcProcess"/>
-          </graphicsAlgorithm>
-        </children>
-        <children visible="true">
-          <properties key="name" value="subcomponent_type_label"/>
-          <properties key="is_manually_positioned" value="true"/>
-          <properties key="is_transient" value="true"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="362" height="21" x="69" y="21" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:MultiText" lineStyle="UNSPECIFIED" width="362" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="SafetyManeuverChecker::SafetyManeuverProcess.impl"/>
-          </graphicsAlgorithm>
-        </children>
-      </children>
-      <children visible="true">
-        <properties key="name" value="label"/>
-        <properties key="is_manually_positioned" value="true"/>
-        <properties key="is_transient" value="true"/>
-        <properties key="independentObject" value="subcomponent AutoPilotSystem::AutoPilotSystem.impl.safetyManeuverChecker"/>
-        <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="167" height="21" x="258" y="2" style="//@styles.2">
-          <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="167" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="safetyManeuverChecker"/>
-        </graphicsAlgorithm>
-      </children>
-      <children visible="true">
-        <properties key="name" value="subcomponent_type_label"/>
-        <properties key="is_manually_positioned" value="true"/>
-        <properties key="is_transient" value="true"/>
-        <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="364" height="21" x="159" y="21" style="//@styles.2">
-          <graphicsAlgorithmChildren xsi:type="al:MultiText" lineStyle="UNSPECIFIED" width="364" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="SafetyManeuverChecker::SafetyManeuverChecker.impl"/>
-        </graphicsAlgorithm>
-      </children>
-    </children>
-    <children xsi:type="pi:ContainerShape" visible="true" active="true">
-      <properties key="independentObject" value="subcomponent AutoPilotSystem::AutoPilotSystem.impl.aarr"/>
-      <properties key="is_layed_out" value="true"/>
-      <properties key="is_ghost" value="false"/>
-      <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" filled="false" width="702" height="205" x="80" y="347" style="//@styles.0/@styles.0/@styles.0" cornerHeight="25" cornerWidth="25"/>
-      <anchors xsi:type="pi:ChopboxAnchor">
-        <properties key="name" value="chopbox"/>
-      </anchors>
-      <children xsi:type="pi:ContainerShape" visible="true" active="true">
-        <properties key="independentObject" value="feature AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver.aarr_erh"/>
-        <properties key="is_layed_out" value="true"/>
-        <properties key="side" value="right"/>
         <properties key="is_ghost" value="false"/>
         <properties key="is_coloring_container" value="true"/>
+        <properties key="side" value="right"/>
         <properties key="layout_side" value="right"/>
-        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="62" height="26" x="640" y="55"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="60" height="26" x="642" y="133"/>
         <anchors xsi:type="pi:ChopboxAnchor">
           <properties key="name" value="chopbox"/>
         </anchors>
         <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
           <properties key="name" value="innerConnector"/>
           <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-          <location x="47" y="21"/>
+          <location x="45" y="21"/>
         </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" outgoingConnections="//@connections.4" useAnchorLocationAsConnectionEndpoint="true">
+        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
           <properties key="name" value="outerConnector"/>
           <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-          <location x="62" y="21"/>
+          <location x="60" y="21"/>
         </anchors>
         <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
           <properties key="name" value="flowSpecification"/>
           <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-          <location x="-3" y="21"/>
+          <location x="-5" y="21"/>
         </anchors>
         <children xsi:type="pi:ContainerShape" visible="true" active="true">
           <properties key="name" value="feature"/>
           <properties key="is_inner_shape" value="true"/>
           <properties key="is_coloring_child" value="true"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="15" height="10" x="47" y="16" style="//@styles.1">
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="15" height="10" x="45" y="16" style="//@styles.1">
             <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" width="15" height="10" style="//@styles.1">
               <points/>
               <points x="15" y="5"/>
@@ -1180,138 +844,18 @@
         </children>
         <children visible="true">
           <properties key="is_manually_positioned" value="true"/>
-          <properties key="independentObject" value="feature AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver.aarr_erh"/>
-          <properties key="name" value="label"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="57" height="16" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="57" height="16" style="//@styles.3" horizontalAlignment="ALIGNMENT_RIGHT" verticalAlignment="UNSPECIFIED" value="aarr_erh"/>
-          </graphicsAlgorithm>
-        </children>
-        <children visible="true">
-          <properties key="is_manually_positioned" value="true"/>
-          <properties key="independentObject" value="feature AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver.aarr_erh"/>
-          <properties key="name" value="annotation"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" x="57" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" style="//@styles.4" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value=""/>
-          </graphicsAlgorithm>
-        </children>
-      </children>
-      <children xsi:type="pi:ContainerShape" visible="true" active="true">
-        <properties key="independentObject" value="feature AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver.aarr_fgc"/>
-        <properties key="side" value="left"/>
-        <properties key="is_layed_out" value="true"/>
-        <properties key="is_ghost" value="false"/>
-        <properties key="is_coloring_container" value="true"/>
-        <properties key="layout_side" value="left"/>
-        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="60" height="26" y="30"/>
-        <anchors xsi:type="pi:ChopboxAnchor">
-          <properties key="name" value="chopbox"/>
-        </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
-          <properties key="name" value="innerConnector"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-          <location x="15" y="21"/>
-        </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
-          <properties key="name" value="outerConnector"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-          <location y="21"/>
-        </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
-          <properties key="name" value="flowSpecification"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-          <location x="65" y="21"/>
-        </anchors>
-        <children xsi:type="pi:ContainerShape" visible="true" active="true">
-          <properties key="name" value="feature"/>
-          <properties key="is_inner_shape" value="true"/>
-          <properties key="is_coloring_child" value="true"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="15" height="10" y="16" style="//@styles.1">
-            <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" width="15" height="10" style="//@styles.1">
-              <points x="15"/>
-              <points y="5"/>
-              <points x="15" y="10"/>
-            </graphicsAlgorithmChildren>
-          </graphicsAlgorithm>
-          <anchors xsi:type="pi:ChopboxAnchor">
-            <properties key="name" value="chopbox"/>
-          </anchors>
-        </children>
-        <children visible="true">
-          <properties key="is_manually_positioned" value="true"/>
           <properties key="independentObject" value="feature AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver.aarr_fgc"/>
           <properties key="name" value="label"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="55" height="16" x="5" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="55" height="16" style="//@styles.3" verticalAlignment="UNSPECIFIED" value="aarr_fgc"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="55" height="16" style="//@styles.2">
+            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="55" height="16" style="//@styles.3" horizontalAlignment="ALIGNMENT_RIGHT" verticalAlignment="UNSPECIFIED" value="aarr_fgc"/>
           </graphicsAlgorithm>
         </children>
         <children visible="true">
           <properties key="is_manually_positioned" value="true"/>
           <properties key="independentObject" value="feature AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver.aarr_fgc"/>
           <properties key="name" value="annotation"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" x="5" style="//@styles.2">
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" x="55" style="//@styles.2">
             <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" style="//@styles.4" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value=""/>
-          </graphicsAlgorithm>
-        </children>
-      </children>
-      <children xsi:type="pi:ContainerShape" visible="true" active="true">
-        <properties key="independentObject" value="subcomponent AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver.impl.apcProcess"/>
-        <properties key="is_layed_out" value="true"/>
-        <properties key="is_ghost" value="false"/>
-        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="518" height="120" x="92" y="55" style="//@styles.0/@styles.1/@styles.0">
-          <points x="20"/>
-          <points x="518"/>
-          <points x="498" y="120"/>
-          <points y="120"/>
-        </graphicsAlgorithm>
-        <anchors xsi:type="pi:ChopboxAnchor">
-          <properties key="name" value="chopbox"/>
-        </anchors>
-        <children xsi:type="pi:ContainerShape" visible="true" active="true">
-          <properties key="independentObject" value="subcomponent AircraftAttitudeRequesterReceiver::AARRProcess.impl.aarrThread"/>
-          <properties key="is_layed_out" value="true"/>
-          <properties key="is_ghost" value="false"/>
-          <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="150" height="50" x="167" y="40" style="//@styles.0/@styles.2">
-            <points x="20"/>
-            <points x="150"/>
-            <points x="130" y="50"/>
-            <points y="50"/>
-          </graphicsAlgorithm>
-          <anchors xsi:type="pi:ChopboxAnchor">
-            <properties key="name" value="chopbox"/>
-          </anchors>
-          <children visible="true">
-            <properties key="name" value="label"/>
-            <properties key="is_manually_positioned" value="true"/>
-            <properties key="is_transient" value="true"/>
-            <properties key="independentObject" value="subcomponent AircraftAttitudeRequesterReceiver::AARRProcess.impl.aarrThread"/>
-            <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="86" height="21" x="32" y="2" style="//@styles.2">
-              <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="86" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="aarrThread"/>
-            </graphicsAlgorithm>
-          </children>
-          <children visible="true">
-            <properties key="name" value="subcomponent_type_label"/>
-            <properties key="is_manually_positioned" value="true"/>
-            <properties key="is_transient" value="true"/>
-            <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="250" height="21" x="-50" y="21" style="//@styles.2">
-              <graphicsAlgorithmChildren xsi:type="al:MultiText" lineStyle="UNSPECIFIED" width="250" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="SSThreads::AircraftAttitudeRRThread"/>
-            </graphicsAlgorithm>
-          </children>
-        </children>
-        <children visible="true">
-          <properties key="name" value="label"/>
-          <properties key="is_manually_positioned" value="true"/>
-          <properties key="is_transient" value="true"/>
-          <properties key="independentObject" value="subcomponent AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver.impl.apcProcess"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="87" height="21" x="215" y="2" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="87" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="apcProcess"/>
-          </graphicsAlgorithm>
-        </children>
-        <children visible="true">
-          <properties key="name" value="subcomponent_type_label"/>
-          <properties key="is_manually_positioned" value="true"/>
-          <properties key="is_transient" value="true"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="355" height="21" x="81" y="21" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:MultiText" lineStyle="UNSPECIFIED" width="355" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="AircraftAttitudeRequesterReceiver::AARRProcess.impl"/>
           </graphicsAlgorithm>
         </children>
       </children>
@@ -1337,7 +881,7 @@
       <properties key="independentObject" value="subcomponent AutoPilotSystem::AutoPilotSystem.impl.gm"/>
       <properties key="is_layed_out" value="true"/>
       <properties key="is_ghost" value="false"/>
-      <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" filled="false" width="619" height="232" x="1720" y="680" style="//@styles.0/@styles.0/@styles.0" cornerHeight="25" cornerWidth="25"/>
+      <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" filled="false" width="619" height="232" x="1900" y="690" style="//@styles.0/@styles.0/@styles.0" cornerHeight="25" cornerWidth="25"/>
       <anchors xsi:type="pi:ChopboxAnchor">
         <properties key="name" value="chopbox"/>
       </anchors>
@@ -1473,7 +1017,7 @@
           <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
           <location x="15" y="21"/>
         </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" incomingConnections="//@connections.7" useAnchorLocationAsConnectionEndpoint="true">
+        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
           <properties key="name" value="outerConnector"/>
           <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
           <location y="21"/>
@@ -1515,68 +1059,6 @@
           </graphicsAlgorithm>
         </children>
       </children>
-      <children xsi:type="pi:ContainerShape" visible="true" active="true">
-        <properties key="independentObject" value="subcomponent GuidanceMonitor::GuidanceMonitor.impl.displayProcess"/>
-        <properties key="is_ghost" value="false"/>
-        <properties key="is_layed_out" value="true"/>
-        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="411" height="141" x="104" y="61" style="//@styles.0/@styles.1/@styles.0">
-          <points x="20"/>
-          <points x="411"/>
-          <points x="391" y="141"/>
-          <points y="141"/>
-        </graphicsAlgorithm>
-        <anchors xsi:type="pi:ChopboxAnchor">
-          <properties key="name" value="chopbox"/>
-        </anchors>
-        <children xsi:type="pi:ContainerShape" visible="true" active="true">
-          <properties key="independentObject" value="subcomponent GuidanceMonitor::GuidanceMonitorProcess.impl.gmThread"/>
-          <properties key="is_ghost" value="false"/>
-          <properties key="is_layed_out" value="true"/>
-          <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="251" height="51" x="80" y="60" style="//@styles.0/@styles.2">
-            <points x="20"/>
-            <points x="251"/>
-            <points x="231" y="51"/>
-            <points y="51"/>
-          </graphicsAlgorithm>
-          <anchors xsi:type="pi:ChopboxAnchor">
-            <properties key="name" value="chopbox"/>
-          </anchors>
-          <children visible="true">
-            <properties key="name" value="label"/>
-            <properties key="is_manually_positioned" value="true"/>
-            <properties key="is_transient" value="true"/>
-            <properties key="independentObject" value="subcomponent GuidanceMonitor::GuidanceMonitorProcess.impl.gmThread"/>
-            <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="80" height="21" x="85" y="2" style="//@styles.2">
-              <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="80" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="gmThread"/>
-            </graphicsAlgorithm>
-          </children>
-          <children visible="true">
-            <properties key="name" value="subcomponent_type_label"/>
-            <properties key="is_manually_positioned" value="true"/>
-            <properties key="is_transient" value="true"/>
-            <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="246" height="21" x="2" y="21" style="//@styles.2">
-              <graphicsAlgorithmChildren xsi:type="al:MultiText" lineStyle="UNSPECIFIED" width="246" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="SSThreads::GuidanceMonitorThread"/>
-            </graphicsAlgorithm>
-          </children>
-        </children>
-        <children visible="true">
-          <properties key="name" value="label"/>
-          <properties key="is_manually_positioned" value="true"/>
-          <properties key="is_transient" value="true"/>
-          <properties key="independentObject" value="subcomponent GuidanceMonitor::GuidanceMonitor.impl.displayProcess"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="109" height="21" x="151" y="2" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="109" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="displayProcess"/>
-          </graphicsAlgorithm>
-        </children>
-        <children visible="true">
-          <properties key="name" value="subcomponent_type_label"/>
-          <properties key="is_manually_positioned" value="true"/>
-          <properties key="is_transient" value="true"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="322" height="21" x="44" y="21" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:MultiText" lineStyle="UNSPECIFIED" width="322" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="GuidanceMonitor::GuidanceMonitorProcess.impl"/>
-          </graphicsAlgorithm>
-        </children>
-      </children>
       <children visible="true">
         <properties key="name" value="label"/>
         <properties key="is_manually_positioned" value="true"/>
@@ -1606,69 +1088,11 @@
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <properties key="independentObject" value="feature Display::Display.dis_fcfi"/>
         <properties key="is_layed_out" value="true"/>
-        <properties key="side" value="right"/>
         <properties key="is_ghost" value="false"/>
         <properties key="is_coloring_container" value="true"/>
-        <properties key="layout_side" value="right"/>
-        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="51" height="26" x="573" y="41"/>
-        <anchors xsi:type="pi:ChopboxAnchor">
-          <properties key="name" value="chopbox"/>
-        </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
-          <properties key="name" value="innerConnector"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-          <location x="36" y="21"/>
-        </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
-          <properties key="name" value="outerConnector"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-          <location x="51" y="21"/>
-        </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
-          <properties key="name" value="flowSpecification"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-          <location x="-14" y="21"/>
-        </anchors>
-        <children xsi:type="pi:ContainerShape" visible="true" active="true">
-          <properties key="name" value="feature"/>
-          <properties key="is_inner_shape" value="true"/>
-          <properties key="is_coloring_child" value="true"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="15" height="10" x="36" y="16" style="//@styles.1">
-            <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" width="15" height="10" style="//@styles.1">
-              <points x="15"/>
-              <points y="5"/>
-              <points x="15" y="10"/>
-            </graphicsAlgorithmChildren>
-          </graphicsAlgorithm>
-          <anchors xsi:type="pi:ChopboxAnchor">
-            <properties key="name" value="chopbox"/>
-          </anchors>
-        </children>
-        <children visible="true">
-          <properties key="is_manually_positioned" value="true"/>
-          <properties key="independentObject" value="feature Display::Display.dis_fcfi"/>
-          <properties key="name" value="label"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="46" height="16" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="46" height="16" style="//@styles.3" horizontalAlignment="ALIGNMENT_RIGHT" verticalAlignment="UNSPECIFIED" value="dis_fcfi"/>
-          </graphicsAlgorithm>
-        </children>
-        <children visible="true">
-          <properties key="is_manually_positioned" value="true"/>
-          <properties key="independentObject" value="feature Display::Display.dis_fcfi"/>
-          <properties key="name" value="annotation"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" x="46" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" style="//@styles.4" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value=""/>
-          </graphicsAlgorithm>
-        </children>
-      </children>
-      <children xsi:type="pi:ContainerShape" visible="true" active="true">
-        <properties key="independentObject" value="feature Display::Display.dis_apsi"/>
-        <properties key="is_layed_out" value="true"/>
         <properties key="side" value="left"/>
-        <properties key="is_ghost" value="false"/>
-        <properties key="is_coloring_container" value="true"/>
         <properties key="layout_side" value="left"/>
-        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="59" height="26" y="41"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="51" height="26" y="80"/>
         <anchors xsi:type="pi:ChopboxAnchor">
           <properties key="name" value="chopbox"/>
         </anchors>
@@ -1677,7 +1101,7 @@
           <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
           <location x="15" y="21"/>
         </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" incomingConnections="//@connections.6" useAnchorLocationAsConnectionEndpoint="true">
+        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
           <properties key="name" value="outerConnector"/>
           <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
           <location y="21"/>
@@ -1704,15 +1128,15 @@
         </children>
         <children visible="true">
           <properties key="is_manually_positioned" value="true"/>
-          <properties key="independentObject" value="feature Display::Display.dis_apsi"/>
+          <properties key="independentObject" value="feature Display::Display.dis_fcfi"/>
           <properties key="name" value="label"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="54" height="16" x="5" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="54" height="16" style="//@styles.3" verticalAlignment="UNSPECIFIED" value="dis_apsi"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="46" height="16" x="5" style="//@styles.2">
+            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="46" height="16" style="//@styles.3" verticalAlignment="UNSPECIFIED" value="dis_fcfi"/>
           </graphicsAlgorithm>
         </children>
         <children visible="true">
           <properties key="is_manually_positioned" value="true"/>
-          <properties key="independentObject" value="feature Display::Display.dis_apsi"/>
+          <properties key="independentObject" value="feature Display::Display.dis_fcfi"/>
           <properties key="name" value="annotation"/>
           <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" x="5" style="//@styles.2">
             <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" style="//@styles.4" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value=""/>
@@ -1720,64 +1144,60 @@
         </children>
       </children>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
-        <properties key="independentObject" value="subcomponent Display::Display.impl.displayProcess"/>
-        <properties key="is_ghost" value="false"/>
+        <properties key="independentObject" value="feature Display::Display.dis_apsi"/>
         <properties key="is_layed_out" value="true"/>
-        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="446" height="141" x="89" y="66" style="//@styles.0/@styles.1/@styles.0">
-          <points x="20"/>
-          <points x="446"/>
-          <points x="426" y="141"/>
-          <points y="141"/>
-        </graphicsAlgorithm>
+        <properties key="is_ghost" value="false"/>
+        <properties key="is_coloring_container" value="true"/>
+        <properties key="side" value="right"/>
+        <properties key="layout_side" value="right"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="59" height="26" x="565" y="130"/>
         <anchors xsi:type="pi:ChopboxAnchor">
           <properties key="name" value="chopbox"/>
         </anchors>
+        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
+          <properties key="name" value="innerConnector"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
+          <location x="44" y="21"/>
+        </anchors>
+        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" incomingConnections="//@connections.4" useAnchorLocationAsConnectionEndpoint="true">
+          <properties key="name" value="outerConnector"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
+          <location x="59" y="21"/>
+        </anchors>
+        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
+          <properties key="name" value="flowSpecification"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
+          <location x="-6" y="21"/>
+        </anchors>
         <children xsi:type="pi:ContainerShape" visible="true" active="true">
-          <properties key="independentObject" value="subcomponent Display::DisplayProcess.impl.displayThread"/>
-          <properties key="is_ghost" value="false"/>
-          <properties key="is_layed_out" value="true"/>
-          <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="286" height="53" x="80" y="50" style="//@styles.0/@styles.2">
-            <points x="20"/>
-            <points x="286"/>
-            <points x="266" y="53"/>
-            <points y="53"/>
+          <properties key="name" value="feature"/>
+          <properties key="is_inner_shape" value="true"/>
+          <properties key="is_coloring_child" value="true"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="15" height="10" x="44" y="16" style="//@styles.1">
+            <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" width="15" height="10" style="//@styles.1">
+              <points x="15"/>
+              <points y="5"/>
+              <points x="15" y="10"/>
+            </graphicsAlgorithmChildren>
           </graphicsAlgorithm>
           <anchors xsi:type="pi:ChopboxAnchor">
             <properties key="name" value="chopbox"/>
           </anchors>
-          <children visible="true">
-            <properties key="name" value="label"/>
-            <properties key="is_manually_positioned" value="true"/>
-            <properties key="is_transient" value="true"/>
-            <properties key="independentObject" value="subcomponent Display::DisplayProcess.impl.displayThread"/>
-            <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="105" height="21" x="90" y="2" style="//@styles.2">
-              <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="105" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="displayThread"/>
-            </graphicsAlgorithm>
-          </children>
-          <children visible="true">
-            <properties key="name" value="subcomponent_type_label"/>
-            <properties key="is_manually_positioned" value="true"/>
-            <properties key="is_transient" value="true"/>
-            <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="183" height="21" x="51" y="21" style="//@styles.2">
-              <graphicsAlgorithmChildren xsi:type="al:MultiText" lineStyle="UNSPECIFIED" width="183" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="SSThreads::DisplayThread"/>
-            </graphicsAlgorithm>
-          </children>
         </children>
         <children visible="true">
-          <properties key="name" value="label"/>
           <properties key="is_manually_positioned" value="true"/>
-          <properties key="is_transient" value="true"/>
-          <properties key="independentObject" value="subcomponent Display::Display.impl.displayProcess"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="109" height="21" x="168" y="2" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="109" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="displayProcess"/>
+          <properties key="independentObject" value="feature Display::Display.dis_apsi"/>
+          <properties key="name" value="label"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="54" height="16" style="//@styles.2">
+            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="54" height="16" style="//@styles.3" horizontalAlignment="ALIGNMENT_RIGHT" verticalAlignment="UNSPECIFIED" value="dis_apsi"/>
           </graphicsAlgorithm>
         </children>
         <children visible="true">
-          <properties key="name" value="subcomponent_type_label"/>
           <properties key="is_manually_positioned" value="true"/>
-          <properties key="is_transient" value="true"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="196" height="21" x="125" y="21" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:MultiText" lineStyle="UNSPECIFIED" width="196" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="Display::DisplayProcess.impl"/>
+          <properties key="independentObject" value="feature Display::Display.dis_apsi"/>
+          <properties key="name" value="annotation"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" x="54" style="//@styles.2">
+            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" style="//@styles.4" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value=""/>
           </graphicsAlgorithm>
         </children>
       </children>
@@ -1799,210 +1219,6 @@
         </graphicsAlgorithm>
       </children>
     </children>
-    <children xsi:type="pi:ContainerShape" visible="true" active="true">
-      <properties key="independentObject" value="subcomponent AutoPilotSystem::AutoPilotSystem.impl.grr"/>
-      <properties key="is_layed_out" value="true"/>
-      <properties key="is_ghost" value="false"/>
-      <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" filled="false" width="716" height="252" x="882" y="680" style="//@styles.0/@styles.0/@styles.0" cornerHeight="25" cornerWidth="25"/>
-      <anchors xsi:type="pi:ChopboxAnchor">
-        <properties key="name" value="chopbox"/>
-      </anchors>
-      <children xsi:type="pi:ContainerShape" visible="true" active="true">
-        <properties key="independentObject" value="feature GuidanceRequesterReceiver::GuidanceRequesterReceiver.grr_erh"/>
-        <properties key="side" value="left"/>
-        <properties key="is_layed_out" value="true"/>
-        <properties key="is_ghost" value="false"/>
-        <properties key="is_coloring_container" value="true"/>
-        <properties key="layout_side" value="left"/>
-        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="53" height="26" y="36"/>
-        <anchors xsi:type="pi:ChopboxAnchor">
-          <properties key="name" value="chopbox"/>
-        </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
-          <properties key="name" value="innerConnector"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-          <location x="15" y="21"/>
-        </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" outgoingConnections="//@connections.2" useAnchorLocationAsConnectionEndpoint="true">
-          <properties key="name" value="outerConnector"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-          <location y="21"/>
-        </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
-          <properties key="name" value="flowSpecification"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-          <location x="65" y="21"/>
-        </anchors>
-        <children xsi:type="pi:ContainerShape" visible="true" active="true">
-          <properties key="name" value="feature"/>
-          <properties key="is_inner_shape" value="true"/>
-          <properties key="is_coloring_child" value="true"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="15" height="10" y="16" style="//@styles.1">
-            <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" width="15" height="10" style="//@styles.1">
-              <points x="15"/>
-              <points y="5"/>
-              <points x="15" y="10"/>
-            </graphicsAlgorithmChildren>
-          </graphicsAlgorithm>
-          <anchors xsi:type="pi:ChopboxAnchor">
-            <properties key="name" value="chopbox"/>
-          </anchors>
-        </children>
-        <children visible="true">
-          <properties key="is_manually_positioned" value="true"/>
-          <properties key="independentObject" value="feature GuidanceRequesterReceiver::GuidanceRequesterReceiver.grr_erh"/>
-          <properties key="name" value="label"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="48" height="16" x="5" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="48" height="16" style="//@styles.3" verticalAlignment="UNSPECIFIED" value="grr_erh"/>
-          </graphicsAlgorithm>
-        </children>
-        <children visible="true">
-          <properties key="is_manually_positioned" value="true"/>
-          <properties key="independentObject" value="feature GuidanceRequesterReceiver::GuidanceRequesterReceiver.grr_erh"/>
-          <properties key="name" value="annotation"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" x="5" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" style="//@styles.4" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value=""/>
-          </graphicsAlgorithm>
-        </children>
-      </children>
-      <children xsi:type="pi:ContainerShape" visible="true" active="true">
-        <properties key="independentObject" value="feature GuidanceRequesterReceiver::GuidanceRequesterReceiver.grr_gm"/>
-        <properties key="is_layed_out" value="true"/>
-        <properties key="side" value="right"/>
-        <properties key="is_ghost" value="false"/>
-        <properties key="is_coloring_container" value="true"/>
-        <properties key="layout_side" value="right"/>
-        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="52" height="26" x="664" y="50"/>
-        <anchors xsi:type="pi:ChopboxAnchor">
-          <properties key="name" value="chopbox"/>
-        </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
-          <properties key="name" value="innerConnector"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-          <location x="37" y="21"/>
-        </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" outgoingConnections="//@connections.7" useAnchorLocationAsConnectionEndpoint="true">
-          <properties key="name" value="outerConnector"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-          <location x="52" y="21"/>
-        </anchors>
-        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
-          <properties key="name" value="flowSpecification"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-          <location x="-13" y="21"/>
-        </anchors>
-        <children xsi:type="pi:ContainerShape" visible="true" active="true">
-          <properties key="name" value="feature"/>
-          <properties key="is_inner_shape" value="true"/>
-          <properties key="is_coloring_child" value="true"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="15" height="10" x="37" y="16" style="//@styles.1">
-            <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" width="15" height="10" style="//@styles.1">
-              <points/>
-              <points x="15" y="5"/>
-              <points y="10"/>
-            </graphicsAlgorithmChildren>
-          </graphicsAlgorithm>
-          <anchors xsi:type="pi:ChopboxAnchor">
-            <properties key="name" value="chopbox"/>
-          </anchors>
-        </children>
-        <children visible="true">
-          <properties key="is_manually_positioned" value="true"/>
-          <properties key="independentObject" value="feature GuidanceRequesterReceiver::GuidanceRequesterReceiver.grr_gm"/>
-          <properties key="name" value="label"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="47" height="16" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="47" height="16" style="//@styles.3" horizontalAlignment="ALIGNMENT_RIGHT" verticalAlignment="UNSPECIFIED" value="grr_gm"/>
-          </graphicsAlgorithm>
-        </children>
-        <children visible="true">
-          <properties key="is_manually_positioned" value="true"/>
-          <properties key="independentObject" value="feature GuidanceRequesterReceiver::GuidanceRequesterReceiver.grr_gm"/>
-          <properties key="name" value="annotation"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" x="47" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" style="//@styles.4" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value=""/>
-          </graphicsAlgorithm>
-        </children>
-      </children>
-      <children xsi:type="pi:ContainerShape" visible="true" active="true">
-        <properties key="independentObject" value="subcomponent GuidanceRequesterReceiver::GuidanceRequesterReceiver.impl.grrProcess"/>
-        <properties key="is_layed_out" value="true"/>
-        <properties key="is_ghost" value="false"/>
-        <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="513" height="161" x="120" y="61" style="//@styles.0/@styles.1/@styles.0">
-          <points x="20"/>
-          <points x="513"/>
-          <points x="493" y="161"/>
-          <points y="161"/>
-        </graphicsAlgorithm>
-        <anchors xsi:type="pi:ChopboxAnchor">
-          <properties key="name" value="chopbox"/>
-        </anchors>
-        <children xsi:type="pi:ContainerShape" visible="true" active="true">
-          <properties key="independentObject" value="subcomponent GuidanceRequesterReceiver::APGuidanceRRProcess.impl.apGuidanceRRThread"/>
-          <properties key="is_layed_out" value="true"/>
-          <properties key="is_ghost" value="false"/>
-          <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="346" height="50" x="80" y="50" style="//@styles.0/@styles.2">
-            <points x="20"/>
-            <points x="346"/>
-            <points x="326" y="50"/>
-            <points y="50"/>
-          </graphicsAlgorithm>
-          <anchors xsi:type="pi:ChopboxAnchor">
-            <properties key="name" value="chopbox"/>
-          </anchors>
-          <children visible="true">
-            <properties key="name" value="label"/>
-            <properties key="is_manually_positioned" value="true"/>
-            <properties key="is_transient" value="true"/>
-            <properties key="independentObject" value="subcomponent GuidanceRequesterReceiver::APGuidanceRRProcess.impl.apGuidanceRRThread"/>
-            <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="155" height="21" x="95" y="2" style="//@styles.2">
-              <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="155" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="apGuidanceRRThread"/>
-            </graphicsAlgorithm>
-          </children>
-          <children visible="true">
-            <properties key="name" value="subcomponent_type_label"/>
-            <properties key="is_manually_positioned" value="true"/>
-            <properties key="is_transient" value="true"/>
-            <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="267" height="21" x="39" y="21" style="//@styles.2">
-              <graphicsAlgorithmChildren xsi:type="al:MultiText" lineStyle="UNSPECIFIED" width="267" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="APThreads::APGuidanceRequestThread"/>
-            </graphicsAlgorithm>
-          </children>
-        </children>
-        <children visible="true">
-          <properties key="name" value="label"/>
-          <properties key="is_manually_positioned" value="true"/>
-          <properties key="is_transient" value="true"/>
-          <properties key="independentObject" value="subcomponent GuidanceRequesterReceiver::GuidanceRequesterReceiver.impl.grrProcess"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="82" height="21" x="215" y="2" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="82" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="grrProcess"/>
-          </graphicsAlgorithm>
-        </children>
-        <children visible="true">
-          <properties key="name" value="subcomponent_type_label"/>
-          <properties key="is_manually_positioned" value="true"/>
-          <properties key="is_transient" value="true"/>
-          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="382" height="21" x="65" y="21" style="//@styles.2">
-            <graphicsAlgorithmChildren xsi:type="al:MultiText" lineStyle="UNSPECIFIED" width="382" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="GuidanceRequesterReceiver::APGuidanceRRProcess.impl"/>
-          </graphicsAlgorithm>
-        </children>
-      </children>
-      <children visible="true">
-        <properties key="name" value="label"/>
-        <properties key="is_manually_positioned" value="true"/>
-        <properties key="is_transient" value="true"/>
-        <properties key="independentObject" value="subcomponent AutoPilotSystem::AutoPilotSystem.impl.grr"/>
-        <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="33" height="21" x="341" y="2" style="//@styles.2">
-          <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="33" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="grr"/>
-        </graphicsAlgorithm>
-      </children>
-      <children visible="true">
-        <properties key="name" value="subcomponent_type_label"/>
-        <properties key="is_manually_positioned" value="true"/>
-        <properties key="is_transient" value="true"/>
-        <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="416" height="21" x="150" y="21" style="//@styles.2">
-          <graphicsAlgorithmChildren xsi:type="al:MultiText" lineStyle="UNSPECIFIED" width="416" height="21" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="GuidanceRequesterReceiver::GuidanceRequesterReceiver.impl"/>
-        </graphicsAlgorithm>
-      </children>
-    </children>
   </children>
   <styles background="//@colors.1" foreground="//@colors.2" lineWidth="1" lineVisible="true" transparency="0.0" id="classifier" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED">
     <styles lineWidth="2" lineStyle="UNSPECIFIED" id="system" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED">
@@ -2018,6 +1234,7 @@
   <styles foreground="//@colors.2" lineStyle="UNSPECIFIED" filled="false" id="label" font="//@fonts.0"/>
   <styles foreground="//@colors.2" lineStyle="UNSPECIFIED" filled="false" id="annotation" font="//@fonts.0"/>
   <styles background="//@colors.2" foreground="//@colors.2" lineWidth="2" lineVisible="true" id="decorator" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED"/>
+  <styles background="//@colors.2" foreground="//@colors.2" lineWidth="2" lineVisible="true" id="flow_specification" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED"/>
   <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="//@children.0/@children.1/@children.1/@anchors.2" end="//@children.0/@children.2/@children.0/@anchors.2">
     <properties key="independentObject" value="connection AutoPilotSystem::AutoPilotSystem.impl.c_apc_apsi"/>
     <properties key="is_ghost" value="false"/>
@@ -2048,39 +1265,7 @@
       <graphicsAlgorithm xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" y="10" style="//@styles.3" font="//@fonts.1" value=""/>
     </connectionDecorators>
   </connections>
-  <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="//@children.0/@children.8/@children.0/@anchors.2" end="//@children.0/@children.3/@children.0/@anchors.2">
-    <properties key="independentObject" value="connection AutoPilotSystem::AutoPilotSystem.impl.c_grr_erh"/>
-    <properties key="is_ghost" value="false"/>
-    <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="//@styles.5"/>
-    <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
-      <properties key="name" value="label"/>
-      <properties key="independentObject" value="connection AutoPilotSystem::AutoPilotSystem.impl.c_grr_erh"/>
-      <graphicsAlgorithm xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" x="-24" y="-20" style="//@styles.3" font="//@fonts.1" value="c_grr_erh"/>
-    </connectionDecorators>
-    <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
-      <properties key="name" value="connection_pattern"/>
-      <properties key="independentObject" value="connection AutoPilotSystem::AutoPilotSystem.impl.c_grr_erh"/>
-      <graphicsAlgorithm xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" y="10" style="//@styles.3" font="//@fonts.1" value=""/>
-    </connectionDecorators>
-    <bendpoints x="921" y="817"/>
-    <bendpoints x="921" y="581"/>
-  </connections>
-  <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="//@children.0/@children.4/@children.0/@anchors.2" end="//@children.0/@children.3/@children.1/@anchors.2">
-    <properties key="independentObject" value="connection AutoPilotSystem::AutoPilotSystem.impl.c_smc_erh"/>
-    <properties key="is_ghost" value="false"/>
-    <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="//@styles.5"/>
-    <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
-      <properties key="name" value="label"/>
-      <properties key="independentObject" value="connection AutoPilotSystem::AutoPilotSystem.impl.c_smc_erh"/>
-      <graphicsAlgorithm xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" x="-27" y="-20" style="//@styles.3" font="//@fonts.1" value="c_smc_erh"/>
-    </connectionDecorators>
-    <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
-      <properties key="name" value="connection_pattern"/>
-      <properties key="independentObject" value="connection AutoPilotSystem::AutoPilotSystem.impl.c_smc_erh"/>
-      <graphicsAlgorithm xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" y="10" style="//@styles.3" font="//@fonts.1" value=""/>
-    </connectionDecorators>
-  </connections>
-  <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="//@children.0/@children.5/@children.0/@anchors.2" end="//@children.0/@children.3/@children.2/@anchors.2">
+  <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="//@children.0/@children.4/@children.0/@anchors.2" end="//@children.0/@children.3/@children.2/@anchors.2">
     <properties key="independentObject" value="connection AutoPilotSystem::AutoPilotSystem.impl.c_aarr_erh"/>
     <properties key="is_ghost" value="false"/>
     <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="//@styles.5"/>
@@ -2109,10 +1294,8 @@
       <properties key="independentObject" value="connection AutoPilotSystem::AutoPilotSystem.impl.c_erh_apc"/>
       <graphicsAlgorithm xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" y="10" style="//@styles.3" font="//@fonts.1" value=""/>
     </connectionDecorators>
-    <bendpoints x="1705" y="520"/>
-    <bendpoints x="1705" y="317"/>
   </connections>
-  <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="//@children.0/@children.2/@children.2/@anchors.2" end="//@children.0/@children.7/@children.1/@anchors.2">
+  <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="//@children.0/@children.2/@children.1/@anchors.2" end="//@children.0/@children.6/@children.1/@anchors.2">
     <properties key="independentObject" value="connection AutoPilotSystem::AutoPilotSystem.impl.c_apgcg_dis"/>
     <properties key="is_ghost" value="false"/>
     <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="//@styles.5"/>
@@ -2126,22 +1309,37 @@
       <properties key="independentObject" value="connection AutoPilotSystem::AutoPilotSystem.impl.c_apgcg_dis"/>
       <graphicsAlgorithm xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" y="10" style="//@styles.3" font="//@fonts.1" value=""/>
     </connectionDecorators>
-    <bendpoints x="115" y="222"/>
-    <bendpoints x="115" y="772"/>
   </connections>
-  <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="//@children.0/@children.8/@children.1/@anchors.2" end="//@children.0/@children.6/@children.2/@anchors.2">
-    <properties key="independentObject" value="connection AutoPilotSystem::AutoPilotSystem.impl.c_fcfi_grr"/>
+  <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="//@children.0/@children.1/@children.0/@anchors.1" end="//@children.0/@children.1/@children.1/@anchors.1">
+    <properties key="independentObject" value="flow_specification APController::APController.flow_APStatus"/>
     <properties key="is_ghost" value="false"/>
-    <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="//@styles.5"/>
-    <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
-      <properties key="name" value="label"/>
-      <properties key="independentObject" value="connection AutoPilotSystem::AutoPilotSystem.impl.c_fcfi_grr"/>
-      <graphicsAlgorithm xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" x="-24" y="-20" style="//@styles.3" font="//@fonts.1" value="c_fcfi_grr"/>
+    <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="//@styles.6"/>
+    <connectionDecorators visible="true" locationRelative="true" location="1.0">
+      <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" style="//@styles.5">
+        <points x="-6" y="4"/>
+        <points x="2"/>
+        <points x="-6" y="-4"/>
+      </graphicsAlgorithm>
     </connectionDecorators>
     <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
-      <properties key="name" value="connection_pattern"/>
-      <properties key="independentObject" value="connection AutoPilotSystem::AutoPilotSystem.impl.c_fcfi_grr"/>
-      <graphicsAlgorithm xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" y="10" style="//@styles.3" font="//@fonts.1" value=""/>
+      <properties key="independentObject" value="flow_specification APController::APController.flow_APStatus"/>
+      <graphicsAlgorithm xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" x="5" y="10" style="//@styles.3" font="//@fonts.1" value="flow_APStatus"/>
+    </connectionDecorators>
+  </connections>
+  <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="//@children.0/@children.1/@children.0/@anchors.1" end="//@children.0/@children.1/@children.2/@anchors.1">
+    <properties key="independentObject" value="flow_specification APController::APController.flow_APActuatorCommands"/>
+    <properties key="is_ghost" value="false"/>
+    <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="//@styles.6"/>
+    <connectionDecorators visible="true" locationRelative="true" location="1.0">
+      <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" style="//@styles.5">
+        <points x="-6" y="4"/>
+        <points x="2"/>
+        <points x="-6" y="-4"/>
+      </graphicsAlgorithm>
+    </connectionDecorators>
+    <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+      <properties key="independentObject" value="flow_specification APController::APController.flow_APActuatorCommands"/>
+      <graphicsAlgorithm xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" x="5" y="10" style="//@styles.3" font="//@fonts.1" value="flow_APActuatorCommands"/>
     </connectionDecorators>
   </connections>
   <colors red="227" green="238" blue="249"/>
