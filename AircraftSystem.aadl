@@ -25,7 +25,10 @@ public
 			c_fcs_csa: port fcs.fcs_csa -> csa.csa_fcs;
 		flows
 			
-			Flow_W_T: end to end flow fci.fci_source -> c_fci_fcs -> fcs.flow_w_t -> c_fcs_pfd -> pfdLeft.pfd_sink {
+			Flow_FCI_PFD_Left: end to end flow fci.fci_source -> c_fci_fcs -> fcs.flow_w_t -> c_fcs_pfd_left -> pfdLeft.pfd_sink {
+				Latency => 50 ms .. 50 ms;
+			};
+			Flow_FCI_PFD_Right: end to end flow fci.fci_source -> c_fci_fcs -> fcs.flow_w_t -> c_fcs_pfd_right -> pfdRight.pfd_sink {
 				Latency => 50 ms .. 50 ms;
 			};
 	

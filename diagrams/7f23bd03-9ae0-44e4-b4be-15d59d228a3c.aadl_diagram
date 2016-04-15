@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="ASCII"?>
 <pi:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" visible="true" gridUnit="10" diagramTypeId="AADL Diagram" name="AircraftSystem::OurAircraft.impl" snapToGrid="true" version="0.11.0">
   <properties key="independentObject" value="classifier AircraftSystem::OurAircraft.impl"/>
-  <properties key="selected_flow" value=""/>
+  <properties key="selected_flow" value="Flow_W_T"/>
   <graphicsAlgorithm xsi:type="al:Rectangle" background="//@colors.1" foreground="//@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
   <children xsi:type="pi:ContainerShape" visible="true" active="true">
     <properties key="independentObject" value="classifier AircraftSystem::OurAircraft.impl"/>
     <properties key="is_layed_out" value="true"/>
     <properties key="is_ghost" value="false"/>
-    <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" filled="false" width="1064" height="496" x="80" y="80" style="//@styles.0/@styles.0/@styles.0" cornerHeight="25" cornerWidth="25"/>
+    <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" filled="false" width="1121" height="496" x="80" y="80" style="//@styles.0/@styles.0/@styles.0" cornerHeight="25" cornerWidth="25"/>
     <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
       <properties key="name" value="connection AircraftSystem::OurAircraft.impl.c_fci_fcs_midpoint"/>
       <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-      <location x="99" y="219"/>
+      <location x="92" y="260"/>
     </anchors>
     <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
       <properties key="name" value="connection AircraftSystem::OurAircraft.impl.c_fcs_pfd_left_midpoint"/>
@@ -31,7 +31,7 @@
     <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
       <properties key="name" value="connection AircraftSystem::OurAircraft.impl.c_fcs_csa_midpoint"/>
       <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
-      <location x="534" y="431"/>
+      <location x="555" y="431"/>
     </anchors>
     <anchors xsi:type="pi:ChopboxAnchor">
       <properties key="name" value="chopbox"/>
@@ -154,18 +154,18 @@
       <properties key="independentObject" value="subcomponent AircraftSystem::OurAircraft.impl.fcs"/>
       <properties key="is_layed_out" value="true"/>
       <properties key="is_ghost" value="false"/>
-      <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" filled="false" width="321" height="145" x="240" y="180" style="//@styles.0/@styles.0/@styles.0" cornerHeight="25" cornerWidth="25"/>
+      <graphicsAlgorithm xsi:type="al:RoundedRectangle" lineStyle="UNSPECIFIED" filled="false" width="321" height="175" x="240" y="180" style="//@styles.0/@styles.0/@styles.0" cornerHeight="25" cornerWidth="25"/>
       <anchors xsi:type="pi:ChopboxAnchor">
         <properties key="name" value="chopbox"/>
       </anchors>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <properties key="independentObject" value="feature FlightControlSystem::FlightControlSystem.fcs_fci"/>
         <properties key="is_layed_out" value="true"/>
-        <properties key="side" value="left"/>
         <properties key="is_ghost" value="false"/>
         <properties key="is_coloring_container" value="true"/>
+        <properties key="side" value="left"/>
         <properties key="layout_side" value="left"/>
-        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="46" height="26" y="50"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="46" height="26" y="85"/>
         <anchors xsi:type="pi:ChopboxAnchor">
           <properties key="name" value="chopbox"/>
         </anchors>
@@ -335,9 +335,9 @@
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <properties key="independentObject" value="feature FlightControlSystem::FlightControlSystem.fcs_csa"/>
         <properties key="is_layed_out" value="true"/>
+        <properties key="side" value="right"/>
         <properties key="is_ghost" value="false"/>
         <properties key="is_coloring_container" value="true"/>
-        <properties key="side" value="right"/>
         <properties key="layout_side" value="right"/>
         <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="52" height="26" x="269" y="119"/>
         <anchors xsi:type="pi:ChopboxAnchor">
@@ -449,9 +449,9 @@
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <properties key="independentObject" value="feature AltitudeHeadingSystem::AltitudeHeadingSystem.ahs_fcs"/>
         <properties key="is_layed_out" value="true"/>
+        <properties key="side" value="left"/>
         <properties key="is_ghost" value="false"/>
         <properties key="is_coloring_container" value="true"/>
-        <properties key="side" value="left"/>
         <properties key="layout_side" value="left"/>
         <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="53" height="26" y="50"/>
         <anchors xsi:type="pi:ChopboxAnchor">
@@ -638,22 +638,22 @@
     </children>
     <children xsi:type="pi:ContainerShape" visible="true" active="true">
       <properties key="independentObject" value="subcomponent AircraftSystem::OurAircraft.impl.pfdLeft"/>
-      <properties key="is_ghost" value="false"/>
       <properties key="is_layed_out" value="true"/>
-      <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" filled="false" width="319" height="86" x="720" y="230" style="//@styles.0/@styles.1">
+      <properties key="is_ghost" value="false"/>
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" filled="false" width="319" height="96" x="720" y="230" style="//@styles.0/@styles.1">
         <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" lineVisible="false" style="//@styles.1">
           <points x="319"/>
-          <points x="319" y="86"/>
-          <points x="315" y="82"/>
+          <points x="319" y="96"/>
+          <points x="315" y="92"/>
           <points x="315" y="4"/>
         </graphicsAlgorithmChildren>
         <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" lineVisible="false" style="//@styles.1">
-          <points x="319" y="86"/>
-          <points y="86"/>
-          <points x="4" y="82"/>
-          <points x="315" y="82"/>
+          <points x="319" y="96"/>
+          <points y="96"/>
+          <points x="4" y="92"/>
+          <points x="315" y="92"/>
         </graphicsAlgorithmChildren>
-        <graphicsAlgorithmChildren xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" filled="false" width="311" height="78" x="4" y="4" style="//@styles.0/@styles.1"/>
+        <graphicsAlgorithmChildren xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" filled="false" width="311" height="88" x="4" y="4" style="//@styles.0/@styles.1"/>
         <graphicsAlgorithmChildren xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="//@styles.0/@styles.1">
           <points/>
           <points x="5" y="5"/>
@@ -663,12 +663,12 @@
           <points x="314" y="5"/>
         </graphicsAlgorithmChildren>
         <graphicsAlgorithmChildren xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="//@styles.0/@styles.1">
-          <points x="314" y="81"/>
-          <points x="319" y="86"/>
+          <points x="314" y="91"/>
+          <points x="319" y="96"/>
         </graphicsAlgorithmChildren>
         <graphicsAlgorithmChildren xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="//@styles.0/@styles.1">
-          <points y="86"/>
-          <points x="5" y="81"/>
+          <points y="96"/>
+          <points x="5" y="91"/>
         </graphicsAlgorithmChildren>
       </graphicsAlgorithm>
       <anchors xsi:type="pi:ChopboxAnchor">
@@ -676,9 +676,9 @@
       </anchors>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <properties key="independentObject" value="feature UserInterface::PrimaryFlightDisplay.pfd_fcs"/>
+        <properties key="is_layed_out" value="true"/>
         <properties key="is_ghost" value="false"/>
         <properties key="is_coloring_container" value="true"/>
-        <properties key="is_layed_out" value="true"/>
         <properties key="side" value="left"/>
         <properties key="layout_side" value="left"/>
         <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="51" height="26" y="40"/>
@@ -752,22 +752,22 @@
     </children>
     <children xsi:type="pi:ContainerShape" visible="true" active="true">
       <properties key="independentObject" value="subcomponent AircraftSystem::OurAircraft.impl.pfdRight"/>
-      <properties key="is_ghost" value="false"/>
       <properties key="is_layed_out" value="true"/>
-      <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" filled="false" width="322" height="86" x="719" y="370" style="//@styles.0/@styles.1">
+      <properties key="is_ghost" value="false"/>
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" filled="false" width="322" height="96" x="719" y="370" style="//@styles.0/@styles.1">
         <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" lineVisible="false" style="//@styles.1">
           <points x="322"/>
-          <points x="322" y="86"/>
-          <points x="318" y="82"/>
+          <points x="322" y="96"/>
+          <points x="318" y="92"/>
           <points x="318" y="4"/>
         </graphicsAlgorithmChildren>
         <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" lineVisible="false" style="//@styles.1">
-          <points x="322" y="86"/>
-          <points y="86"/>
-          <points x="4" y="82"/>
-          <points x="318" y="82"/>
+          <points x="322" y="96"/>
+          <points y="96"/>
+          <points x="4" y="92"/>
+          <points x="318" y="92"/>
         </graphicsAlgorithmChildren>
-        <graphicsAlgorithmChildren xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" filled="false" width="314" height="78" x="4" y="4" style="//@styles.0/@styles.1"/>
+        <graphicsAlgorithmChildren xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" filled="false" width="314" height="88" x="4" y="4" style="//@styles.0/@styles.1"/>
         <graphicsAlgorithmChildren xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="//@styles.0/@styles.1">
           <points/>
           <points x="5" y="5"/>
@@ -777,12 +777,12 @@
           <points x="317" y="5"/>
         </graphicsAlgorithmChildren>
         <graphicsAlgorithmChildren xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="//@styles.0/@styles.1">
-          <points x="317" y="81"/>
-          <points x="322" y="86"/>
+          <points x="317" y="91"/>
+          <points x="322" y="96"/>
         </graphicsAlgorithmChildren>
         <graphicsAlgorithmChildren xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="//@styles.0/@styles.1">
-          <points y="86"/>
-          <points x="5" y="81"/>
+          <points y="96"/>
+          <points x="5" y="91"/>
         </graphicsAlgorithmChildren>
       </graphicsAlgorithm>
       <anchors xsi:type="pi:ChopboxAnchor">
@@ -790,10 +790,10 @@
       </anchors>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
         <properties key="independentObject" value="feature UserInterface::PrimaryFlightDisplay.pfd_fcs"/>
-        <properties key="is_ghost" value="false"/>
-        <properties key="is_coloring_container" value="true"/>
         <properties key="is_layed_out" value="true"/>
         <properties key="side" value="left"/>
+        <properties key="is_ghost" value="false"/>
+        <properties key="is_coloring_container" value="true"/>
         <properties key="layout_side" value="left"/>
         <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="51" height="26" y="40"/>
         <anchors xsi:type="pi:ChopboxAnchor">
@@ -885,14 +885,15 @@
     <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
       <properties key="name" value="label"/>
       <properties key="independentObject" value="connection AircraftSystem::OurAircraft.impl.c_fci_fcs"/>
-      <graphicsAlgorithm xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" x="-23" y="-20" style="//@styles.4" font="//@fonts.1" value="c_fci_fcs"/>
+      <graphicsAlgorithm xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" x="8" y="-53" style="//@styles.4" font="//@fonts.1" value="c_fci_fcs"/>
     </connectionDecorators>
     <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
       <properties key="name" value="connection_pattern"/>
       <properties key="independentObject" value="connection AircraftSystem::OurAircraft.impl.c_fci_fcs"/>
       <graphicsAlgorithm xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" y="10" style="//@styles.4" font="//@fonts.1" value=""/>
     </connectionDecorators>
-    <bendpoints x="147" y="292"/>
+    <bendpoints x="172" y="191"/>
+    <bendpoints x="172" y="366"/>
   </connections>
   <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="//@children.0/@children.2/@children.0/@anchors.2" end="//@children.0/@children.1/@children.2/@anchors.2">
     <properties key="independentObject" value="connection AircraftSystem::OurAircraft.impl.c_ahs_fcs"/>
@@ -901,7 +902,7 @@
     <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
       <properties key="name" value="label"/>
       <properties key="independentObject" value="connection AircraftSystem::OurAircraft.impl.c_ahs_fcs"/>
-      <graphicsAlgorithm xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" x="-26" y="-20" style="//@styles.4" font="//@fonts.1" value="c_ahs_fcs"/>
+      <graphicsAlgorithm xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" x="11" y="-14" style="//@styles.4" font="//@fonts.1" value="c_ahs_fcs"/>
     </connectionDecorators>
     <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
       <properties key="name" value="connection_pattern"/>
@@ -916,14 +917,15 @@
     <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
       <properties key="name" value="label"/>
       <properties key="independentObject" value="connection AircraftSystem::OurAircraft.impl.c_fcs_csa"/>
-      <graphicsAlgorithm xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" x="-100" y="-33" style="//@styles.4" font="//@fonts.1" value="c_fcs_csa"/>
+      <graphicsAlgorithm xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" x="-105" y="-20" style="//@styles.4" font="//@fonts.1" value="c_fcs_csa"/>
     </connectionDecorators>
     <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
       <properties key="name" value="connection_pattern"/>
       <properties key="independentObject" value="connection AircraftSystem::OurAircraft.impl.c_fcs_csa"/>
       <graphicsAlgorithm xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" y="10" style="//@styles.4" font="//@fonts.1" value=""/>
     </connectionDecorators>
-    <bendpoints x="641" y="511"/>
+    <bendpoints x="662" y="400"/>
+    <bendpoints x="662" y="511"/>
   </connections>
   <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="//@children.0/@children.0/@children.0/@anchors.1" end="//@children.0/@children.0/@children.0/@anchors.3">
     <properties key="independentObject" value="flow_specification UserInterface::FlightControlInterface.fci_source"/>
@@ -965,6 +967,7 @@
   </connections>
   <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="//@children.0/@children.4/@children.0/@anchors.1" end="//@children.0/@children.4/@children.0/@anchors.3">
     <properties key="independentObject" value="flow_specification UserInterface::PrimaryFlightDisplay.pfd_sink"/>
+    <properties key="is_ghost" value="false"/>
     <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="//@styles.7"/>
     <connectionDecorators visible="true" locationRelative="true">
       <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" style="//@styles.6">
@@ -986,6 +989,7 @@
   </connections>
   <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="//@children.0/@children.5/@children.0/@anchors.1" end="//@children.0/@children.5/@children.0/@anchors.3">
     <properties key="independentObject" value="flow_specification UserInterface::PrimaryFlightDisplay.pfd_sink"/>
+    <properties key="is_ghost" value="false"/>
     <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="//@styles.7"/>
     <connectionDecorators visible="true" locationRelative="true">
       <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" style="//@styles.6">
@@ -1007,6 +1011,7 @@
   </connections>
   <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="//@children.0/@children.1/@children.1/@anchors.2" end="//@children.0/@children.4/@children.0/@anchors.2">
     <properties key="independentObject" value="connection AircraftSystem::OurAircraft.impl.c_fcs_pfd_left"/>
+    <properties key="is_ghost" value="false"/>
     <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="//@styles.6"/>
     <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
       <properties key="name" value="label"/>
@@ -1021,11 +1026,12 @@
   </connections>
   <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="//@children.0/@children.1/@children.1/@anchors.2" end="//@children.0/@children.5/@children.0/@anchors.2">
     <properties key="independentObject" value="connection AircraftSystem::OurAircraft.impl.c_fcs_pfd_right"/>
+    <properties key="is_ghost" value="false"/>
     <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="//@styles.6"/>
     <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
       <properties key="name" value="label"/>
       <properties key="independentObject" value="connection AircraftSystem::OurAircraft.impl.c_fcs_pfd_right"/>
-      <graphicsAlgorithm xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" x="-45" y="46" style="//@styles.4" font="//@fonts.1" value="c_fcs_pfd_right"/>
+      <graphicsAlgorithm xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" x="10" y="-12" style="//@styles.4" font="//@fonts.1" value="c_fcs_pfd_right"/>
     </connectionDecorators>
     <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
       <properties key="name" value="connection_pattern"/>
