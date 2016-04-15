@@ -4,9 +4,13 @@ with SSThreads;
 
 	system GuidanceMonitor
 		features
-			gm_apgcg: in data port;
-			gm_fdgcg: in data port;
-			gm_grr: in data port;
+			gm_ap: in data port;
+			gm_ap_cmd: out data port;
+			gm_fgs: in data port;
+		flows
+			flow_ap_cmd: flow path gm_fgs -> gm_ap_cmd {
+				Latency => 5ms..5ms;
+			};
 	end GuidanceMonitor;
 
 	system implementation GuidanceMonitor.impl

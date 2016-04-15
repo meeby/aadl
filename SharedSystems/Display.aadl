@@ -6,6 +6,14 @@ public
 		features
 			dis_fcfi: in data port;
 			dis_apsi: in data port;
+			dis_pfd: out data port;
+		flows
+			flow_fc_pdf: flow path dis_fcfi -> dis_pfd {
+				Latency => 5ms..5ms;
+			};
+			flow_ap_pdf: flow path dis_apsi -> dis_pfd {
+				Latency => 5ms..5ms;
+			};
 	end Display;
 
 	system implementation Display.impl

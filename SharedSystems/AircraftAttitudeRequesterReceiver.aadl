@@ -6,6 +6,14 @@ with SSThreads;
 		features
 			aarr_erh: out data port;
 			aarr_fgc: out data port;
+			aarr_ahs: in data port;
+		flows
+			flow_ahs_erh: flow path aarr_ahs -> aarr_erh {
+				Latency => 5ms..5ms;
+			};
+			flow_ahs_fgc: flow path aarr_ahs -> aarr_fgc {
+				Latency => 5ms..5ms;
+			};
 	end AircraftAttitudeRequesterReceiver;
 
 	system implementation AircraftAttitudeRequesterReceiver.impl

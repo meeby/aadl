@@ -14,10 +14,12 @@ public
 			fcs_ahs: in data port;
 			fcs_csa: out data port;
 		flows
-			flow_w_t: flow path fcs_fci -> fcs_pdf {
+			flow_fci_pdf: flow path fcs_fci -> fcs_pdf {
 				Latency => 10 ms .. 20 ms;
 			};
-			
+			flow_fci_csa: flow path fcs_fci-> fcs_csa {
+				Latency => 10 ms .. 20 ms;
+			};
 	end FlightControlSystem;
 
 	system implementation FlightControlSystem.impl
@@ -28,6 +30,19 @@ public
 			dis: system Display::Display.impl;
 			gm: system GuidanceMonitor::GuidanceMonitor.impl;
 			hw: system FCSExecutionPlatform::Hardware;
+	connections
+		c_ahs_aarr: port fcs_ahs -> aarr.aarr_ahs;
+		c_aarr_ap: port aarr.aarr_erh -> ap.ap_aarr;
+
+		c_ap_dis: port ap.ap_pdf -> dis.dis_apsi;
+		c_fgs_dis: port fgs.fgs_dis -> dis.dis_fcfi;
+		c_dis_pdf: port dis.dis_pfd -> fcs_pdf;
+		c_ap_gm: port ap.ap_gm -> gm.gm_ap;
+		c_gm_ap_cmd: port gm.gm_ap_cmd -> ap.ap_gm_cmd;
+		c_fci_ap: port fcs_fci -> ap.ap_fci;
+
+		c_ap_csa: port ap.ap_csa -> fcs_csa;
+		c_fci_fgs: port fcs_fci -> fgs.fgs_ui;
 	end FlightControlSystem.impl;
 
 end FlightControlSystem;

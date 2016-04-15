@@ -9,6 +9,16 @@ public
 	with Display;
 
 	system AutoPilotSystem
+		features
+			ap_fci: in data port;
+			ap_aarr: in data port;
+			ap_gm_cmd: in data port;
+			ap_pdf: out data port;
+			ap_csa: out data port;
+			ap_gm: out data port;
+		flows
+			Flow_AP_CSA: flow path ap_fci -> ap_csa;
+			Flow_AP_UI: flow path ap_fci -> ap_pdf;
 	end AutoPilotSystem;
 
 	system implementation AutoPilotSystem.impl

@@ -4,6 +4,10 @@ public
 	device ControlSurfaceActuator
 		features
 			csa_fcs: in data port;
+		flows
+			csa_sink: flow sink csa_fcs {
+				Latency => 5ms..5ms;
+			};
 	end ControlSurfaceActuator;
 	
 end ControlSurfaceActuator;
