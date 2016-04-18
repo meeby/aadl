@@ -37,6 +37,7 @@ public
 			fgc8: port fgControllerProc.requestFDGuidanceCmds -> fgc_fdgcg_out;
 			fgc9: port fgc_fdgcg_in -> fgControllerProc.receiveFDGuidanceCmds;
 			fgc10: port fgControllerProc.sendFDGuidanceCmds -> fgc_dis;
+			fgcErr1: port fgControllerProc.setFCFailureIndicator -> fgc_fcfi;
 		flows
 			Flow_FDGuidReq: flow path fgc_ui -> fgc1 -> fgControllerProc.Flow_fdGuidReq -> fgc2 -> fgc_aarr_out;
 			Flow_RefAttSet: flow path fgc_aarr_in -> fgc3 -> fgControllerProc.Flow_getAttitude -> fgc4 -> fgc_rap_out;
@@ -65,6 +66,11 @@ public
 			Flow_reqRefAttitude: flow path refAttitudeSetResult -> requestRefAttitude;
 			Flow_recRefAttitude: flow path receiveRefAttitude -> requestFDGuidanceCmds;
 			Flow_sendFDGuidance: flow path receiveFDGuidanceCmds -> sendFDGuidanceCmds;
+			Flow_Err1: flow path fdGuidanceCmdRequest -> setFCFailureIndicator;
+			Flow_Err2: flow path receiveAttitude -> setFCFailureIndicator;
+			Flow_Err3: flow path refAttitudeSetResult -> setFCFailureIndicator;
+			Flow_Err4: flow path receiveRefAttitude -> setFCFailureIndicator;
+			Flow_Err5: flow path receiveFDGuidanceCmds -> setFCFailureIndicator;
 	end FGControllerProcess;
 
 	process implementation FGControllerProcess.impl
@@ -99,7 +105,18 @@ public
 			Flow_recRefAttitude: flow path receiveRefAttitude -> fgcp7 ->
 					recRefAttitude.Flow_RAReceived -> fgcp8 -> requestFDGuidanceCmds;
 			Flow_sendFDGuidance: flow path receiveFDGuidanceCmds -> fgcp9 -> genFDGuidance.Flow_GetFDGuid -> fgcp10 ->
-					sendFDGuidanceCmds;
+							sendFDGuidanceCmds;
+			Flow_Err1: flow path fdGuidanceCmdRequest -> fcgp1 -> getAttitude.Flow_Error1 -> fgcpErr1 ->
+							alertFailure.Flow_Failure ->
+					fgcpErr5 -> setFCFailureIndicator;
+			Flow_Err2: flow path receiveAttitude -> fcgp3 -> getAttitude.Flow_Error2 -> fgcpErr1 -> alertFailure.Flow_Failure ->
+							fgcpErr5 -> setFCFailureIndicator;
+			Flow_Err3: flow path refAttitudeSetResult -> fgcp5 -> reqRefAttitude.Flow_Error -> fgcpErr2 ->
+							alertFailure.Flow_Failure -> fgcpErr5 -> setFCFailureIndicator;
+			Flow_Err4: flow path receiveRefAttitude -> fgcp7 -> recRefAttitude.Flow_Error ->
+					fgcpErr3 -> alertFailure.Flow_Failure -> fgcpErr5 -> setFCFailureIndicator;
+			Flow_Err5: flow path receiveFDGuidanceCmds -> fgcp9 -> genFDGuidance.Flow_Error -> fgcpErr4 ->
+							alertFailure.Flow_Failure -> fgcpErr5 -> setFCFailureIndicator;
 	end FGControllerProcess.impl;
 
 end FGController;
