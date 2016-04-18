@@ -4,9 +4,6 @@ public
 	with APController;
 	with APStatusIndicator;
 	with EngagementRequestHandler;
-	with AircraftAttitudeRequesterReceiver;
-	with GuidanceMonitor;
-	with Display;
 
 	system AutoPilotSystem
 		features
@@ -27,15 +24,17 @@ public
 			engagementRequestHandler: system EngagementRequestHandler::EngagementRequestHandler.impl;
 			apStatus: system APStatusIndicator::APStatusIndicator.impl;
 			actCmndGenerator: system ActuatorCommandGenerator::ActuatorCommandGenerator.impl;
-			aarr: system AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver.impl;
-			gm: system GuidanceMonitor::GuidanceMonitor.impl;
-			display: system Display::Display.impl;
+
 		connections
 			c_apc_apsi: port apController.apc_apsi -> apStatus.apsi_apc;
 			c_apc_acg: port apController.apc_acg -> actCmndGenerator.acg_apc;
-			c_aarr_erh: port aarr.aarr_erh -> engagementRequestHandler.erh_aarr;
 			c_erh_apc: port engagementRequestHandler.erh_apc -> apController.apc_erh;
-			c_apgcg_dis: port apStatus.apsi_dis -> display.dis_apsi;
-	end AutoPilotSystem.impl;
+			c_aarr_erh: port ap_aarr -> engagementRequestHandler.erh_aarr;
+			c_aps_pdf: port apStatus.apsi_dis -> ap_pdf;
+			c_acg_csa: port actCmndGenerator.acg_csa -> ap_csa;
+	
+
+
+end AutoPilotSystem.impl;
 
 end AutoPilotSystem;

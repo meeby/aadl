@@ -6,6 +6,10 @@ public
 		features
 			apsi_apc: in data port;
 			apsi_dis: out data port;
+		flows
+			flow_apc_dis: flow path apsi_apc -> apsi_dis {
+				Latency => 5ms..5ms;
+			};
 	end APStatusIndicator;
 
 	system implementation APStatusIndicator.impl

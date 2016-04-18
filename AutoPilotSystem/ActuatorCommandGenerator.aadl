@@ -5,6 +5,11 @@ public
 	system ActuatorCommandGenerator
 		features
 			acg_apc: in data port;
+			acg_csa: out data port;
+		flows
+			flow_apc_csa: flow path acg_apc -> acg_csa {
+				Latency => 5ms..5ms;
+			};
 	end ActuatorCommandGenerator;
 
 	system implementation ActuatorCommandGenerator.impl
