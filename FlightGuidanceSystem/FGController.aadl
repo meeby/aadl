@@ -5,7 +5,8 @@ public
 
 	system FGController
 		features
-			fgc_aarr: in data port;
+			fgc_aarr_in: in data port;
+			fgc_aarr_out: out data port;
 			fgc_fcfi: out data port;
 			fgc_apgcg: out data port;
 			fgc_fdgcg_in: in data port;
@@ -15,10 +16,11 @@ public
 			fgc_ui: in data port;
 			fgc_dis: out data port;
 		flows
-			Flow_SyncFD: flow path fgc_ui -> fgc_rap_out;
-			Flow_GetRefAtt: flow path fgc_rap_in -> fgc_rap_out;
-			Flow_GetFDGuidance: flow path fgc_rap_in -> fgc_fdgcg_out;
-			Flow_FDSendGuidance: flow path fgc_fdgcg_in -> fgc_dis;
+			Flow_FDGuidReq: flow path fgc_ui -> fgc_aarr_out;
+			Flow_RefAttSet: flow path fgc_aarr_in -> fgc_rap_out;
+			Flow_RefAttReq: flow path fgc_rap_in -> fgc_rap_out;
+			Flow_ReqFDGuid: flow path fgc_rap_in -> fgc_fdgcg_out;
+			Flow_SendFDGuid: flow path fgc_fdgcg_in -> fgc_dis;
 	end FGController;
 
 	system implementation FGController.impl
@@ -26,25 +28,27 @@ public
 			fgControllerProc: process FGControllerProcess.impl;
 		connections
 			fgc1: port fgc_ui -> fgControllerProc.fdGuidanceCmdRequest;
-			fgc2: port fgControllerProc.setRefAttitude -> fgc_rap_out;
-			fgc3: port fgc_rap_in -> fgControllerProc.refAttitudeSetResult;
-			fgc4: port fgControllerProc.requestRefAttitude -> fgc_rap_out;
-			fgc5: port fgc_rap_in -> fgControllerProc.receiveRefAttitude;
-			fgc6: port fgControllerProc.requestFDGuidanceCmds -> fgc_fdgcg_out;
-			fgc7: port fgc_fdgcg_in -> fgControllerProc.receiveFDGuidanceCmds;
-			fgc8: port fgControllerProc.sendFDGuidanceCmds -> fgc_dis;
-	flows
-		Flow_SyncFD: flow path fgc_ui -> fgc1 -> fgControllerProc.Flow_SyncFD -> fgc2 -> fgc_rap_out;
-		Flow_GetRefAtt: flow
-						path fgc_rap_in -> fgc3 -> fgControllerProc.Flow_RefAtt -> fgc4 -> fgc_rap_out;
-						Flow_GetFDGuidance: flow
-						path fgc_rap_in -> fgc5 -> fgControllerProc.Flow_FDGuidanceReq -> fgc6 -> fgc_fdgcg_out;
-				Flow_FDSendGuidance: flow path fgc_fdgcg_in -> fgc7 -> fgControllerProc.Flow_FDGuidanceRec -> fgc8 -> fgc_dis;
-end FGController.impl;
+			fgc2: port fgControllerProc.requestAttitude -> fgc_aarr_out;
+			fgc3: port fgc_aarr_in -> fgControllerProc.receiveAttitude;
+			fgc4: port fgControllerProc.setRefAttitude -> fgc_rap_out;
+			fgc5: port fgc_rap_in -> fgControllerProc.refAttitudeSetResult;
+			fgc6: port fgControllerProc.requestRefAttitude -> fgc_rap_out;
+			fgc7: port fgc_rap_in -> fgControllerProc.receiveRefAttitude;
+			fgc8: port fgControllerProc.requestFDGuidanceCmds -> fgc_fdgcg_out;
+			fgc9: port fgc_fdgcg_in -> fgControllerProc.receiveFDGuidanceCmds;
+			fgc10: port fgControllerProc.sendFDGuidanceCmds -> fgc_dis;
+		flows
+			Flow_FDGuidReq: flow path fgc_ui -> fgc1 -> fgControllerProc.Flow_fdGuidReq -> fgc2 -> fgc_aarr_out;
+			Flow_RefAttSet: flow path fgc_aarr_in -> fgc3 -> fgControllerProc.Flow_getAttitude -> fgc4 -> fgc_rap_out;
+			Flow_RefAttReq: flow path fgc_rap_in -> fgc5 -> fgControllerProc.Flow_reqRefAttitude -> fgc6 -> fgc_rap_out;
+			Flow_ReqFDGuid: flow path fgc_rap_in -> fgc7 -> fgControllerProc.Flow_recRefAttitude -> fgc8 -> fgc_fdgcg_out;
+			Flow_SendFDGuid: flow path fgc_fdgcg_in -> fgc9 -> fgControllerProc.Flow_sendFDGuidance -> fgc10 -> fgc_dis;
+	end FGController.impl;
 
 	process FGControllerProcess
 		features
-			requestAttitude: in data port;
+			requestAttitude: out data port;
+			receiveAttitude: in data port;
 			setFCFailureIndicator: out data port;
 			startAPGuidGeneration: out data port;
 			fdGuidanceCmdRequest: in data port;
@@ -56,10 +60,11 @@ end FGController.impl;
 			requestRefAttitude: out data port;
 			receiveRefAttitude: in data port;
 		flows
-			Flow_SyncFD: flow path fdGuidanceCmdRequest -> setRefAttitude;
-			Flow_RefAtt: flow path refAttitudeSetResult -> requestRefAttitude;
-			Flow_FDGuidanceReq: flow path receiveRefAttitude -> requestFDGuidanceCmds;
-			Flow_FDGuidanceRec: flow path receiveFDGuidanceCmds -> sendFDGuidanceCmds;
+			Flow_fdGuidReq: flow path fdGuidanceCmdRequest -> requestAttitude;
+			Flow_getAttitude: flow path receiveAttitude -> setRefAttitude;
+			Flow_reqRefAttitude: flow path refAttitudeSetResult -> requestRefAttitude;
+			Flow_recRefAttitude: flow path receiveRefAttitude -> requestFDGuidanceCmds;
+			Flow_sendFDGuidance: flow path receiveFDGuidanceCmds -> sendFDGuidanceCmds;
 	end FGControllerProcess;
 
 	process implementation FGControllerProcess.impl
@@ -67,27 +72,33 @@ end FGController.impl;
 			getAttitude: thread FGSThreads::RequestAndReceiveAircraftAttitude;
 			alertFailure: thread FGSThreads::AlertFCFailureIndicator;
 			genAPCommands: thread FGSThreads::StartAPCommandGeneration;
-			startFDGuidance: thread FGSThreads::StartFDGuidanceCommandGeneration;
 			reqRefAttitude: thread FGSThreads::RequestReferenceAttitude;
 			recRefAttitude: thread FGSThreads::ReceiveReferenceAttitude;
 			genFDGuidance: thread FGSThreads::GetFDGuidanceCommands;
 		connections
-			fgcp1: port fdGuidanceCmdRequest -> startFDGuidance.guidanceRequest;
-			fgcp2: port startFDGuidance.setReferenceAttitude -> setRefAttitude;
-			fgcp3: port RefAttitudeSetResult -> reqRefAttitude.refAttitudeRequest;
-			fgcp4: port reqRefAttitude.requestRefAttitude -> requestRefAttitude;
-			fgcp5: port receiveRefAttitude -> recRefAttitude.refAttitudeInput;
-			fgcp6: port recRefAttitude.sendRefAttitude -> requestFDGuidanceCmds;
-			fgcp7: port receiveFDGuidanceCmds -> genFDGuidance.guidanceInput;
-			fgcp8: port genFDGuidance.sendGuidance -> sendFDGuidanceCmds;
+			fcgp1: port fdGuidanceCmdRequest -> getAttitude.fdRequest;
+			fcgp2: port getAttitude.requestAttitude -> requestAttitude;
+			fcgp3: port receiveAttitude -> getAttitude.receiveAttitude;
+			fcgp4: port getAttitude.setRefAttitude -> setRefAttitude;
+			fgcp5: port refAttitudeSetResult -> reqRefAttitude.refAttitudeRequest;
+			fgcp6: port reqRefAttitude.requestRefAttitude -> requestRefAttitude;
+			fgcp7: port receiveRefAttitude -> recRefAttitude.refAttitudeInput;
+			fgcp8: port recRefAttitude.sendRefAttitude -> requestFDGuidanceCmds;
+			fgcp9: port receiveFDGuidanceCmds -> genFDGuidance.guidanceInput;
+			fgcp10: port genFDGuidance.sendGuidance -> sendFDGuidanceCmds;
+			fgcpErr1: port getAttitude.errorNotification -> alertFailure.errorNotification;
+			fgcpErr2: port reqRefAttitude.errorNotification -> alertFailure.errorNotification;
+			fgcpErr3: port recRefAttitude.errorNotification -> alertFailure.errorNotification;
+			fgcpErr4: port genFDGuidance.errorNotification -> alertFailure.errorNotification;
+			fgcpErr5: port alertFailure.sendError -> setFCFailureIndicator;
 		flows
-			Flow_SyncFD: flow path fdGuidanceCmdRequest -> fgcp1 -> startFDGuidance.Flow_FDGuidanceRequest -> fgcp2 ->
-					setRefAttitude;
-			Flow_RefAtt: flow path refAttitudeSetResult -> fgcp3 -> reqRefAttitude.Flow_RARequest ->
-					fgcp4 -> requestRefAttitude;
-			Flow_FDGuidanceReq: flow path receiveRefAttitude -> fgcp5 ->
-					recRefAttitude.Flow_RAReceived -> fgcp6 -> requestFDGuidanceCmds;
-			Flow_FDGuidanceRec: flow path receiveFDGuidanceCmds -> fgcp7 -> genFDGuidance.Flow_GetFDGuid -> fgcp8 ->
+			Flow_fdGuidReq: flow path fdGuidanceCmdRequest -> fcgp1 -> getAttitude.Flow_FDRequest -> fcgp2 -> requestAttitude;
+			Flow_getAttitude: flow path receiveAttitude -> fcgp3 -> getAttitude.Flow_AttitudeRec -> fcgp4 -> setRefAttitude;
+			Flow_reqRefAttitude: flow path refAttitudeSetResult -> fgcp5 -> reqRefAttitude.Flow_RARequest -> fgcp6 ->
+					requestRefAttitude;
+			Flow_recRefAttitude: flow path receiveRefAttitude -> fgcp7 ->
+					recRefAttitude.Flow_RAReceived -> fgcp8 -> requestFDGuidanceCmds;
+			Flow_sendFDGuidance: flow path receiveFDGuidanceCmds -> fgcp9 -> genFDGuidance.Flow_GetFDGuid -> fgcp10 ->
 					sendFDGuidanceCmds;
 	end FGControllerProcess.impl;
 

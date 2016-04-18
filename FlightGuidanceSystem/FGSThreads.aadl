@@ -2,32 +2,46 @@ package FGSThreads
 public
 
 	thread RequestAndReceiveAircraftAttitude
+		features
+			fdRequest: in data port;
+			requestAttitude: out data port;
+			receiveAttitude: in data port;
+			setRefAttitude: out data port;
+			errorNotification: out data port;
+		flows
+			Flow_FDRequest: flow path fdRequest-> requestAttitude;
+			Flow_AttitudeRec: flow path receiveAttitude-> setRefAttitude;
+			Flow_Error1: flow path fdRequest -> errorNotification;
+			Flow_Error2: flow path receiveAttitude -> errorNotification;
+		properties
+			Dispatch_Protocol => Periodic;
+			Period => 10 ms;
+			Compute_Execution_time => 2 ms .. 2 ms;
 	end RequestAndReceiveAircraftAttitude;
 
 	thread AlertFCFailureIndicator
+		features
+			errorNotification: in data port;
+			sendError: out data port;
+		flows
+			Flow_Failure: flow path errorNotification -> sendError;
+		properties
+			Dispatch_Protocol => Periodic;
+			Period => 10 ms;
+			Compute_Execution_time => 2 ms .. 2 ms;
 	end AlertFCFailureIndicator;
 
 	thread StartAPCommandGeneration
 	end StartAPCommandGeneration;
 
-	thread StartFDGuidanceCommandGeneration
-		features
-			guidanceRequest: in data port;
-			setReferenceAttitude: out data port;
-		flows
-			Flow_FDGuidanceRequest: flow path guidanceRequest -> setReferenceAttitude;
-		properties
-			Dispatch_Protocol => Periodic;
-			Period => 10 ms;
-			Compute_Execution_time => 2 ms .. 2 ms;
-	end StartFDGuidanceCommandGeneration;
-
 	thread RequestReferenceAttitude
 		features
 			refAttitudeRequest: in data port;
 			requestRefAttitude: out data port;
+			errorNotification: out data port;
 		flows
 			Flow_RARequest: flow path refAttitudeRequest -> requestRefAttitude;
+			Flow_Error: flow path refAttitudeRequest -> errorNotification;
 		properties
 			Dispatch_Protocol => Periodic;
 			Period => 10 ms;
@@ -38,8 +52,10 @@ public
 		features
 			refAttitudeInput: in data port;
 			sendRefAttitude: out data port;
+			errorNotification: out data port;
 		flows
 			Flow_RAReceived: flow path refAttitudeInput -> sendRefAttitude;
+			Flow_Error: flow path refAttitudeInput -> errorNotification;
 		properties
 			Dispatch_Protocol => Periodic;
 			Period => 10 ms;
@@ -50,8 +66,10 @@ public
 		features
 			guidanceInput: in data port;
 			sendGuidance: out data port;
+			errorNotification: out data port;
 		flows
 			Flow_GetFDGuid: flow path guidanceInput -> sendGuidance;
+			Flow_Error: flow path guidanceInput -> errorNotification;
 		properties
 			Dispatch_Protocol => Periodic;
 			Period => 10 ms;
@@ -78,18 +96,6 @@ public
 			Period => 10 ms;
 			Compute_Execution_time => 2 ms .. 2 ms;
 	end CalculateFDGuidance;
-
-	thread TransformFDGuidanceCommands
-		features
-			desiredAttitude: in data port;
-			displayableAttitude: out data port;
-		flows
-			Flow_FDGuidance: flow path desiredAttitude -> displayableAttitude;
-		properties
-			Dispatch_Protocol => Periodic;
-			Period => 10 ms;
-			Compute_Execution_time => 2 ms .. 2 ms;
-	end TransformFDGuidanceCommands;
 
 	thread FGControllerThread
 	end FGControllerThread;
