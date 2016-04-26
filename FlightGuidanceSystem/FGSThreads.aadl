@@ -32,6 +32,13 @@ public
 	end AlertFCFailureIndicator;
 
 	thread StartAPCommandGeneration
+		features
+			apCommandRequest: in data port;
+			startAPCommandGeneration: out data port;
+			errorNotification: out data port;
+		flows
+			Flow_APCommandGenerationRequest: flow path apCommandRequest -> startAPCommandGeneration;
+			Flow_Error: flow path apCommandRequest -> errorNotification;
 	end StartAPCommandGeneration;
 
 	thread RequestReferenceAttitude
