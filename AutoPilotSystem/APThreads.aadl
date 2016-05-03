@@ -16,7 +16,7 @@ public
 		flows
 			flow_W_T: flow path actuators_in -> actuators_out;
 		properties
-			Dispatch_Protocol => Periodic;
+			Dispatch_Protocol => Aperiodic;
 			Period => 10 ms;
 			Compute_Execution_time => 2 ms .. 2 ms;
 	end SendActuatorCommands;
@@ -34,9 +34,9 @@ public
 		flows
 			flow_W_T: flow path in_status -> out_status;
 		properties
-			Dispatch_Protocol => Periodic;
+			Dispatch_Protocol => Aperiodic;
 			Period => 10 ms;
-			Compute_Execution_time => 2 ms .. 2 ms;
+			Compute_Execution_time => 3 ms .. 4 ms;
 	end UpdateAPStatusIndicator;
 
 	thread RequestAPEngagement
@@ -49,9 +49,9 @@ public
 		flows
 			flow_W_T: flow path guidance_receiver -> guidance_sender;
 		properties
-			Dispatch_Protocol => Periodic;
+			Dispatch_Protocol => Aperiodic;
 			Period => 10 ms;
-			Compute_Execution_time => 2 ms .. 2 ms;
+			Compute_Execution_time => 5 ms .. 8 ms;
 	end RequestAPGuidance;
 
 	thread ConfirmManeuverIsSafe
@@ -64,9 +64,9 @@ public
 			flow_W_T: flow path maneuver_checker_in -> isSafe;
 			flow_B_T: flow path maneuver_checker_in -> notSafe;
 		properties
-			Dispatch_Protocol => Periodic;
+			Dispatch_Protocol => Aperiodic;
 			Period => 10 ms;
-			Compute_Execution_time => 2 ms .. 2 ms;
+			Compute_Execution_time => 1 ms .. 4 ms;
 	end ConfirmManeuverIsSafe;
 
 end APThreads;
