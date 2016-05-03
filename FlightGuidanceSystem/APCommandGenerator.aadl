@@ -1,25 +1,42 @@
 package APGuidanceCommandGenerator
 public
-	
-with FGSThreads;
-	
+
+	with FGSThreads;
+
 	system APGuidanceCommandGenerator
 		features
 			apgcg_gm: out data port;
 			apgcg_fgc: in data port;
+		flows
+			Flow_APGuid: flow path apgcg_fgc -> apgcg_gm;
 	end APGuidanceCommandGenerator;
-	
+
 	system implementation APGuidanceCommandGenerator.impl
 		subcomponents
 			commandGenProcess: process APGCGProcess.impl;
+		connections
+			apgcg1: port apgcg_fgc -> commandGenProcess.receiveAPGuidReq;
+			apgcg2: port commandGenProcess.sendAPGuidCommands -> apgcg_gm;
+		flows
+			Flow_APGuid: flow path apgcg_fgc -> apgcg1 -> commandGenProcess.Flow_APGuid -> apgcg2 -> apgcg_gm;
 	end APGuidanceCommandGenerator.impl;
 
 	process APGCGProcess
+		features
+			receiveAPGuidReq: in data port;
+			sendAPGuidCommands: out data port;
+		flows
+			Flow_APGuid: flow path receiveAPGuidReq -> sendAPGuidCommands;
 	end APGCGProcess;
-	
+
 	process implementation APGCGProcess.impl
 		subcomponents
 			apgcgThread: thread FGSThreads::GenerateAPCommands;
+		connections
+			apgcg1: port receiveAPGuidReq -> apgcgThread.receiveRequest;
+			apgcg2: port apgcgThread.sendAPGuidCommands -> sendAPGuidCommands;
+		flows
+			Flow_APGuid: flow path receiveAPGuidReq -> apgcg1 -> apgcgThread.Flow_APGuidance -> apgcg2 -> sendAPGuidCommands;
 	end APGCGProcess.impl;
-	
+
 end APGuidanceCommandGenerator;

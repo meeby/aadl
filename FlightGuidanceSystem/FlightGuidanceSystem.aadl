@@ -5,9 +5,8 @@ public
 	with FDGuidanceCommandGenerator;
 	with FGController;
 	with ReferenceAttitudeProcessor;
---	with AircraftAttitudeRequesterReceiver;
---	with GuidanceMonitor;
-
+	--	with AircraftAttitudeRequesterReceiver;
+	--	with GuidanceMonitor;
 	system FlightGuidanceSystem
 		features
 			fgs_ui: in data port;
@@ -23,8 +22,6 @@ public
 			fdGuidanceCmndGenerator: process FDGuidanceCommandGenerator::FDGuidanceCommandGeneratorProcess.impl;
 			fgController: system FGController::FGController.impl;
 			refAttitProcessor: process ReferenceAttitudeProcessor::ReferenceAttitudeProcessorProcess.impl;
---			aarr: system AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver.impl;
---			gm: system GuidanceMonitor::GuidanceMonitor.impl;
 		connections
 			fgs1: port refAttitProcessor.rap_fgc_out -> fgController.fgc_rap_in;
 			fgs2: port fgController.fgc_rap_out -> refAttitProcessor.rap_fgc_in;
@@ -32,6 +29,8 @@ public
 			fgs4: port fdGuidanceCmndGenerator.generatedGuidanceCommands -> fgController.fgc_fdgcg_in;
 			fgs5: port fgs_ui -> fgController.fgc_ui;
 			fgs6: port fgController.fgc_dis -> fgs_dis;
-end FlightGuidanceSystem.impl;
+			fgs7: port fcFailureIndicator.fcfi_dis -> fgs_dis;
+			fgs8: port fgController.fgc_fcfi -> fcFailureIndicator.fcfi_fgc;
+	end FlightGuidanceSystem.impl;
 
 end FlightGuidanceSystem;

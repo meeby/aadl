@@ -84,12 +84,19 @@ public
 	end GetFDGuidanceCommands;
 
 	thread GenerateAPCommands
+		features
+			receiveRequest: in data port;
+			sendAPGuidCommands: out data port;
+		flows
+			Flow_APGuidance: flow path receiveRequest -> sendAPGuidCommands;
 	end GenerateAPCommands;
 
-	thread ReceiveFCFailureIndicator
-	end ReceiveFCFailureIndicator;
-
 	thread DisplayFCFailureIndicator
+		features
+			receiveFailure: in data port;
+			notifyOfFailure: out data port;
+		flows
+			Flow_FailureNotify: flow path receiveFailure -> notifyOfFailure;
 	end DisplayFCFailureIndicator;
 
 	thread CalculateFDGuidance

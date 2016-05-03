@@ -1,7 +1,7 @@
 package FCFailureIndicator
 public
-	
-with FGSThreads;
+
+	with FGSThreads;
 
 	process FCFailureIndicatorProcess
 		features
@@ -10,11 +10,15 @@ with FGSThreads;
 		flows
 			Flow_FCFailure: flow path fcfi_fgc -> fcfi_dis;
 	end FCFailureIndicatorProcess;
-	
+
 	process implementation FCFailureIndicatorProcess.impl
 		subcomponents
-			receiveFailure: thread FGSThreads::ReceiveFCFailureIndicator;
 			displayFailure: thread FGSThreads::DisplayFCFailureIndicator;
+		connections
+			fcfi1: port fcfi_fgc -> displayFailure.receiveFailure;
+			fcfi2: port displayFailure.notifyOfFailure -> fcfi_dis;
+		flows
+			Flow_FCFailure: flow path fcfi_fgc -> fcfi1 -> displayFailure.Flow_FailureNotify -> fcfi2 -> fcfi_dis;
 	end FCFailureIndicatorProcess.impl;
 
 end FCFailureIndicator;
