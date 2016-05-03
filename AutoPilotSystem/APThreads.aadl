@@ -2,15 +2,15 @@ package APThreads
 public
 
 	thread GenerateActuatorCommands
-	    features
+		features
 			request: in data port;
 			actuators: out data port;
 		flows
-			flow_W_T: flow path request -> actuators;	
+			flow_W_T: flow path request -> actuators;
 	end GenerateActuatorCommands;
 
 	thread SendActuatorCommands
-	    features		
+		features
 			actuators_in: in data port;
 			actuators_out: out data port;
 		flows
@@ -22,6 +22,9 @@ public
 	end SendActuatorCommands;
 
 	thread APControllerThread
+		features
+			actuators_in: in data port;
+			actuators_out: out data port;
 	end APControllerThread;
 
 	thread UpdateAPStatusIndicator
@@ -52,14 +55,14 @@ public
 	end RequestAPGuidance;
 
 	thread ConfirmManeuverIsSafe
-	features
+		features
 			maneuver_checker_in: in data port;
 			isSafe: out data port;
 			notSafe: out data port;
-			
+
 		flows
-			flow_W_T: flow path maneuver_checker_in -> isSafe;	
-			flow_B_T: flow path maneuver_checker_in -> notSafe;	
+			flow_W_T: flow path maneuver_checker_in -> isSafe;
+			flow_B_T: flow path maneuver_checker_in -> notSafe;
 		properties
 			Dispatch_Protocol => Periodic;
 			Period => 10 ms;

@@ -5,7 +5,6 @@ public
 	with AircraftAttitudeRequesterReceiver;
 	with Display;
 	with GuidanceMonitor;
-	with FCSExecutionPlatform;
 
 	system FlightControlSystem
 		features
@@ -29,7 +28,6 @@ public
 			aarr: system AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver.impl;
 			dis: system Display::Display.impl;
 			gm: system GuidanceMonitor::GuidanceMonitor.impl;
-			hw: system FCSExecutionPlatform::Hardware;
 	connections
 		c_ahs_aarr: port fcs_ahs -> aarr.aarr_ahs;
 		c_aarr_ap: port aarr.aarr_erh -> ap.ap_aarr;

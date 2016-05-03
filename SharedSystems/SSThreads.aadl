@@ -10,4 +10,24 @@ public
 	thread MonitorForGuidanceRequest
 	end MonitorForGuidanceRequest;
 
+	thread ClearFlightDirectorFromDisplay
+		features
+			receiveClearFlightDirectorRequest: in data port;
+			receiveAPEngaged: in data port;
+			receiveAPDisengaged: in data port;
+			sendRequestToClearFlightDirector: out data port;
+		flows
+			flow_request_clearFD: flow path receiveClearFlightDirectorRequest -> sendRequestToClearFlightDirector;
+	end ClearFlightDirectorFromDisplay;
+
+	thread RequestAPStatusIndicator
+		features
+			receiveAPStatus: in data port;
+			autoPilotIsEngaged: out data port;
+			autoPilotIsDisengaged: out data port;
+		flows
+			flow_AP_engaged: flow path receiveAPStatus -> autoPilotIsEngaged;
+			flow_AP_disengaged: flow path receiveAPStatus -> autoPilotIsDisengaged;
+	end RequestAPStatusIndicator;
+
 end SSThreads;

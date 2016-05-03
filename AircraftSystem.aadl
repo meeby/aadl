@@ -4,6 +4,7 @@ public
 	with AltitudeHeadingSystem;
 	with ControlSurfaceActuator;
 	with UserInterface;
+	with FCSExecutionPlatform;
 
 	system OurAircraft
 	end OurAircraft;
@@ -16,6 +17,7 @@ public
 			fci: device UserInterface::FlightControlInterface;
 			pfdLeft: device UserInterface::PrimaryFlightDisplay;
 			pfdRight: device UserInterface::PrimaryFlightDisplay;
+			hw: system FCSExecutionPlatform::Hardware;
 			
 		connections
 			c_fci_fcs: port fci.fci_fcs -> fcs.fcs_fci;
@@ -31,7 +33,7 @@ public
 			Flow_FCI_PFD_Right: end to end flow fci.fci_source -> c_fci_fcs -> fcs.flow_fci_pdf -> c_fcs_pfd_right -> pfdRight.pfd_sink {
 				Latency => 50 ms .. 50 ms;
 			};
-			Flow_Request_Control_Wheel_Steering: end to end flow fci.fci_source -> c_fci_fcs -> fcs.flow_fci_csa -> c_fcs_csa -> csa.csa_sink {
+			Flow_Request_Control_Wheel_Steering: end to end flow fci.fci_source -> c_fci_fcs -> fcs.flow_fci_csa {
 				Latency => 50 ms .. 50 ms;
 			};
 			Flow_Cancel_Control_Wheel_Steering: end to end flow fci.fci_source -> c_fci_fcs -> fcs.flow_fci_csa -> c_fcs_csa -> csa.csa_sink {
