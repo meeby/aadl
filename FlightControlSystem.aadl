@@ -9,16 +9,21 @@ public
 	system FlightControlSystem
 		features
 			fcs_fci: in data port;
-			fcs_pdf: out data port;	
+			fcs_pfd: out data port;
 			fcs_ahs: in data port;
 			fcs_csa: out data port;
 		flows
-			flow_fci_pdf: flow path fcs_fci -> fcs_pdf {
-				Latency => 10 ms .. 20 ms;
-			};
-			flow_fci_csa: flow path fcs_fci-> fcs_csa {
-				Latency => 10 ms .. 20 ms;
-			};
+		-- used for displaying information on PFD 
+			flow_fci_pfd: flow path fcs_fci -> fcs_pfd {
+						Latency => 10 ms .. 20 ms;
+					};
+					-- used for control wheel steering, 
+			flow_fci_csa: flow path fcs_fci -> fcs_csa {
+						Latency => 10 ms .. 20 ms;
+					};
+			flow_ahs_csa: flow path fcs_ahs -> fcs_csa {
+						Latency => 10 ms .. 20 ms;
+					};
 	end FlightControlSystem;
 
 	system implementation FlightControlSystem.impl
@@ -28,19 +33,27 @@ public
 			aarr: system AircraftAttitudeRequesterReceiver::AircraftAttitudeRequesterReceiver.impl;
 			dis: system Display::Display.impl;
 			gm: system GuidanceMonitor::GuidanceMonitor.impl;
-	connections
-		c_ahs_aarr: port fcs_ahs -> aarr.aarr_ahs;
-		c_aarr_ap: port aarr.aarr_erh -> ap.ap_aarr;
+		connections
+			c_ahs_aarr: port fcs_ahs -> aarr.aarr_ahs;
+			c_aarr_ap: port aarr.aarr_erh -> ap.ap_aarr;
 
-		c_ap_dis: port ap.ap_pdf -> dis.dis_apsi;
-		c_fgs_dis: port fgs.fgs_dis -> dis.dis_fcfi;
-		c_dis_pdf: port dis.dis_pfd -> fcs_pdf;
-		c_ap_gm: port ap.ap_gm -> gm.gm_ap;
-		c_gm_ap_cmd: port gm.gm_ap_cmd -> ap.ap_gm_cmd;
-		c_fci_ap: port fcs_fci -> ap.ap_fci;
+			c_ap_dis: port ap.ap_pfd -> dis.dis_apsi;
+			c_fgs_dis: port fgs.fgs_dis -> dis.dis_fcfi;
+			c_dis_pfd: port dis.dis_pfd -> fcs_pfd;
+			c_ap_gm: port ap.ap_gm -> gm.gm_ap;
+			c_gm_ap_cmd: port gm.gm_ap_cmd -> ap.ap_gm_cmd;
+			c_fci_ap: port fcs_fci -> ap.ap_fci;
 
-		c_ap_csa: port ap.ap_csa -> fcs_csa;
-		c_fci_fgs: port fcs_fci -> fgs.fgs_ui;
+			c_ap_csa: port ap.ap_csa -> fcs_csa;
+			c_fci_fgs: port fcs_fci -> fgs.fgs_ui;
+
+		flows
+			flow_fci_csa: flow path fcs_fci -> c_fci_ap -> ap.Flow_fci_gm -> c_ap_gm -> gm.flow_ap_cmd ->
+					c_gm_ap_cmd -> ap.Flow_gm_csa -> c_ap_csa -> fcs_csa;
+			flow_fci_pfd: flow path fcs_fci -> c_fci_ap -> ap.flow_AP_UI -> c_ap_dis -> dis.flow_ap_pfd ->
+					c_dis_pfd -> fcs_pfd;
+			flow_ahs_csa: flow path fcs_ahs -> c_ahs_aarr -> aarr.flow_ahs_erh -> c_aarr_ap -> ap.Flow_aarr_csa ->
+					c_ap_csa -> fcs_csa;
 	end FlightControlSystem.impl;
 
 end FlightControlSystem;

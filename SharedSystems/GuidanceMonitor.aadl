@@ -8,7 +8,10 @@ with SSThreads;
 			gm_ap_cmd: out data port;
 			gm_fgs: in data port;
 		flows
-			flow_ap_cmd: flow path gm_fgs -> gm_ap_cmd {
+			flow_fgs_cmd: flow path gm_fgs -> gm_ap_cmd {
+				Latency => 5ms..5ms;
+			};
+			flow_ap_cmd: flow path gm_ap -> gm_ap_cmd {
 				Latency => 5ms..5ms;
 			};
 	end GuidanceMonitor;

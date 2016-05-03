@@ -8,16 +8,24 @@ public
 			apsi_dis: out data port;
 		flows
 			flow_apc_dis: flow path apsi_apc -> apsi_dis {
-				Latency => 5ms..5ms;
-			};
+						Latency => 5 ms .. 5 ms;
+					};
 	end APStatusIndicator;
 
 	system implementation APStatusIndicator.impl
 		subcomponents
 			apsiProcess: process APStatusIndicatorProcess.impl;
+		connections
+			c_apc_in: port apsi_apc -> apsiProcess.status_in;
+			c_dis_out: port apsiProcess.status_out -> apsi_dis;
 	end APStatusIndicator.impl;
 
 	process APStatusIndicatorProcess
+		features
+			status_in: in data port;
+			status_out: out data port;
+		flows
+			flow_in_out: flow path status_in -> status_out;
 	end APStatusIndicatorProcess;
 
 	process implementation APStatusIndicatorProcess.impl

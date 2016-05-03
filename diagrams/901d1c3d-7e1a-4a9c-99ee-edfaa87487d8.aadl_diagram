@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pi:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" visible="true" gridUnit="10" diagramTypeId="AADL Diagram" name="ActuatorCommandGenerator::GenerateActuatorCommand.impl" snapToGrid="true" version="0.11.0">
+  <properties key="independentObject" value="classifier ActuatorCommandGenerator::GenerateActuatorCommand.impl"/>
+  <graphicsAlgorithm xsi:type="al:Rectangle" background="//@colors.1" foreground="//@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
+  <children xsi:type="pi:ContainerShape" visible="true" active="true">
+    <properties key="independentObject" value="classifier ActuatorCommandGenerator::GenerateActuatorCommand.impl"/>
+    <properties key="is_ghost" value="false"/>
+    <properties key="is_layed_out" value="true"/>
+    <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="1057" height="470" x="80" y="80" style="//@styles.6/@styles.1/@styles.0">
+      <points x="20"/>
+      <points x="1057"/>
+      <points x="1037" y="470"/>
+      <points y="470"/>
+    </graphicsAlgorithm>
+    <anchors xsi:type="pi:ChopboxAnchor">
+      <properties key="name" value="chopbox"/>
+    </anchors>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <properties key="independentObject" value="subcomponent ActuatorCommandGenerator::GenerateActuatorCommand.impl.generateActuatorCommandThread"/>
+      <properties key="is_ghost" value="false"/>
+      <properties key="is_layed_out" value="true"/>
+      <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" filled="false" width="432" height="198" x="80" y="80" style="//@styles.6/@styles.0">
+        <points x="20"/>
+        <points x="432"/>
+        <points x="412" y="198"/>
+        <points y="198"/>
+      </graphicsAlgorithm>
+      <anchors xsi:type="pi:ChopboxAnchor">
+        <properties key="name" value="chopbox"/>
+      </anchors>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <properties key="independentObject" value="feature APThreads::GenerateActuatorCommands.request"/>
+        <properties key="is_ghost" value="false"/>
+        <properties key="is_coloring_container" value="true"/>
+        <properties key="is_layed_out" value="true"/>
+        <properties key="side" value="left"/>
+        <properties key="layout_side" value="left"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="54" height="26" y="61"/>
+        <anchors xsi:type="pi:ChopboxAnchor">
+          <properties key="name" value="chopbox"/>
+        </anchors>
+        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" outgoingConnections="//@connections.0" useAnchorLocationAsConnectionEndpoint="true">
+          <properties key="name" value="innerConnector"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
+          <location x="15" y="21"/>
+        </anchors>
+        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
+          <properties key="name" value="outerConnector"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
+          <location y="21"/>
+        </anchors>
+        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
+          <properties key="name" value="flowSpecification"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
+          <location x="65" y="21"/>
+        </anchors>
+        <children xsi:type="pi:ContainerShape" visible="true" active="true">
+          <properties key="name" value="feature"/>
+          <properties key="is_inner_shape" value="true"/>
+          <properties key="is_coloring_child" value="true"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="15" height="10" y="16" style="//@styles.2">
+            <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" width="15" height="10" style="//@styles.2">
+              <points/>
+              <points x="15" y="5"/>
+              <points y="10"/>
+            </graphicsAlgorithmChildren>
+          </graphicsAlgorithm>
+          <anchors xsi:type="pi:ChopboxAnchor">
+            <properties key="name" value="chopbox"/>
+          </anchors>
+        </children>
+        <children visible="true">
+          <properties key="is_manually_positioned" value="true"/>
+          <properties key="independentObject" value="feature APThreads::GenerateActuatorCommands.request"/>
+          <properties key="name" value="label"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="49" height="16" x="5" style="//@styles.0">
+            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="49" height="16" style="//@styles.1" verticalAlignment="UNSPECIFIED" value="request"/>
+          </graphicsAlgorithm>
+        </children>
+        <children visible="true">
+          <properties key="is_manually_positioned" value="true"/>
+          <properties key="independentObject" value="feature APThreads::GenerateActuatorCommands.request"/>
+          <properties key="name" value="annotation"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" x="5" style="//@styles.0">
+            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value=""/>
+          </graphicsAlgorithm>
+        </children>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <properties key="independentObject" value="feature APThreads::GenerateActuatorCommands.actuators"/>
+        <properties key="is_ghost" value="false"/>
+        <properties key="is_coloring_container" value="true"/>
+        <properties key="is_layed_out" value="true"/>
+        <properties key="side" value="right"/>
+        <properties key="layout_side" value="right"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="66" height="26" x="366" y="61"/>
+        <anchors xsi:type="pi:ChopboxAnchor">
+          <properties key="name" value="chopbox"/>
+        </anchors>
+        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" incomingConnections="//@connections.0" useAnchorLocationAsConnectionEndpoint="true">
+          <properties key="name" value="innerConnector"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
+          <location x="51" y="21"/>
+        </anchors>
+        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
+          <properties key="name" value="outerConnector"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
+          <location x="66" y="21"/>
+        </anchors>
+        <anchors xsi:type="pi:FixPointAnchor" visible="true" active="true" useAnchorLocationAsConnectionEndpoint="true">
+          <properties key="name" value="flowSpecification"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0"/>
+          <location x="1" y="21"/>
+        </anchors>
+        <children xsi:type="pi:ContainerShape" visible="true" active="true">
+          <properties key="name" value="feature"/>
+          <properties key="is_inner_shape" value="true"/>
+          <properties key="is_coloring_child" value="true"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="15" height="10" x="51" y="16" style="//@styles.2">
+            <graphicsAlgorithmChildren xsi:type="al:Polygon" lineStyle="UNSPECIFIED" width="15" height="10" style="//@styles.2">
+              <points/>
+              <points x="15" y="5"/>
+              <points y="10"/>
+            </graphicsAlgorithmChildren>
+          </graphicsAlgorithm>
+          <anchors xsi:type="pi:ChopboxAnchor">
+            <properties key="name" value="chopbox"/>
+          </anchors>
+        </children>
+        <children visible="true">
+          <properties key="is_manually_positioned" value="true"/>
+          <properties key="independentObject" value="feature APThreads::GenerateActuatorCommands.actuators"/>
+          <properties key="name" value="label"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="61" height="16" style="//@styles.0">
+            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="61" height="16" style="//@styles.1" horizontalAlignment="ALIGNMENT_RIGHT" verticalAlignment="UNSPECIFIED" value="actuators"/>
+          </graphicsAlgorithm>
+        </children>
+        <children visible="true">
+          <properties key="is_manually_positioned" value="true"/>
+          <properties key="independentObject" value="feature APThreads::GenerateActuatorCommands.actuators"/>
+          <properties key="name" value="annotation"/>
+          <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" x="61" style="//@styles.0">
+            <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" style="//@styles.3" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value=""/>
+          </graphicsAlgorithm>
+        </children>
+      </children>
+      <children visible="true">
+        <properties key="name" value="label"/>
+        <properties key="is_manually_positioned" value="true"/>
+        <properties key="is_transient" value="true"/>
+        <properties key="independentObject" value="subcomponent ActuatorCommandGenerator::GenerateActuatorCommand.impl.generateActuatorCommandThread"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="235" height="21" x="98" y="2" style="//@styles.0">
+          <graphicsAlgorithmChildren xsi:type="al:Text" lineStyle="UNSPECIFIED" width="235" height="21" style="//@styles.1" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="generateActuatorCommandThread"/>
+        </graphicsAlgorithm>
+      </children>
+      <children visible="true">
+        <properties key="name" value="subcomponent_type_label"/>
+        <properties key="is_manually_positioned" value="true"/>
+        <properties key="is_transient" value="true"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineStyle="UNSPECIFIED" width="275" height="21" x="78" y="21" style="//@styles.0">
+          <graphicsAlgorithmChildren xsi:type="al:MultiText" lineStyle="UNSPECIFIED" width="275" height="21" style="//@styles.1" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED" value="APThreads::GenerateActuatorCommands"/>
+        </graphicsAlgorithm>
+      </children>
+    </children>
+  </children>
+  <styles background="//@colors.1" lineStyle="UNSPECIFIED" filled="true" lineVisible="false" transparency="0.2" id="text-background" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED"/>
+  <styles foreground="//@colors.2" lineStyle="UNSPECIFIED" filled="false" id="label" font="//@fonts.0"/>
+  <styles background="//@colors.2" foreground="//@colors.2" lineWidth="2" lineVisible="true" id="feature" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED"/>
+  <styles foreground="//@colors.2" lineStyle="UNSPECIFIED" filled="false" id="annotation" font="//@fonts.0"/>
+  <styles background="//@colors.2" foreground="//@colors.2" lineWidth="2" lineVisible="true" id="flow_specification" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED"/>
+  <styles background="//@colors.2" foreground="//@colors.2" lineWidth="2" lineVisible="true" id="decorator" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED"/>
+  <styles background="//@colors.1" foreground="//@colors.2" lineWidth="1" lineVisible="true" transparency="0.0" id="classifier" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED">
+    <styles lineWidth="2" lineStyle="DASH" id="thread" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED"/>
+    <styles lineWidth="2" lineStyle="UNSPECIFIED" id="process" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED">
+      <styles lineWidth="3" lineStyle="UNSPECIFIED" id="process-implementation" horizontalAlignment="UNSPECIFIED" verticalAlignment="UNSPECIFIED"/>
+    </styles>
+  </styles>
+  <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="//@children.0/@children.0/@children.0/@anchors.1" end="//@children.0/@children.0/@children.1/@anchors.1">
+    <properties key="independentObject" value="flow_specification APThreads::GenerateActuatorCommands.flow_W_T"/>
+    <graphicsAlgorithm xsi:type="al:Polyline" lineStyle="UNSPECIFIED" style="//@styles.4"/>
+    <connectionDecorators visible="true" locationRelative="true" location="1.0">
+      <graphicsAlgorithm xsi:type="al:Polygon" lineStyle="UNSPECIFIED" style="//@styles.5">
+        <points x="-6" y="4"/>
+        <points x="2"/>
+        <points x="-6" y="-4"/>
+      </graphicsAlgorithm>
+    </connectionDecorators>
+    <connectionDecorators visible="true" active="true" locationRelative="true" location="0.5">
+      <properties key="independentObject" value="flow_specification APThreads::GenerateActuatorCommands.flow_W_T"/>
+      <graphicsAlgorithm xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" x="5" y="10" style="//@styles.1" font="//@fonts.1" value="flow_W_T"/>
+    </connectionDecorators>
+  </connections>
+  <colors red="227" green="238" blue="249"/>
+  <colors red="255" green="255" blue="255"/>
+  <colors/>
+  <fonts name="Arial" size="10" bold="true"/>
+  <fonts name="Arial" size="8"/>
+</pi:Diagram>
