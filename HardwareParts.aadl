@@ -1,0 +1,31 @@
+package HardwareParts
+public
+	with SEI;
+
+	bus CANbus
+	end CANbus;
+
+	bus PCIbus
+	end PCIbus;
+
+	memory RAM
+		features
+			PCIBA: requires bus access PCIbus;
+	end RAM;
+
+	memory ROM
+		features
+			PCIBA: requires bus access PCIbus;
+	end ROM;
+
+	processor PowerPC
+		features
+			CANBA: requires bus access CANbus;
+			PCIBA: requires bus access PCIbus;
+	end PowerPC;
+
+	processor implementation PowerPC.single
+		properties
+			SEI::MIPSCapacity => 1000.0 MIPS; -- million instructions per second
+	end PowerPC.single;
+end HardwareParts;

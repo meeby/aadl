@@ -1,6 +1,7 @@
 package APController
 public
 	with APThreads;
+	with HardwareParts;
 
 	system APController
 		features
@@ -8,8 +9,8 @@ public
 			apc_apsi: out data port;
 			apc_acg: out data port;
 		flows
-        	flow_APStatus: flow path apc_erh -> apc_apsi;
-        	flow_APFunction_Failure: flow path apc_erh -> apc_apsi;
+			flow_APStatus: flow path apc_erh -> apc_apsi;
+			flow_APFunction_Failure: flow path apc_erh -> apc_apsi;
 			flow_APActuatorCommands: flow path apc_erh -> apc_acg;
 	end APController;
 
@@ -18,11 +19,11 @@ public
 			apcProcess: process APControllerProcess.impl;
 			apcEngagement: process APEngagementProcess.impl;
 			apcActuatorCommands: process APActuatorCommandsProcess.impl;
-			
+
 		connections
 			c4: port apcProcess.engagement_send -> apcEngagement.receiver;
 			c5: port apcEngagement.engagement_status -> apcProcess.engagementStatus;
-	  		c6: port apcProcess.actuatorCommands_requester -> apcActuatorCommands.request;
+			c6: port apcProcess.actuatorCommands_requester -> apcActuatorCommands.request;
 			c7: port apcActuatorCommands.actuators -> apcProcess.actuatorCommands_receiver;
 			c8: port apcProcess.status_indicator -> apc_apsi;
 			c9: port apcProcess.Actuators -> apc_acg;
@@ -30,13 +31,13 @@ public
 			new_connection: port apcActuatorCommands.function_failure -> apcProcess.engagementStatus;
 		flows
 			flow_APStatus: flow path apc_erh -> c10 -> apcProcess.flow_W_T -> c4 -> apcEngagement.flow_W_T -> c5 ->
-						apcProcess.flow_A_T -> c8 -> apc_apsi;
+					apcProcess.flow_A_T -> c8 -> apc_apsi;
 			flow_APActuatorCommands: flow path apc_erh -> c10 ->
-						apcProcess.flow_W_T -> c4 -> apcEngagement.flow_W_T -> c5 -> apcProcess.flow_B_T -> c6 ->
-						apcActuatorCommands.flow_W_T -> c7 -> apcProcess.flow_C_T -> c9 -> apc_acg;
-			flow_APFunction_Failure: flow
-						path apc_erh -> c10 -> apcProcess.flow_W_T -> c4 -> apcEngagement.flow_W_T -> c5 -> apcProcess.flow_B_T -> c6 ->
-						apcActuatorCommands.flow_error -> new_connection -> apcProcess.flow_A_T -> c8 -> apc_apsi;
+					apcProcess.flow_W_T -> c4 -> apcEngagement.flow_W_T -> c5 -> apcProcess.flow_B_T -> c6 ->
+					apcActuatorCommands.flow_W_T -> c7 -> apcProcess.flow_C_T -> c9 -> apc_acg;
+			flow_APFunction_Failure: flow path apc_erh -> c10 -> apcProcess.flow_W_T -> c4 -> apcEngagement.flow_W_T -> c5 ->
+					apcProcess.flow_B_T -> c6 ->
+					apcActuatorCommands.flow_error -> new_connection -> apcProcess.flow_A_T -> c8 -> apc_apsi;
 	end APController.impl;
 
 	process APControllerProcess
@@ -49,43 +50,47 @@ public
 			Actuators: out data port;
 			actuatorCommands_requester: out data port;
 		flows
-			flow_W_T: flow path engagement_request -> engagement_send;	
-			flow_B_T: flow path engagementStatus -> actuatorCommands_requester;	
+			flow_W_T: flow path engagement_request -> engagement_send;
+			flow_B_T: flow path engagementStatus -> actuatorCommands_requester;
 			flow_A_T: flow path engagementStatus -> status_indicator;
-			flow_C_T: flow path actuatorCommands_receiver -> Actuators;	
+			flow_C_T: flow path actuatorCommands_receiver -> Actuators;
+		properties
+			Reference_Processor => classifier (HardwareParts::PowerPC.single);
 
 	end APControllerProcess;
 
 	process implementation APControllerProcess.impl
 		subcomponents
 			apControllerThread: thread APThreads::APControllerThread;
-			apStatusIndicator:thread APThreads::UpdateAPStatusIndicator;
+			apStatusIndicator: thread APThreads::UpdateAPStatusIndicator;
 		connections
 			new_connection: port apStatusIndicator.out_status -> status_indicator;
 			new_connection2: port engagementStatus -> apStatusIndicator.in_status;
 			new_connection3: port actuatorCommands_receiver -> apControllerThread.actuators_in;
 			new_connection4: port apControllerThread.actuators_out -> Actuators;
 	end APControllerProcess.impl;
-	
+
 	process APEngagementProcess
-	    features
+		features
 			receiver: in data port;
 			engagement_status: out data port;
 		flows
 			flow_W_T: flow path receiver -> engagement_status;
+		properties
+			Reference_Processor => classifier (HardwareParts::PowerPC.single);
 	end APEngagementProcess;
 
 	process implementation APEngagementProcess.impl
 		subcomponents
 			apSafetyManeuverChecker: thread APThreads::ConfirmManeuverIsSafe;
 			apGuidanceRequester: thread APThreads::RequestAPGuidance;
-	connections
+		connections
 			new_connection: port apGuidanceRequester.guidance_sender -> apSafetyManeuverChecker.maneuver_checker_in;
 			new_connection2: port apSafetyManeuverChecker.notSafe -> engagement_status;
 			new_connection3: port apSafetyManeuverChecker.isSafe -> engagement_status;
 			new_connection4: port receiver -> apGuidanceRequester.guidance_receiver;
 	end APEngagementProcess.impl;
-	
+
 	process APActuatorCommandsProcess
 		features
 			request: in data port;
@@ -94,6 +99,8 @@ public
 		flows
 			flow_W_T: flow path request -> actuators;
 			flow_error: flow path request -> function_failure;
+		properties
+			Reference_Processor => classifier (HardwareParts::PowerPC.single);
 	end APActuatorCommandsProcess;
 
 	process implementation APActuatorCommandsProcess.impl
@@ -104,6 +111,6 @@ public
 			c1: port apGenerateActuatorCommands.actuators -> apSendActuatorCommands.actuators_in;
 			c2: port request -> apGenerateActuatorCommands.request;
 			c3: port apSendActuatorCommands.actuators_out -> actuators;
-		end APActuatorCommandsProcess.impl;
+	end APActuatorCommandsProcess.impl;
 
 end APController;

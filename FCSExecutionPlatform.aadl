@@ -1,7 +1,25 @@
 package FCSExecutionPlatform
 public
-
+	with HardwareParts;
+	
 	system Hardware
+		features
+			CANBA: provides bus access HardwareParts::CANbus;
 	end Hardware;
+
+	system implementation Hardware.single
+		subcomponents
+			CANBUS: bus HardwareParts::CANbus;
+			PCIBUS: bus HardwareParts::PCIbus;
+			RAM: memory HardwareParts::RAM;
+			ROM: memory HardwareParts::ROM;
+			PowerPC: processor HardwareParts::PowerPC.single;
+		connections
+			c1: bus access ROM.PCIBA <-> PCIBUS;
+			c2: bus access PCIBUS <-> RAM.PCIBA;
+			c3: bus access PCIBUS <-> PowerPC.PCIBA;
+			c4: bus access PowerPC.CANBA <-> CANBUS;
+			c5: bus access CANBUS <-> CANBA;
+	end Hardware.single;
 
 end FCSExecutionPlatform;
