@@ -2,6 +2,7 @@ package FGController
 public
 
 	with FGSThreads;
+with HardwareParts;
 
 	system FGController
 		features
@@ -82,6 +83,8 @@ public
 			Flow_Err4: flow path receiveRefAttitude -> setFCFailureIndicator;
 			Flow_Err5: flow path receiveFDGuidanceCmds -> setFCFailureIndicator;
 			Flow_Err6: flow path receiveAPGuidRequest -> setFCFailureIndicator;
+		properties
+			Reference_Processor => classifier (HardwareParts::PowerPC.single);
 	end FGControllerProcess;
 
 	process implementation FGControllerProcess.impl
