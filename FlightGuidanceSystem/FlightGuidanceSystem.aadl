@@ -9,14 +9,16 @@ public
 		features
 			fgs_ui: in data port;
 			fgs_dis: out data port;
-			fgs_gm: out data port;
+			fgs_gm_out: out data port;
+			fgs_gm_in: in data port;
 			fgs_aarr_out: out data port;
 			fgs_aarr_in: in data port;
 		flows
 			Flow_FDGuidancePart1: flow path fgs_ui -> fgs_aarr_out;
 			Flow_FDGuidancePart2: flow path fgs_aarr_in -> fgs_dis;
-			Flow_APGuidance: flow path fgs_ui -> fgs_gm;
-			Flow_FGSError1: flow path fgs_ui -> fgs_dis;
+			Flow_APGuidance: flow path fgs_gm_in -> fgs_gm_out;
+			Flow_Error1: flow path fgs_ui -> fgs_dis;
+			Flow_Error2: flow path fgs_gm_in -> fgs_dis;
 	end FlightGuidanceSystem;
 
 	system implementation FlightGuidanceSystem.impl
@@ -34,21 +36,23 @@ public
 			fgs5: port fgs_ui -> fgController.fgc_ui;
 			fgs6: port fgController.fgc_dis -> fgs_dis;
 			fgs7: port fcFailureIndicator.fcfi_dis -> fgs_dis;
-			fgs8: port fgController.fgc_fcfi -> fcFailureIndicator.fcfi_fgc;
-			fgs9: port fgController.fgc_apgcg -> apGuidanceCmndGenerator.apgcg_fgc;
-			fgs10: port apGuidanceCmndGenerator.apgcg_gm -> fgs_gm;
-			fgs11: port fgController.fgc_aarr_out -> fgs_aarr_out;
-			fgs12: port fgs_aarr_in -> fgController.fgc_aarr_in;
+			fgs8: port fgController.fgc_apgcg_out -> apGuidanceCmndGenerator.apgcg_fgc_in;
+			fgs9: port apGuidanceCmndGenerator.apgcg_fgc_out -> fgs_gm_out;
+			fgs10: port fgController.fgc_aarr_out -> fgs_aarr_out;
+			fgs11: port fgs_aarr_in -> fgController.fgc_aarr_in;
+			fgs12: port fgs_gm_in -> fgController.fgc_gm_in;
+			fgs13: port fgController.fgc_gm_out -> fgs_gm_out;
+			fgs14: port apGuidanceCmndGenerator.apgcg_fgc_out -> fgController.fgc_apgcg_in;
+			fgsErr1: port fgController.fgc_fcfi -> fcFailureIndicator.fcfi_in;
+			fgsErr2: port apGuidanceCmndGenerator.apgcg_fcfi -> fcFailureIndicator.fcfi_in;
 		flows
-			Flow_APGuidance: flow path fgs_ui -> fgs5 -> fgController.Flow_ReqAPGuid -> fgs9 ->
-					apGuidanceCmndGenerator.Flow_APGuid -> fgs10 -> fgs_gm;
-			Flow_FDGuidancePart1: flow path fgs_ui -> fgs5 ->
-					fgController.Flow_FDGuidReq -> fgs11 -> fgs_aarr_out;
-			Flow_FDGuidancePart2: flow path fgs_aarr_in -> fgs12 -> fgController.Flow_RefAttSet -> fgs2 ->
-							refAttitProcessor.Flow_SetRefAttitude -> fgs1 ->
-					fgController.Flow_RefAttReq -> fgs2 -> refAttitProcessor.Flow_SendRefAttitude -> fgs1 ->
-					fgController.Flow_ReqFDGuid -> fgs3 -> fdGuidanceCmndGenerator.Flow_FDGuidance -> fgs4 ->
-					fgController.Flow_SendFDGuid -> fgs6 -> fgs_dis;
+			Flow_FDGuidancePart1: flow path fgs_ui -> fgs5 -> fgController.Flow_FDGuidReq -> fgs10 -> fgs_aarr_out;
+			Flow_FDGuidancePart2: flow path fgs_aarr_in -> fgs11 -> fgController.Flow_RefAttSet -> fgs2 ->
+					refAttitProcessor.Flow_SetRefAttitude -> fgs1 -> fgController.Flow_RefAttReq -> fgs2 ->
+					refAttitProcessor.Flow_SendRefAttitude -> fgs1 -> fgController.Flow_ReqFDGuid -> fgs3 ->
+					fdGuidanceCmndGenerator.Flow_FDGuidance -> fgs4 -> fgController.Flow_SendFDGuid -> fgs6 -> fgs_dis;
+			Flow_APGuidance: flow path fgs_gm_in -> fgs12 -> fgController.Flow_ReqAPGuid -> fgs8 ->
+					apGuidanceCmndGenerator.Flow_APGuid -> fgs14 -> fgController.Flow_SendAPGuid -> fgs13 -> fgs_gm_out;
 	end FlightGuidanceSystem.impl;
 
 end FlightGuidanceSystem;
