@@ -2,31 +2,38 @@ package FGController
 public
 
 	with FGSThreads;
-with HardwareParts;
+	with HardwareParts;
 
 	system FGController
 		features
 			fgc_aarr_in: in data port;
 			fgc_aarr_out: out data port;
 			fgc_fcfi: out data port;
-			fgc_apgcg: out data port;
+			fgc_apgcg_in: in data port;
+			fgc_apgcg_out: out data port;
 			fgc_fdgcg_in: in data port;
 			fgc_fdgcg_out: out data port;
 			fgc_rap_in: in data port;
 			fgc_rap_out: out data port;
 			fgc_ui: in data port;
 			fgc_dis: out data port;
+			fgc_gm_in: in data port;
+			fgc_gm_out: out data port;
 		flows
 			Flow_FDGuidReq: flow path fgc_ui -> fgc_aarr_out;
 			Flow_RefAttSet: flow path fgc_aarr_in -> fgc_rap_out;
 			Flow_RefAttReq: flow path fgc_rap_in -> fgc_rap_out;
 			Flow_ReqFDGuid: flow path fgc_rap_in -> fgc_fdgcg_out;
 			Flow_SendFDGuid: flow path fgc_fdgcg_in -> fgc_dis;
-			Flow_ReqAPGuid: flow path fgc_ui -> fgc_apgcg;
+			Flow_ReqAPGuid: flow path fgc_gm_in -> fgc_apgcg_out;
+			Flow_SendAPGuid: flow path fgc_apgcg_in -> fgc_gm_out;
 			Flow_Err1: flow path fgc_ui -> fgc_fcfi;
 			Flow_Err2: flow path fgc_aarr_in -> fgc_fcfi;
-			Flow_Err3: flow path fgc_fdgcg_in -> fgc_fcfi;
+			Flow_Err3: flow path fgc_rap_in -> fgc_fcfi;
 			Flow_Err4: flow path fgc_rap_in -> fgc_fcfi;
+			Flow_Err5: flow path fgc_fdgcg_in -> fgc_fcfi;
+			Flow_Err6: flow path fgc_gm_in -> fgc_fcfi;
+			Flow_Err7: flow path fgc_apgcg_in -> fgc_fcfi;
 	end FGController;
 
 	system implementation FGController.impl
@@ -43,8 +50,10 @@ with HardwareParts;
 			fgc8: port fgControllerProc.requestFDGuidanceCmds -> fgc_fdgcg_out;
 			fgc9: port fgc_fdgcg_in -> fgControllerProc.receiveFDGuidanceCmds;
 			fgc10: port fgControllerProc.sendFDGuidanceCmds -> fgc_dis;
-			fgc11: port fgc_ui -> fgControllerProc.receiveAPGuidRequest;
-			fgc12: port fgControllerProc.startAPGuidGeneration -> fgc_apgcg;
+			fgc11: port fgc_gm_in -> fgControllerProc.receiveAPGuidRequest;
+			fgc12: port fgControllerProc.startAPGuidGeneration -> fgc_apgcg_out;
+			fgc13: port fgc_apgcg_in -> fgControllerProc.receiveAPGuid;
+			fgc14: port fgControllerProc.sendAPGuid -> fgc_gm_out;
 			fgcErr1: port fgControllerProc.setFCFailureIndicator -> fgc_fcfi;
 		flows
 			Flow_FDGuidReq: flow path fgc_ui -> fgc1 -> fgControllerProc.Flow_fdGuidReq -> fgc2 -> fgc_aarr_out;
@@ -52,7 +61,19 @@ with HardwareParts;
 			Flow_RefAttReq: flow path fgc_rap_in -> fgc5 -> fgControllerProc.Flow_reqRefAttitude -> fgc6 -> fgc_rap_out;
 			Flow_ReqFDGuid: flow path fgc_rap_in -> fgc7 -> fgControllerProc.Flow_recRefAttitude -> fgc8 -> fgc_fdgcg_out;
 			Flow_SendFDGuid: flow path fgc_fdgcg_in -> fgc9 -> fgControllerProc.Flow_sendFDGuidance -> fgc10 -> fgc_dis;
-			Flow_ReqAPGuid: flow path fgc_ui -> fgc11 -> fgControllerProc.Flow_genAPCommands -> fgc12 -> fgc_apgcg;
+			Flow_ReqAPGuid: flow path fgc_gm_in -> fgc11 -> fgControllerProc.Flow_startAPCommands -> fgc12 -> fgc_apgcg_out;
+			Flow_SendAPGuid: flow path fgc_apgcg_in -> fgc13 -> fgControllerProc.Flow_sendAPCommands -> fgc14 -> fgc_gm_out;
+			Flow_Err1: flow path fgc_ui -> fgc1 -> fgControllerProc.Flow_Err1 -> fgcErr1 -> fgc_fcfi;
+			Flow_Err2: flow path fgc_aarr_in -> fgc3 -> fgControllerProc.Flow_Err2 -> fgcErr1 -> fgc_fcfi;
+			Flow_Err3: flow path fgc_rap_in -> fgc5 -> fgControllerProc.Flow_Err3 -> fgcErr1 -> fgc_fcfi;
+			Flow_Err4: flow path fgc_rap_in -> fgc7 ->
+					fgControllerProc.Flow_Err4 -> fgcErr1 -> fgc_fcfi;
+			Flow_Err5: flow path fgc_fdgcg_in -> fgc9 ->
+					fgControllerProc.Flow_Err5 -> fgcErr1 -> fgc_fcfi;
+			Flow_Err6: flow path fgc_gm_in -> fgc11 ->
+					fgControllerProc.Flow_Err6 -> fgcErr1 -> fgc_fcfi;
+			Flow_Err7: flow path fgc_apgcg_in -> fgc13 ->
+					fgControllerProc.Flow_Err7 -> fgcErr1 -> fgc_fcfi;
 	end FGController.impl;
 
 	process FGControllerProcess
@@ -62,6 +83,8 @@ with HardwareParts;
 			setFCFailureIndicator: out data port;
 			receiveAPGuidRequest: in data port;
 			startAPGuidGeneration: out data port;
+			receiveAPGuid: in data port;
+			sendAPGuid: out data port;
 			fdGuidanceCmdRequest: in data port;
 			requestFDGuidanceCmds: out data port;
 			receiveFDGuidanceCmds: in data port;
@@ -76,13 +99,15 @@ with HardwareParts;
 			Flow_reqRefAttitude: flow path refAttitudeSetResult -> requestRefAttitude;
 			Flow_recRefAttitude: flow path receiveRefAttitude -> requestFDGuidanceCmds;
 			Flow_sendFDGuidance: flow path receiveFDGuidanceCmds -> sendFDGuidanceCmds;
-			Flow_genAPCommands: flow path receiveAPGuidRequest -> startAPGuidGeneration;
+			Flow_startAPCommands: flow path receiveAPGuidRequest -> startAPGuidGeneration;
+			Flow_sendAPCommands: flow path receiveAPGuid -> sendAPGuid;
 			Flow_Err1: flow path fdGuidanceCmdRequest -> setFCFailureIndicator;
 			Flow_Err2: flow path receiveAttitude -> setFCFailureIndicator;
 			Flow_Err3: flow path refAttitudeSetResult -> setFCFailureIndicator;
 			Flow_Err4: flow path receiveRefAttitude -> setFCFailureIndicator;
 			Flow_Err5: flow path receiveFDGuidanceCmds -> setFCFailureIndicator;
 			Flow_Err6: flow path receiveAPGuidRequest -> setFCFailureIndicator;
+			Flow_Err7: flow path receiveAPGuid -> setFCFailureIndicator;
 		properties
 			Reference_Processor => classifier (HardwareParts::PowerPC.single);
 	end FGControllerProcess;
@@ -91,7 +116,8 @@ with HardwareParts;
 		subcomponents
 			getAttitude: thread FGSThreads::RequestAndReceiveAircraftAttitude;
 			alertFailure: thread FGSThreads::AlertFCFailureIndicator;
-			genAPCommands: thread FGSThreads::StartAPCommandGeneration;
+			startAPCommands: thread FGSThreads::RecieveAPGuidReq;
+			sendAPCommands: thread FGSThreads::SendAPCommands;
 			reqRefAttitude: thread FGSThreads::RequestReferenceAttitude;
 			recRefAttitude: thread FGSThreads::ReceiveReferenceAttitude;
 			genFDGuidance: thread FGSThreads::GetFDGuidanceCommands;
@@ -106,14 +132,17 @@ with HardwareParts;
 			fgcp8: port recRefAttitude.sendRefAttitude -> requestFDGuidanceCmds;
 			fgcp9: port receiveFDGuidanceCmds -> genFDGuidance.guidanceInput;
 			fgcp10: port genFDGuidance.sendGuidance -> sendFDGuidanceCmds;
-			fcgp11: port receiveAPGuidRequest -> genAPCommands.apCommandRequest;
-			fgcp12: port genAPCommands.startAPCommandGeneration -> startAPGuidGeneration;
+			fcgp11: port receiveAPGuidRequest -> startAPCommands.receiveRequest;
+			fgcp12: port startAPCommands.startAPGuidCommands -> startAPGuidGeneration;
+			fgcp13: port receiveAPGuid -> sendAPCommands.receiveCommands;
+			fgcp14: port sendAPCommands.sendAPGuidCommands -> sendAPGuid;
 			fgcpErr1: port getAttitude.errorNotification -> alertFailure.errorNotification;
 			fgcpErr2: port reqRefAttitude.errorNotification -> alertFailure.errorNotification;
 			fgcpErr3: port recRefAttitude.errorNotification -> alertFailure.errorNotification;
 			fgcpErr4: port genFDGuidance.errorNotification -> alertFailure.errorNotification;
-			fgcpErr5: port genAPCommands.errorNotification -> alertFailure.errorNotification;
+			fgcpErr5: port startAPCommands.errorNotification -> alertFailure.errorNotification;
 			fgcpErr6: port alertFailure.sendError -> setFCFailureIndicator;
+			fgcpErr7: port sendAPCommands.errorNotification -> alertFailure.errorNotification;
 		flows
 			Flow_fdGuidReq: flow path fdGuidanceCmdRequest -> fcgp1 -> getAttitude.Flow_FDRequest -> fcgp2 -> requestAttitude;
 			Flow_getAttitude: flow path receiveAttitude -> fcgp3 -> getAttitude.Flow_AttitudeRec -> fcgp4 -> setRefAttitude;
@@ -123,22 +152,26 @@ with HardwareParts;
 					recRefAttitude.Flow_RAReceived -> fgcp8 -> requestFDGuidanceCmds;
 			Flow_sendFDGuidance: flow path receiveFDGuidanceCmds -> fgcp9 -> genFDGuidance.Flow_GetFDGuid -> fgcp10 ->
 					sendFDGuidanceCmds;
-			Flow_genAPCommands: flow path receiveAPGuidRequest -> fcgp11 ->
-					genAPCommands.Flow_APCommandGenerationRequest -> fgcp12 -> startAPGuidGeneration;
-			Flow_Err1: flow path fdGuidanceCmdRequest -> fcgp1 -> getAttitude.Flow_Error1 -> fgcpErr1 ->
-					alertFailure.Flow_Failure ->
-					fgcpErr6 -> setFCFailureIndicator;
+			Flow_startAPCommands: flow path receiveAPGuidRequest -> fcgp11 -> startAPCommands.Flow_APGuidance -> fgcp12 ->
+					startAPGuidGeneration;
+			Flow_sendAPCommands: flow path receiveAPGuid -> fgcp13 ->
+					sendAPCommands.Flow_APGuidance -> fgcp14 -> sendAPGuid;
+			Flow_Err1: flow path fdGuidanceCmdRequest -> fcgp1 -> getAttitude.Flow_Error1 ->
+					fgcpErr1 -> alertFailure.Flow_Failure -> fgcpErr6 -> setFCFailureIndicator;
 			Flow_Err2: flow path receiveAttitude -> fcgp3 -> getAttitude.Flow_Error2 -> fgcpErr1 -> alertFailure.Flow_Failure ->
-					fgcpErr6 -> setFCFailureIndicator;
-			Flow_Err3: flow path refAttitudeSetResult -> fgcp5 -> reqRefAttitude.Flow_Error -> fgcpErr2 ->
+					fgcpErr6 ->
+					setFCFailureIndicator;
+			Flow_Err3: flow path refAttitudeSetResult -> fgcp5 -> reqRefAttitude.Flow_Error ->
+					fgcpErr2 -> alertFailure.Flow_Failure -> fgcpErr6 -> setFCFailureIndicator;
+			Flow_Err4: flow path receiveRefAttitude -> fgcp7 -> recRefAttitude.Flow_Error -> fgcpErr3 ->
+					alertFailure.Flow_Failure -> fgcpErr6 ->
+					setFCFailureIndicator;
+			Flow_Err5: flow path receiveFDGuidanceCmds -> fgcp9 -> genFDGuidance.Flow_Error ->
+					fgcpErr4 -> alertFailure.Flow_Failure -> fgcpErr6 -> setFCFailureIndicator;
+			Flow_Err6: flow path receiveAPGuidRequest -> fcgp11 -> startAPCommands.Flow_Error -> fgcpErr5 ->
 					alertFailure.Flow_Failure -> fgcpErr6 -> setFCFailureIndicator;
-			Flow_Err4: flow path receiveRefAttitude -> fgcp7 -> recRefAttitude.Flow_Error ->
-					fgcpErr3 -> alertFailure.Flow_Failure -> fgcpErr6 -> setFCFailureIndicator;
-			Flow_Err5: flow path receiveFDGuidanceCmds -> fgcp9 -> genFDGuidance.Flow_Error -> fgcpErr4 ->
-					alertFailure.Flow_Failure -> fgcpErr6 -> setFCFailureIndicator;
-			Flow_Err6: flow path receiveAPGuidRequest -> fcgp11 -> genAPCommands.Flow_Error -> fgcpErr5 ->
-					alertFailure.Flow_Failure ->
-					fgcpErr6 -> setFCFailureIndicator;
+			Flow_Err7: flow path receiveAPGuid -> fgcp13 ->
+					sendAPCommands.Flow_Error -> fgcpErr7 -> alertFailure.Flow_Failure -> fgcpErr6 -> setFCFailureIndicator;
 	end FGControllerProcess.impl;
 
 end FGController;

@@ -83,12 +83,34 @@ public
 			Compute_Execution_time => 2 ms .. 2 ms;
 	end GetFDGuidanceCommands;
 
+	thread RecieveAPGuidReq
+		features
+			receiveRequest: in data port;
+			startAPGuidCommands: out data port;
+			errorNotification: out data port;
+		flows
+			Flow_APGuidance: flow path receiveRequest -> startAPGuidCommands;
+			Flow_Error: flow path receiveRequest -> errorNotification;
+	end RecieveAPGuidReq;
+	
+	thread SendAPCommands
+		features
+			receiveCommands: in data port;
+			sendAPGuidCommands: out data port;
+			errorNotification: out data port;
+		flows
+			Flow_APGuidance: flow path receiveCommands -> sendAPGuidCommands;
+			Flow_Error: flow path receiveCommands -> errorNotification;
+	end SendAPCommands;
+	
 	thread GenerateAPCommands
 		features
 			receiveRequest: in data port;
 			sendAPGuidCommands: out data port;
+			errorNotification: out data port;
 		flows
 			Flow_APGuidance: flow path receiveRequest -> sendAPGuidCommands;
+			Flow_Error: flow path receiveRequest -> errorNotification;
 	end GenerateAPCommands;
 
 	thread DisplayFCFailureIndicator

@@ -6,19 +6,19 @@ public
 	process FCFailureIndicatorProcess
 		features
 			fcfi_dis: out data port;
-			fcfi_fgc: in data port;
+			fcfi_in: in data port;
 		flows
-			Flow_FCFailure: flow path fcfi_fgc -> fcfi_dis;
+			Flow_FCFailure: flow path fcfi_in -> fcfi_dis;
 	end FCFailureIndicatorProcess;
 
 	process implementation FCFailureIndicatorProcess.impl
 		subcomponents
 			displayFailure: thread FGSThreads::DisplayFCFailureIndicator;
 		connections
-			fcfi1: port fcfi_fgc -> displayFailure.receiveFailure;
+			fcfi1: port fcfi_in -> displayFailure.receiveFailure;
 			fcfi2: port displayFailure.notifyOfFailure -> fcfi_dis;
 		flows
-			Flow_FCFailure: flow path fcfi_fgc -> fcfi1 -> displayFailure.Flow_FailureNotify -> fcfi2 -> fcfi_dis;
+			Flow_FCFailure: flow path fcfi_in -> fcfi1 -> displayFailure.Flow_FailureNotify -> fcfi2 -> fcfi_dis;
 	end FCFailureIndicatorProcess.impl;
 
 end FCFailureIndicator;
