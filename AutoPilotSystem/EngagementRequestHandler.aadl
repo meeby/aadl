@@ -5,18 +5,30 @@ public
 	system EngagementRequestHandler
 		features
 			erh_grr: in data port;
-			erh_smc: in data port;
 			erh_aarr: in data port;
-
 			erh_apc: out data port;
+		flows
+			Flow_APS_Grr: flow path erh_grr -> erh_apc;
+			Flow_APS_Aarr: flow path erh_aarr -> erh_apc;
 	end EngagementRequestHandler;
 
 	system implementation EngagementRequestHandler.impl
 		subcomponents
 			erhProcess: process EngagementProcess.impl;
+		connections
+			c1: port erh_aarr -> erhProcess.aarr_in;
+			c2: port erh_grr -> erhProcess.grr_in;
+			c3: port erhProcess.erh_out -> erh_apc;
 	end EngagementRequestHandler.impl;
 
 	process EngagementProcess
+		features
+			grr_in: in data port;
+			aarr_in: in data port;
+			erh_out: out data port;
+		flows
+			flow_grr_out: flow path grr_in -> erh_out;
+			flow_aarr_out: flow path aarr_in -> erh_out;
 	end EngagementProcess;
 
 	process implementation EngagementProcess.impl

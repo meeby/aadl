@@ -14,9 +14,9 @@ public
 			Flow_Error1: flow path fdRequest -> errorNotification;
 			Flow_Error2: flow path receiveAttitude -> errorNotification;
 		properties
-			Dispatch_Protocol => Periodic;
+			Dispatch_Protocol => Aperiodic;
 			Period => 10 ms;
-			Compute_Execution_time => 2 ms .. 2 ms;
+			Compute_Execution_time => 7 ms .. 9 ms;
 	end RequestAndReceiveAircraftAttitude;
 
 	thread AlertFCFailureIndicator
@@ -26,9 +26,9 @@ public
 		flows
 			Flow_Failure: flow path errorNotification -> sendError;
 		properties
-			Dispatch_Protocol => Periodic;
+			Dispatch_Protocol => Aperiodic;
 			Period => 10 ms;
-			Compute_Execution_time => 2 ms .. 2 ms;
+			Compute_Execution_time => 1 ms .. 3 ms;
 	end AlertFCFailureIndicator;
 
 	thread StartAPCommandGeneration
@@ -50,9 +50,9 @@ public
 			Flow_RARequest: flow path refAttitudeRequest -> requestRefAttitude;
 			Flow_Error: flow path refAttitudeRequest -> errorNotification;
 		properties
-			Dispatch_Protocol => Periodic;
+			Dispatch_Protocol => Aperiodic;
 			Period => 10 ms;
-			Compute_Execution_time => 2 ms .. 2 ms;
+			Compute_Execution_time => 3 ms .. 4 ms;
 	end RequestReferenceAttitude;
 
 	thread ReceiveReferenceAttitude
@@ -64,9 +64,9 @@ public
 			Flow_RAReceived: flow path refAttitudeInput -> sendRefAttitude;
 			Flow_Error: flow path refAttitudeInput -> errorNotification;
 		properties
-			Dispatch_Protocol => Periodic;
+			Dispatch_Protocol => Aperiodic;
 			Period => 10 ms;
-			Compute_Execution_time => 2 ms .. 2 ms;
+			Compute_Execution_time => 3 ms .. 4 ms;
 	end ReceiveReferenceAttitude;
 	
 	thread GetFDGuidanceCommands
@@ -78,7 +78,7 @@ public
 			Flow_GetFDGuid: flow path guidanceInput -> sendGuidance;
 			Flow_Error: flow path guidanceInput -> errorNotification;
 		properties
-			Dispatch_Protocol => Periodic;
+			Dispatch_Protocol => Aperiodic;
 			Period => 10 ms;
 			Compute_Execution_time => 2 ms .. 2 ms;
 	end GetFDGuidanceCommands;
@@ -128,9 +128,9 @@ public
 		flows
 			Flow_FDGuidance: flow path receiveCurrentAttitude -> outputNewAttitude;
 		properties
-			Dispatch_Protocol => Periodic;
+			Dispatch_Protocol => Aperiodic;
 			Period => 10 ms;
-			Compute_Execution_time => 2 ms .. 2 ms;
+			Compute_Execution_time => 2 ms .. 5 ms;
 	end CalculateFDGuidance;
 
 	thread FGControllerThread

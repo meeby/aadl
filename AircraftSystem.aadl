@@ -21,16 +21,16 @@ public
 			
 		connections
 			c_fci_fcs: port fci.fci_fcs -> fcs.fcs_fci;
-			c_fcs_pfd_left: port fcs.fcs_pdf -> pfdLeft.pfd_fcs;
-			c_fcs_pfd_right: port fcs.fcs_pdf -> pfdRight.pfd_fcs;
+			c_fcs_pfd_left: port fcs.fcs_pfd -> pfdLeft.pfd_fcs;
+			c_fcs_pfd_right: port fcs.fcs_pfd -> pfdRight.pfd_fcs;
 			c_ahs_fcs: port ahs.ahs_fcs -> fcs.fcs_ahs;
 			c_fcs_csa: port fcs.fcs_csa -> csa.csa_fcs;
 
 		flows
-			Flow_FCI_PFD_Left: end to end flow fci.fci_source -> c_fci_fcs -> fcs.flow_fci_pdf -> c_fcs_pfd_left -> pfdLeft.pfd_sink {
+			Flow_FCI_PFD_Left: end to end flow fci.fci_source -> c_fci_fcs -> fcs.flow_fci_pfd -> c_fcs_pfd_left -> pfdLeft.pfd_sink {
 				Latency => 50 ms .. 50 ms;
 			};
-			Flow_FCI_PFD_Right: end to end flow fci.fci_source -> c_fci_fcs -> fcs.flow_fci_pdf -> c_fcs_pfd_right -> pfdRight.pfd_sink {
+			Flow_FCI_PFD_Right: end to end flow fci.fci_source -> c_fci_fcs -> fcs.flow_fci_pfd -> c_fcs_pfd_right -> pfdRight.pfd_sink {
 				Latency => 50 ms .. 50 ms;
 			};
 			Flow_Request_Control_Wheel_Steering: end to end flow fci.fci_source -> c_fci_fcs -> fcs.flow_fci_csa {

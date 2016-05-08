@@ -1,6 +1,5 @@
 package AutoPilotSystem
 public
-	with ActuatorCommandGenerator;
 	with APController;
 	with APStatusIndicator;
 	with EngagementRequestHandler;
@@ -10,12 +9,18 @@ public
 			ap_fci: in data port;
 			ap_aarr: in data port;
 			ap_gm_cmd: in data port;
-			ap_pdf: out data port;
+			ap_pfd: out data port;
 			ap_csa: out data port;
 			ap_gm: out data port;
 		flows
 			Flow_AP_CSA: flow path ap_fci -> ap_csa;
-			Flow_AP_UI: flow path ap_fci -> ap_pdf;
+			Flow_AP_UI: flow path ap_fci -> ap_pfd;
+			Flow_gm_csa: flow path ap_gm_cmd -> ap_csa;
+			Flow_aarr_csa: flow path ap_aarr -> ap_csa;
+			Flow_fci_gm: flow path ap_fci -> ap_gm;
+			Flow_gmcmd_pfd: flow path ap_gm_cmd -> ap_pfd;
+			Flow_aarr_pfd: flow path ap_aarr -> ap_pfd;
+
 	end AutoPilotSystem;
 
 	system implementation AutoPilotSystem.impl
@@ -23,18 +28,15 @@ public
 			apController: system APController::APController.impl;
 			engagementRequestHandler: system EngagementRequestHandler::EngagementRequestHandler.impl;
 			apStatus: system APStatusIndicator::APStatusIndicator.impl;
-			actCmndGenerator: system ActuatorCommandGenerator::ActuatorCommandGenerator.impl;
 
 		connections
 			c_apc_apsi: port apController.apc_apsi -> apStatus.apsi_apc;
-			c_apc_acg: port apController.apc_acg -> actCmndGenerator.acg_apc;
+			c_apc_acg: port apController.apc_acg -> ap_csa;
 			c_erh_apc: port engagementRequestHandler.erh_apc -> apController.apc_erh;
 			c_aarr_erh: port ap_aarr -> engagementRequestHandler.erh_aarr;
-			c_aps_pdf: port apStatus.apsi_dis -> ap_pdf;
-			c_acg_csa: port actCmndGenerator.acg_csa -> ap_csa;
-	
-
-
-end AutoPilotSystem.impl;
+			c_aps_pfd: port apStatus.apsi_dis -> ap_pfd;
+			c_gm_grr: port ap_gm_cmd -> engagementRequestHandler.erh_grr;
+			c_apsi_gm: port apStatus.apsi_dis -> ap_gm;
+	end AutoPilotSystem.impl;
 
 end AutoPilotSystem;

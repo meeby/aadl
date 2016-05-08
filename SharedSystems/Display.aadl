@@ -13,10 +13,10 @@ public
 			apsi_dis: in data port; -- need to know if AP is engaged
 
 		flows
-			flow_fc_pdf: flow path dis_fcfi -> dis_pfd {
+			flow_fc_pfd: flow path dis_fcfi -> dis_pfd {
 						Latency => 5 ms .. 5 ms;
 					};
-			flow_ap_pdf: flow path dis_apsi -> dis_pfd {
+			flow_ap_pfd: flow path dis_apsi -> dis_pfd {
 						Latency => 5 ms .. 5 ms;
 					};
 
@@ -60,8 +60,8 @@ public
 			C1: port getClearFlightDirectorRequest -> clearThread.receiveClearFlightDirectorRequest;
 			C2: port getAPStatus -> distinguishAPStatus.receiveAPStatus;
 			C3: port distinguishAPStatus.autoPilotIsEngaged -> clearThread.receiveAPEngaged;
-C5: port clearThread.sendRequestToClearFlightDirector -> allowClearFlightGuidance;
-C4: port distinguishAPStatus.autoPilotIsDisengaged -> clearThread.receiveAPDisengaged;
-end ClearFlightDirectorProcess.impl;
+			C5: port clearThread.sendRequestToClearFlightDirector -> allowClearFlightGuidance;
+			C4: port distinguishAPStatus.autoPilotIsDisengaged -> clearThread.receiveAPDisengaged;
+	end ClearFlightDirectorProcess.impl;
 
 end Display;
