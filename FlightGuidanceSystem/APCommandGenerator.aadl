@@ -3,27 +3,27 @@ public
 
 	with FGSThreads;
 
-	system APGuidanceCommandGenerator
-		features
-			apgcg_fgc_out: out data port;
-			apgcg_fgc_in: in data port;
-			apgcg_fcfi: out data port;
-		flows
-			Flow_APGuid: flow path apgcg_fgc_in -> apgcg_fgc_out;
-			Flow_Error: flow path apgcg_fgc_in -> apgcg_fcfi;
-	end APGuidanceCommandGenerator;
-
-	system implementation APGuidanceCommandGenerator.impl
-		subcomponents
-			commandGenProcess: process APGCGProcess.impl;
-		connections
-			apgcg1: port apgcg_fgc_in -> commandGenProcess.receiveAPGuidReq;
-			apgcg2: port commandGenProcess.sendAPGuidCommands -> apgcg_fgc_out;
-			apgcgErr: port commandGenProcess.setFCFailureIndicator -> apgcg_fcfi;
-		flows
-			Flow_APGuid: flow path apgcg_fgc_in -> apgcg1 -> commandGenProcess.Flow_APGuid -> apgcg2 -> apgcg_fgc_out;
-			Flow_Error: flow path apgcg_fgc_in -> apgcg1 -> commandGenProcess.Flow_Error -> apgcgErr -> apgcg_fcfi;
-	end APGuidanceCommandGenerator.impl;
+--	system APGuidanceCommandGenerator
+--		features
+--			apgcg_fgc_out: out data port;
+--			apgcg_fgc_in: in data port;
+--			apgcg_fcfi: out data port;
+--		flows
+--			Flow_APGuid: flow path apgcg_fgc_in -> apgcg_fgc_out;
+--			Flow_Error: flow path apgcg_fgc_in -> apgcg_fcfi;
+--	end APGuidanceCommandGenerator;
+--
+--	system implementation APGuidanceCommandGenerator.impl
+--		subcomponents
+--			commandGenProcess: process APGCGProcess.impl;
+--		connections
+--			apgcg1: port apgcg_fgc_in -> commandGenProcess.receiveAPGuidReq;
+--			apgcg2: port commandGenProcess.sendAPGuidCommands -> apgcg_fgc_out;
+--			apgcgErr: port commandGenProcess.setFCFailureIndicator -> apgcg_fcfi;
+--		flows
+--			Flow_APGuid: flow path apgcg_fgc_in -> apgcg1 -> commandGenProcess.Flow_APGuid -> apgcg2 -> apgcg_fgc_out;
+--			Flow_Error: flow path apgcg_fgc_in -> apgcg1 -> commandGenProcess.Flow_Error -> apgcgErr -> apgcg_fcfi;
+--	end APGuidanceCommandGenerator.impl;
 
 	process APGCGProcess
 		features

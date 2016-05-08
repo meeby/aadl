@@ -18,12 +18,13 @@ public
 			Flow_FDGuidancePart2: flow path fgs_aarr_in -> fgs_dis;
 			Flow_APGuidance: flow path fgs_gm_in -> fgs_gm_out;
 			Flow_Error1: flow path fgs_ui -> fgs_dis;
-			Flow_Error2: flow path fgs_gm_in -> fgs_dis;
+			Flow_Error2: flow path fgs_aarr_in -> fgs_dis;
+			Flow_Error3: flow path fgs_gm_in -> fgs_dis;
 	end FlightGuidanceSystem;
 
 	system implementation FlightGuidanceSystem.impl
 		subcomponents
-			apGuidanceCmndGenerator: system APGuidanceCommandGenerator::APGuidanceCommandGenerator.impl;
+			apGuidanceCmndGenerator: process APGuidanceCommandGenerator::APGCGProcess.impl;
 			fcFailureIndicator: process FCFailureIndicator::FCFailureIndicatorProcess.impl;
 			fdGuidanceCmndGenerator: process FDGuidanceCommandGenerator::FDGuidanceCommandGeneratorProcess.impl;
 			fgController: system FGController::FGController.impl;
@@ -36,15 +37,17 @@ public
 			fgs5: port fgs_ui -> fgController.fgc_ui;
 			fgs6: port fgController.fgc_dis -> fgs_dis;
 			fgs7: port fcFailureIndicator.fcfi_dis -> fgs_dis;
-			fgs8: port fgController.fgc_apgcg_out -> apGuidanceCmndGenerator.apgcg_fgc_in;
-			fgs9: port apGuidanceCmndGenerator.apgcg_fgc_out -> fgs_gm_out;
+			fgs8: port fgController.fgc_apgcg_out -> apGuidanceCmndGenerator.receiveAPGuidReq;
+			fgs9: port apGuidanceCmndGenerator.sendAPGuidCommands -> fgs_gm_out;
 			fgs10: port fgController.fgc_aarr_out -> fgs_aarr_out;
 			fgs11: port fgs_aarr_in -> fgController.fgc_aarr_in;
 			fgs12: port fgs_gm_in -> fgController.fgc_gm_in;
 			fgs13: port fgController.fgc_gm_out -> fgs_gm_out;
-			fgs14: port apGuidanceCmndGenerator.apgcg_fgc_out -> fgController.fgc_apgcg_in;
+			fgs14: port apGuidanceCmndGenerator.sendAPGuidCommands -> fgController.fgc_apgcg_in;
 			fgsErr1: port fgController.fgc_fcfi -> fcFailureIndicator.fcfi_in;
-			fgsErr2: port apGuidanceCmndGenerator.apgcg_fcfi -> fcFailureIndicator.fcfi_in;
+			fgsErr2: port apGuidanceCmndGenerator.setFCFailureIndicator -> fcFailureIndicator.fcfi_in;
+			fgsErr3: port fdGuidanceCmndGenerator.setFCFailureIndicator -> fcFailureIndicator.fcfi_in;
+			fgsErr4: port refAttitProcessor.rap_fcfi -> fcFailureIndicator.fcfi_in;
 		flows
 			Flow_FDGuidancePart1: flow path fgs_ui -> fgs5 -> fgController.Flow_FDGuidReq -> fgs10 -> fgs_aarr_out;
 			Flow_FDGuidancePart2: flow path fgs_aarr_in -> fgs11 -> fgController.Flow_RefAttSet -> fgs2 ->
@@ -53,6 +56,42 @@ public
 					fdGuidanceCmndGenerator.Flow_FDGuidance -> fgs4 -> fgController.Flow_SendFDGuid -> fgs6 -> fgs_dis;
 			Flow_APGuidance: flow path fgs_gm_in -> fgs12 -> fgController.Flow_ReqAPGuid -> fgs8 ->
 					apGuidanceCmndGenerator.Flow_APGuid -> fgs14 -> fgController.Flow_SendAPGuid -> fgs13 -> fgs_gm_out;
+			Flow_Error1: flow path fgs_ui -> fgs5 -> fgController.Flow_Err1 -> fgsErr1 -> fcFailureIndicator.Flow_FCFailure ->
+					fgs7 -> fgs_dis;
+			Flow_Error2: flow path fgs_aarr_in -> fgs11 -> fgController.Flow_Err2 -> fgsErr1 ->
+					fcFailureIndicator.Flow_FCFailure -> fgs7 -> fgs_dis;
+			Flow_Error2: flow path fgs_aarr_in ->
+					fgs11 -> fgController.Flow_RefAttSet -> fgs2 -> refAttitProcessor.Flow_Error -> fgsErr4 ->
+					fcFailureIndicator.Flow_FCFailure -> fgs7 -> fgs_dis;
+			Flow_Error2: flow path fgs_aarr_in -> fgs11 ->
+					fgController.Flow_RefAttSet -> fgs2 -> refAttitProcessor.Flow_SetRefAttitude -> fgs1 -> fgController.Flow_Err3 ->
+					fgsErr1 -> fcFailureIndicator.Flow_FCFailure -> fgs7 -> fgs_dis;
+			Flow_Error2: flow path fgs_aarr_in ->
+					fgs11 -> fgController.Flow_RefAttSet -> fgs2 -> refAttitProcessor.Flow_SetRefAttitude -> fgs1 ->
+					fgController.Flow_RefAttReq -> fgs2 -> refAttitProcessor.Flow_Error -> fgsErr4 ->
+					fcFailureIndicator.Flow_FCFailure -> fgs7 -> fgs_dis;
+			Flow_Error2: flow path fgs_aarr_in -> fgs11 ->
+					fgController.Flow_RefAttSet -> fgs2 -> refAttitProcessor.Flow_SetRefAttitude -> fgs1 ->
+					fgController.Flow_RefAttReq -> fgs2 -> refAttitProcessor.Flow_SendRefAttitude -> fgs1 -> fgController.Flow_Err4 ->
+							fgsErr4 -> fcFailureIndicator.Flow_FCFailure -> fgs7 -> fgs_dis;
+			Flow_Error2: flow path fgs_aarr_in ->
+					fgs11 -> fgController.Flow_RefAttSet -> fgs2 -> refAttitProcessor.Flow_SetRefAttitude -> fgs1 ->
+					fgController.Flow_RefAttReq -> fgs2 -> refAttitProcessor.Flow_SendRefAttitude -> fgs1 ->
+					fgController.Flow_ReqFDGuid -> fgs3 -> fdGuidanceCmndGenerator.Flow_Error -> fgsErr3 ->
+					fcFailureIndicator.Flow_FCFailure -> fgs7 -> fgs_dis;
+			Flow_Error2: flow path fgs_aarr_in -> fgs11 ->
+					fgController.Flow_RefAttSet -> fgs2 -> refAttitProcessor.Flow_SetRefAttitude -> fgs1 ->
+					fgController.Flow_RefAttReq -> fgs2 -> refAttitProcessor.Flow_SendRefAttitude -> fgs1 ->
+					fgController.Flow_ReqFDGuid -> fgs3 -> fdGuidanceCmndGenerator.Flow_FDGuidance -> fgs4 -> fgController.Flow_Err5
+							-> fgsErr1 -> fcFailureIndicator.Flow_FCFailure -> fgs7 -> fgs_dis;
+			Flow_Error3: flow path fgs_gm_in -> fgs12 ->
+					fgController.Flow_Err6 -> fgsErr1 -> fcFailureIndicator.Flow_FCFailure -> fgs7 -> fgs_dis;
+			Flow_Error3: flow path fgs_gm_in -> fgs12 -> fgController.Flow_ReqAPGuid -> fgs8 ->
+							apGuidanceCmndGenerator.Flow_Error ->
+					fgsErr2 -> fcFailureIndicator.Flow_FCFailure -> fgs7 -> fgs_dis;
+			Flow_Error3: flow path fgs_gm_in -> fgs12 -> fgController.Flow_ReqAPGuid -> fgs8 ->
+							apGuidanceCmndGenerator.Flow_APGuid -> fgs14 -> fgController.Flow_Err7 -> fgsErr1 ->
+							fcFailureIndicator.Flow_FCFailure -> fgs7 -> fgs_dis;
 	end FlightGuidanceSystem.impl;
 
 end FlightGuidanceSystem;

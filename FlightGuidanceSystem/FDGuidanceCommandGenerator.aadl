@@ -6,8 +6,10 @@ public
 		features
 			guidanceRequest: in data port;
 			generatedGuidanceCommands: out data port;
+			setFCFailureIndicator: out data port;
 		flows
 			Flow_FDGuidance: flow path guidanceRequest -> generatedGuidanceCommands;
+			Flow_Error: flow path guidanceRequest -> setFCFailureIndicator;
 	end FDGuidanceCommandGeneratorProcess;
 
 	process implementation FDGuidanceCommandGeneratorProcess.impl
@@ -16,9 +18,12 @@ public
 		connections
 			fdgcgp1: port guidanceRequest -> calcFDGuid.receiveCurrentAttitude;
 			fdgcgp2: port calcFDGuid.outputNewAttitude -> generatedGuidanceCommands;
+			fdgcgpErr1: port calcFDGuid.errorNotification -> setFCFailureIndicator;
 		flows
 			Flow_FDGuidance: flow path guidanceRequest -> fdgcgp1 -> calcFDGuid.Flow_FDGuidance -> fdgcgp2 ->
-							generatedGuidanceCommands;
+					generatedGuidanceCommands;
+			Flow_Error: flow path guidanceRequest -> fdgcgp1 -> calcFDGuid.Flow_Error ->
+					fdgcgpErr1 -> setFCFailureIndicator;
 	end FDGuidanceCommandGeneratorProcess.impl;
 
 end FDGuidanceCommandGenerator;

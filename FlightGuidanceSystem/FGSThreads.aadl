@@ -15,7 +15,6 @@ public
 			Flow_Error2: flow path receiveAttitude -> errorNotification;
 		properties
 			Dispatch_Protocol => Aperiodic;
-			Period => 10 ms;
 			Compute_Execution_time => 7 ms .. 9 ms;
 	end RequestAndReceiveAircraftAttitude;
 
@@ -27,7 +26,6 @@ public
 			Flow_Failure: flow path errorNotification -> sendError;
 		properties
 			Dispatch_Protocol => Aperiodic;
-			Period => 10 ms;
 			Compute_Execution_time => 1 ms .. 3 ms;
 	end AlertFCFailureIndicator;
 
@@ -39,6 +37,9 @@ public
 		flows
 			Flow_APCommandGenerationRequest: flow path apCommandRequest -> startAPCommandGeneration;
 			Flow_Error: flow path apCommandRequest -> errorNotification;
+		properties
+			Dispatch_Protocol => Aperiodic;
+			Compute_Execution_time => 1 ms .. 1 ms;
 	end StartAPCommandGeneration;
 
 	thread RequestReferenceAttitude
@@ -51,7 +52,6 @@ public
 			Flow_Error: flow path refAttitudeRequest -> errorNotification;
 		properties
 			Dispatch_Protocol => Aperiodic;
-			Period => 10 ms;
 			Compute_Execution_time => 3 ms .. 4 ms;
 	end RequestReferenceAttitude;
 
@@ -65,7 +65,6 @@ public
 			Flow_Error: flow path refAttitudeInput -> errorNotification;
 		properties
 			Dispatch_Protocol => Aperiodic;
-			Period => 10 ms;
 			Compute_Execution_time => 3 ms .. 4 ms;
 	end ReceiveReferenceAttitude;
 	
@@ -79,7 +78,6 @@ public
 			Flow_Error: flow path guidanceInput -> errorNotification;
 		properties
 			Dispatch_Protocol => Aperiodic;
-			Period => 10 ms;
 			Compute_Execution_time => 2 ms .. 2 ms;
 	end GetFDGuidanceCommands;
 
@@ -91,6 +89,9 @@ public
 		flows
 			Flow_APGuidance: flow path receiveRequest -> startAPGuidCommands;
 			Flow_Error: flow path receiveRequest -> errorNotification;
+		properties
+			Dispatch_Protocol => Aperiodic;
+			Compute_Execution_time => 1 ms .. 1 ms;
 	end RecieveAPGuidReq;
 	
 	thread SendAPCommands
@@ -101,6 +102,9 @@ public
 		flows
 			Flow_APGuidance: flow path receiveCommands -> sendAPGuidCommands;
 			Flow_Error: flow path receiveCommands -> errorNotification;
+		properties
+			Dispatch_Protocol => Aperiodic;
+			Compute_Execution_time => 1 ms .. 2 ms;
 	end SendAPCommands;
 	
 	thread GenerateAPCommands
@@ -111,6 +115,9 @@ public
 		flows
 			Flow_APGuidance: flow path receiveRequest -> sendAPGuidCommands;
 			Flow_Error: flow path receiveRequest -> errorNotification;
+		properties
+			Dispatch_Protocol => Aperiodic;
+			Compute_Execution_time => 2 ms .. 5 ms;
 	end GenerateAPCommands;
 
 	thread DisplayFCFailureIndicator
@@ -119,37 +126,48 @@ public
 			notifyOfFailure: out data port;
 		flows
 			Flow_FailureNotify: flow path receiveFailure -> notifyOfFailure;
+		properties
+			Dispatch_Protocol => Aperiodic;
+			Compute_Execution_time => 2 ms .. 2 ms;
 	end DisplayFCFailureIndicator;
 
 	thread CalculateFDGuidance
 		features
 			receiveCurrentAttitude: in data port;
 			outputNewAttitude: out data port;
+			errorNotification: out data port;
 		flows
 			Flow_FDGuidance: flow path receiveCurrentAttitude -> outputNewAttitude;
+			Flow_Error: flow path receiveCurrentAttitude -> errorNotification;
 		properties
 			Dispatch_Protocol => Aperiodic;
-			Period => 10 ms;
 			Compute_Execution_time => 2 ms .. 5 ms;
 	end CalculateFDGuidance;
-
-	thread FGControllerThread
-	end FGControllerThread;
 
 	thread SetReferenceAttitude
 		features
 			desiredReferenceAttitude: in data port;
 			result: out data port;
+			errorNotification: out data port;
 		flows
 			Flow_FDGuidance: flow path desiredReferenceAttitude -> result;
+			Flow_Error: flow path desiredReferenceAttitude -> errorNotification;
+		properties
+			Dispatch_Protocol => Aperiodic;
+			Compute_Execution_time => 1 ms .. 1 ms;
 	end SetReferenceAttitude;
 
 	thread SendReferenceAttitude
 		features
 			request: in data port;
 			currentReferenceAttitude: out data port;
+			errorNotification: out data port;
 		flows
 			Flow_FDGuidance: flow path request -> currentReferenceAttitude;
+			Flow_Error: flow path request -> errorNotification;
+		properties
+			Dispatch_Protocol => Aperiodic;
+			Compute_Execution_time => 1 ms .. 1 ms;
 	end SendReferenceAttitude;
 
 end FGSThreads;

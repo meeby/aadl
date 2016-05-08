@@ -6,9 +6,11 @@ public
 		features
 			rap_fgc_in: in data port;
 			rap_fgc_out: out data port;
+			rap_fcfi: out data port;
 		flows
 			Flow_SetRefAttitude: flow path rap_fgc_in -> rap_fgc_out;
 			Flow_SendRefAttitude: flow path rap_fgc_in -> rap_fgc_out;
+			Flow_Error: flow path rap_fgc_in -> rap_fcfi;
 	end ReferenceAttitudeProcessorProcess;
 
 	process implementation ReferenceAttitudeProcessorProcess.impl
@@ -20,11 +22,14 @@ public
 			rapp2: port setReferenceAttitude.result -> rap_fgc_out;
 			rapp3: port rap_fgc_in -> sendReferenceAttitude.request;
 			rapp4: port sendReferenceAttitude.currentReferenceAttitude -> rap_fgc_out;
+			rappErr1: port setReferenceAttitude.errorNotification -> rap_fcfi;
+			rappErr2: port sendReferenceAttitude.errorNotification -> rap_fcfi;
 		flows
 			Flow_SendRefAttitude: flow path rap_fgc_in -> rapp3 -> sendReferenceAttitude.Flow_FDGuidance -> rapp4 ->
-					rap_fgc_out;
-			Flow_SetRefAttitude: flow path rap_fgc_in -> rapp1 -> setReferenceAttitude.Flow_FDGuidance -> rapp2 ->
-					rap_fgc_out;
+							rap_fgc_out;
+			Flow_SetRefAttitude: flow path rap_fgc_in -> rapp1 -> setReferenceAttitude.Flow_FDGuidance -> rapp2 -> rap_fgc_out;
+			Flow_Error: flow path rap_fgc_in -> rapp1 -> setReferenceAttitude.Flow_Error -> rappErr1 -> rap_fcfi;
+			Flow_Error: flow path rap_fgc_in -> rapp3 -> sendReferenceAttitude.Flow_Error -> rappErr2 -> rap_fcfi;
 	end ReferenceAttitudeProcessorProcess.impl;
 
 end ReferenceAttitudeProcessor;
